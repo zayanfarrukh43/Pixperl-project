@@ -1,8 +1,10 @@
-@import "tailwindcss";
-
-@import "tailwindcss";
+/* 1. Google Font @import MUST be the very first statement */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Space+Grotesk:wght@400;600;700;900&display=swap');
 
+/* 2. Tailwind v4 import comes second */
+@import "tailwindcss";
+
+/* 3. Theme overrides */
 @theme {
   --font-sans: 'Space Grotesk', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
