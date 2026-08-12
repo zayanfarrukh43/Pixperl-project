@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, Navigation, EffectCoverflow } from 'swiper/modules';
+import { Autoplay, Navigation, EffectCoverflow } from 'swiper/modules';
 
 import { 
   FaShoppingCart, 
@@ -20,15 +20,50 @@ import {
   FaLock,
   FaFacebookF,
   FaInstagram,
-  FaLinkedinIn
+  FaLinkedinIn,
+  FaCheckCircle,
+  FaServer,
+  FaBroadcastTower,
+  FaSearch,
+  FaFileSignature,
+  FaTools,
+  FaEye,
+  FaArrowRight,
+  FaGlobe,
+  FaClock,
+  FaNetworkWired
 } from 'react-icons/fa';
 
 import 'swiper/css';
-import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 
 const QUOTE_LINK = "/get-quote"; 
+
+// Helper component for live clock in office locations
+function CityClock({ timeZone }) {
+  const [timeStr, setTimeStr] = useState('');
+
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      setTimeStr(
+        now.toLocaleTimeString('en-US', {
+          timeZone,
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true
+        })
+      );
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, [timeZone]);
+
+  return <span>{timeStr || '00:00:00 AM'}</span>;
+}
 
 export default function PixPerlPage() {
   const [activeTab, setActiveTab] = useState('home');
@@ -36,6 +71,7 @@ export default function PixPerlPage() {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
+    { name: 'About Us', href: '/about', externalPage: true },
     { name: 'Services', href: '#services' },
     { name: 'Clients', href: '#clients' },
     { name: 'Partners', href: '#partners' },
@@ -53,37 +89,111 @@ export default function PixPerlPage() {
   ];
 
   const clients = [
-    { name: 'BOBO SUPPLIES', type: 'Retail Chain', desc: '24/7 coverage across 12+ retail operations in Houston, TX.', logoText: 'B' },
-    { name: 'HEAVEN DREAM HOMES', type: 'Construction & Real Estate', desc: 'Active construction zone monitoring and site equipment security.', logoText: 'H' },
-    { name: 'APEX LOGISTICS', type: 'Warehouse Operations', desc: 'Perimeter monitoring and automated access log reporting.', logoText: 'A' }
+    { 
+      name: 'BOBO SUPPLIES', 
+      type: 'Retail Chain', 
+      desc: 'Full-spectrum remote coverage across 12+ high-volume retail locations in Houston, TX.', 
+      logoText: 'B',
+      nodes: '48 Active Cams',
+      uptime: '99.98% Threat Intercept',
+      tenure: '3 Year SLA Partner'
+    },
+    { 
+      name: 'HEAVEN DREAM HOMES', 
+      type: 'Construction & Real Estate', 
+      desc: 'Active construction zone protection, thermal fence detection, and site equipment security.', 
+      logoText: 'H',
+      nodes: '18 Thermal Arrays',
+      uptime: '100% Perimeter Guard',
+      tenure: '2 Year SLA Partner'
+    },
+    { 
+      name: 'APEX LOGISTICS', 
+      type: 'Warehouse Operations', 
+      desc: 'Multi-point perimeter monitoring and automated vehicle log analytics.', 
+      logoText: 'A',
+      nodes: '64 HD Nodes',
+      uptime: '<15s Threat Alert',
+      tenure: '4 Year SLA Partner'
+    },
+    { 
+      name: 'VANGUARD MEDICAL HUB', 
+      type: 'Healthcare Facility', 
+      desc: 'Strict access control monitoring and continuous emergency lane watch.', 
+      logoText: 'V',
+      nodes: '32 Secure Nodes',
+      uptime: 'Zero Breach Record',
+      tenure: '1 Year SLA Partner'
+    }
   ];
 
   const steps = [
-    { num: '01', title: 'Requirement Analysis', desc: 'Detailed assessment of your physical and digital surveillance needs.' },
-    { num: '02', title: 'Proposal & Tender', desc: 'Customized blueprint and tender submission for full site coverage.' },
-    { num: '03', title: 'Contract Signing', desc: '12-month structured SLA setup to ensure transparent operations.' },
-    { num: '04', title: 'Setup & Deployment', desc: 'Hardware installation and integration with our 24/7 command center.' },
-    { num: '05', title: 'Active Protection', desc: 'Continuous remote monitoring paired with weekly analytics reports.' },
+    { 
+      num: '01', 
+      phase: 'PHASE 01',
+      title: 'Requirement Analysis', 
+      desc: 'Detailed physical and digital site survey analyzing blind spots, perimeter vulnerabilities, and network bandwidth.',
+      icon: FaSearch,
+      deliverable: 'Site Risk & Coverage Audit'
+    },
+    { 
+      num: '02', 
+      phase: 'PHASE 02',
+      title: 'Proposal & Tender', 
+      desc: 'Customized surveillance architecture, hardware allocation blueprints, and transparent SLA pricing tiers.',
+      icon: FaFileContract,
+      deliverable: 'Custom System Specification'
+    },
+    { 
+      num: '03', 
+      phase: 'PHASE 03',
+      title: 'Contract Signing', 
+      desc: 'Finalizing structured 12-month SLA terms, incident escalation paths, and guaranteed uptime protocols.',
+      icon: FaFileSignature,
+      deliverable: 'Binding SLA Agreement'
+    },
+    { 
+      num: '04', 
+      phase: 'PHASE 04',
+      title: 'Setup & Deployment', 
+      desc: 'RDV hardware installation, zero-trust network encryption setup, and streaming link to our 24/7 command center.',
+      icon: FaTools,
+      deliverable: 'Hardware Sync & Calibration'
+    },
+    { 
+      num: '05', 
+      phase: 'LIVE OPERATIONS',
+      title: 'Active Protection', 
+      desc: 'Continuous real-time monitoring, instant threat suppression dispatch, and weekly operational analytics logs.',
+      icon: FaEye,
+      deliverable: '24/7 Command Watch'
+    },
   ];
 
   const offices = [
     {
       city: 'Houston, TX',
       country: 'USA',
-      role: 'Global Headquarters & Command Center',
+      timeZone: 'America/Chicago',
+      role: 'Global HQ & Primary Command Center',
       address: '1200 Smith St, Suite 1800, Houston, TX 77002, USA',
       phone: '+1 (800) 555-PIX3D',
       email: 'houston@pixperl3d.com',
-      badge: 'HQ'
+      badge: 'GLOBAL HQ',
+      coordinates: '29.7604° N, 95.3698° W',
+      capacity: '60+ Console Desks'
     },
     {
       city: 'Karachi',
       country: 'Pakistan',
-      role: 'Regional Operations & Engineering Hub',
+      timeZone: 'Asia/Karachi',
+      role: 'Regional Operations & AI Analytics Hub',
       address: 'Shahrah-e-Faisal, Karachi, Sindh, Pakistan',
       phone: '+92 (21) 3555-7493',
       email: 'karachi@pixperl3d.com',
-      badge: 'REGIONAL HUB'
+      badge: 'REGIONAL HUB',
+      coordinates: '24.8607° N, 67.0011° E',
+      capacity: '40+ Neural Array Monitors'
     }
   ];
 
@@ -104,7 +214,11 @@ export default function PixPerlPage() {
               <a 
                 key={idx} 
                 href={link.href}
-                onClick={() => setActiveTab(link.name.toLowerCase())} 
+                onClick={() => {
+                  if (!link.externalPage) {
+                    setActiveTab(link.name.toLowerCase());
+                  }
+                }} 
                 className={`transition-colors hover:text-emerald-400 ${activeTab === link.name.toLowerCase() ? 'text-emerald-400' : ''}`}
               >
                 {link.name}
@@ -137,7 +251,9 @@ export default function PixPerlPage() {
                 key={idx}
                 href={link.href}
                 onClick={() => {
-                  setActiveTab(link.name.toLowerCase());
+                  if (!link.externalPage) {
+                    setActiveTab(link.name.toLowerCase());
+                  }
                   setMobileMenuOpen(false);
                 }}
                 className="block py-2 text-neutral-300 hover:text-emerald-400"
@@ -156,7 +272,7 @@ export default function PixPerlPage() {
         )}
       </header>
 
-      {/* Hero Section */}
+      {/* HERO SECTION */}
       <section id="home" className="relative pt-12 sm:pt-20 pb-16 sm:pb-28 border-b border-neutral-900 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neutral-900 via-black to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
@@ -244,7 +360,7 @@ export default function PixPerlPage() {
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* SERVICES SECTION */}
       <section id="services" className="py-16 sm:py-28 bg-neutral-950 border-b border-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           
@@ -257,16 +373,15 @@ export default function PixPerlPage() {
           </div>
 
           <Swiper
-            modules={[Autoplay, Pagination, Navigation]}
+            modules={[Autoplay, Navigation]}
             spaceBetween={16}
             slidesPerView={1}
             autoplay={{ delay: 3500, disableOnInteraction: false }}
-            pagination={{ clickable: true }}
             breakpoints={{
               640: { slidesPerView: 2, spaceBetween: 20 },
               1024: { slidesPerView: 3, spaceBetween: 24 },
             }}
-            className="pb-14 px-1"
+            className="pb-6 px-1"
           >
             {services.map((s, idx) => {
               const ServiceIcon = s.icon;
@@ -295,38 +410,87 @@ export default function PixPerlPage() {
         </div>
       </section>
 
-      {/* Clients Section */}
-      <section id="clients" className="py-16 sm:py-28 bg-black border-b border-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
-          <p className="text-xs font-mono font-extrabold tracking-widest text-neutral-500 uppercase">TRUSTED PARTNERS</p>
-          <h2 className="text-2xl sm:text-4xl font-black text-white mt-1 sm:mt-2 tracking-tight">Businesses We Safeguard</h2>
+      {/* CLIENTS SECTION */}
+      <section id="clients" className="py-16 sm:py-28 bg-black border-b border-neutral-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
 
-          <div className="mt-10 sm:mt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          
+          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-950/40 border border-emerald-500/20 rounded-full text-[9px] sm:text-[10px] font-mono font-bold tracking-widest text-emerald-400 uppercase mb-3">
+              <FaCheckCircle className="text-emerald-400" />
+              VERIFIED ACTIVE CONTRACTS
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
+              Businesses We Safeguard
+            </h2>
+            <p className="mt-3 text-neutral-400 text-xs sm:text-sm leading-relaxed font-normal">
+              Empowering industry leaders with high-definition surveillance infrastructure, active incident response, and zero-downtime monitoring contracts.
+            </p>
+          </div>
+
+          <div className="mt-6">
             <Swiper
               effect={'coverflow'}
               grabCursor={true}
               centeredSlides={true}
               slidesPerView={'auto'}
               coverflowEffect={{
-                rotate: 20,
+                rotate: 15,
                 stretch: 0,
-                depth: 80,
+                depth: 100,
                 modifier: 1,
                 slideShadows: false,
               }}
               modules={[EffectCoverflow, Autoplay]}
-              autoplay={{ delay: 4000 }}
-              className="max-w-4xl"
+              autoplay={{ delay: 4500, disableOnInteraction: false }}
+              className="max-w-5xl pb-6"
             >
               {clients.map((c, idx) => (
-                <SwiperSlide key={idx} className="max-w-[280px] sm:max-w-sm">
-                  <div className="p-6 sm:p-8 border border-neutral-800 rounded-2xl bg-neutral-950/80 hover:border-neutral-700 transition-all text-center flex flex-col items-center">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-neutral-900 border border-neutral-800 flex items-center justify-center font-mono font-black text-base sm:text-lg text-emerald-400 mb-4 sm:mb-6 shadow-inner">
-                      {c.logoText}
+                <SwiperSlide key={idx} className="max-w-[300px] sm:max-w-md">
+                  <div className="p-6 sm:p-8 border border-neutral-800 rounded-3xl bg-neutral-950/90 hover:border-emerald-500/40 transition-all text-left flex flex-col justify-between shadow-2xl group min-h-[380px] relative overflow-hidden">
+                    <div>
+                      <div className="flex items-center justify-between pb-4 border-b border-neutral-900 mb-6">
+                        <div className="w-12 h-12 rounded-xl bg-black border border-neutral-800 flex items-center justify-center font-mono font-black text-lg text-emerald-400 group-hover:border-emerald-400/50 transition-colors shadow-inner">
+                          {c.logoText}
+                        </div>
+
+                        <div className="flex items-center gap-2 px-2.5 py-1 bg-emerald-950/60 border border-emerald-500/30 rounded-md font-mono text-[9px] font-bold text-emerald-400 uppercase">
+                          ACTIVE 24/7
+                        </div>
+                      </div>
+
+                      <span className="text-[10px] font-mono font-extrabold tracking-widest text-emerald-400 uppercase">{c.type}</span>
+                      <h3 className="text-xl sm:text-2xl font-black text-white mt-1 mb-3 group-hover:text-emerald-400 transition-colors">{c.name}</h3>
+                      <p className="text-xs text-neutral-400 leading-relaxed font-normal">{c.desc}</p>
                     </div>
-                    <span className="text-[9px] sm:text-[10px] font-mono font-bold tracking-widest text-emerald-400 uppercase">{c.type}</span>
-                    <h3 className="text-lg sm:text-xl font-black text-white mt-1 mb-2 sm:mb-3">{c.name}</h3>
-                    <p className="text-xs text-neutral-400 leading-relaxed font-normal">{c.desc}</p>
+
+                    <div className="mt-6 pt-4 border-t border-neutral-900 font-mono text-[10px] space-y-2 bg-black/40 p-3 rounded-xl border border-neutral-900">
+                      <div className="flex items-center justify-between text-neutral-400">
+                        <span className="flex items-center gap-1.5">
+                          <FaBroadcastTower className="text-emerald-400" />
+                          HARDWARE DEPLOYMENT:
+                        </span>
+                        <span className="text-white font-bold">{c.nodes}</span>
+                      </div>
+
+                      <div className="flex items-center justify-between text-neutral-400">
+                        <span className="flex items-center gap-1.5">
+                          <FaServer className="text-emerald-400" />
+                          PERFORMANCE METRIC:
+                        </span>
+                        <span className="text-emerald-400 font-bold">{c.uptime}</span>
+                      </div>
+
+                      <div className="flex items-center justify-between text-neutral-400">
+                        <span className="flex items-center gap-1.5">
+                          <FaFileContract className="text-emerald-400" />
+                          AGREEMENT SLA:
+                        </span>
+                        <span className="text-neutral-300 font-bold">{c.tenure}</span>
+                      </div>
+                    </div>
+
                   </div>
                 </SwiperSlide>
               ))}
@@ -335,12 +499,23 @@ export default function PixPerlPage() {
         </div>
       </section>
 
-      {/* Partner Section */}
+      {/* STRATEGIC ALLIANCE - PARTNER SECTION */}
       <section id="partners" className="py-16 sm:py-28 bg-neutral-950 border-b border-neutral-900 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-emerald-500/5 blur-[120px] pointer-events-none rounded-full" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-            <p className="text-xs font-mono font-extrabold tracking-widest text-emerald-400 uppercase">STRATEGIC ALLIANCE</p>
-            <h2 className="text-2xl sm:text-4xl font-black text-white mt-1 sm:mt-2 tracking-tight">Our Key Tech Partner</h2>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-950/60 border border-emerald-500/30 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-emerald-400 uppercase mb-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              STRATEGIC ALLIANCE
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
+              Powered By <span className="text-emerald-400">RDV Technologies</span>
+            </h2>
+            <p className="mt-3 text-neutral-400 text-xs sm:text-sm leading-relaxed font-normal">
+              PixPerl 3D Studio partners with RDV to integrate enterprise hardware, low-latency streaming infrastructure, and neural AI threat detection into a unified command hub.
+            </p>
           </div>
 
           <motion.div 
@@ -348,134 +523,269 @@ export default function PixPerlPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative max-w-4xl mx-auto p-6 sm:p-12 rounded-2xl bg-gradient-to-b from-neutral-900 to-black border border-neutral-800 hover:border-emerald-500/40 transition-all shadow-2xl group"
+            className="relative max-w-5xl mx-auto rounded-3xl bg-gradient-to-b from-neutral-900 via-neutral-950 to-black border border-neutral-800/80 hover:border-emerald-500/40 transition-all shadow-2xl p-6 sm:p-10 lg:p-12"
           >
-            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 sm:gap-12 text-center md:text-left">
-              <div className="flex-shrink-0">
-                <div className="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl bg-black border-2 border-emerald-400/40 flex flex-col items-center justify-center p-4 shadow-[0_0_30px_rgba(52,211,153,0.15)]">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8 pb-8 border-b border-neutral-800/80">
+              
+              <div className="flex items-center gap-5 text-center sm:text-left">
+                <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-black border-2 border-emerald-400/50 flex flex-col items-center justify-center p-3 shadow-[0_0_35px_rgba(52,211,153,0.15)] flex-shrink-0">
                   <span className="font-mono font-black text-3xl sm:text-4xl tracking-widest text-white">RDV</span>
-                  <span className="text-[8px] sm:text-[9px] font-mono font-bold tracking-[0.3em] text-emerald-400 uppercase mt-1">TECHNOLOGIES</span>
+                  <span className="text-[7px] sm:text-[8px] font-mono font-bold tracking-[0.3em] text-emerald-400 uppercase mt-1">TECHNOLOGIES</span>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2 justify-center sm:justify-start">
+                    <span className="text-xs font-mono font-bold text-emerald-400 tracking-wider uppercase">CORE HARDWARE & SOFTWARE BACKBONE</span>
+                  </div>
+                  <h3 className="text-xl sm:text-2xl font-black text-white mt-1">RDV Systems Integration</h3>
+                  <p className="text-xs text-neutral-400 mt-1 max-w-md">
+                    Custom-built surveillance hardware paired with edge-AI computing platforms to power 24/7 proactive threat suppression.
+                  </p>
                 </div>
               </div>
 
-              <div className="flex-1">
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-[9px] sm:text-[10px] font-mono font-bold tracking-widest text-emerald-400 uppercase mb-3">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                  OFFICIAL SURVEILLANCE & INFRASTRUCTURE PARTNER
+              <div className="flex flex-col items-center lg:items-end font-mono">
+                <div className="px-3.5 py-1.5 bg-neutral-900 border border-emerald-500/30 rounded-lg text-emerald-400 text-xs font-bold flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                  ACTIVE SYSTEM ALLIANCE
                 </div>
-                
-                <h3 className="text-xl sm:text-3xl font-black text-white tracking-tight">RDV Systems Integration</h3>
-                
-                <p className="mt-3 text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
-                  PixPerl 3D Studio is proud to collaborate with <strong>RDV</strong> to deliver high-performance hardware integrations, ultra-low latency streams, and automated AI security monitoring solutions tailored for commercial enterprises.
-                </p>
+                <span className="text-[10px] text-neutral-500 mt-2">SLA Coverage Guaranteed</span>
+              </div>
+            </div>
 
-                <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 font-mono text-[10px] sm:text-xs text-neutral-300">
-                  <div className="p-2.5 rounded bg-neutral-900/80 border border-neutral-800/80 flex items-center gap-2">
-                    <FaMicrochip className="text-emerald-400 flex-shrink-0" />
-                    <div>
-                        <span className="text-emerald-400 block font-bold">Hardware</span>
-                        <span>HD Camera Modules</span>
-                    </div>
-                  </div>
-                  <div className="p-2.5 rounded bg-neutral-900/80 border border-neutral-800/80 flex items-center gap-2">
-                    <FaShieldAlt className="text-emerald-400 flex-shrink-0" />
-                    <div>
-                        <span className="text-emerald-400 block font-bold">Streaming</span>
-                        <span>Encrypted Channels</span>
-                    </div>
-                  </div>
-                  <div className="p-2.5 rounded bg-neutral-900/80 border border-neutral-800/80 col-span-2 sm:col-span-1 flex items-center gap-2">
-                    <FaHeadset className="text-emerald-400 flex-shrink-0" />
-                    <div>
-                        <span className="text-emerald-400 block font-bold">Support</span>
-                        <span>24/7 SLA Guarantee</span>
-                    </div>
-                  </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 pt-8">
+              
+              <div className="p-5 rounded-xl bg-neutral-900/50 border border-neutral-800/80 hover:border-emerald-500/30 transition-all group">
+                <div className="w-10 h-10 rounded-lg bg-black border border-neutral-800 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
+                  <FaMicrochip size={18} />
                 </div>
+                <h4 className="text-sm font-bold text-white mb-1.5">Edge AI Hardware</h4>
+                <p className="text-xs text-neutral-400 leading-relaxed font-normal">
+                  High-throughput camera modules equipped with real-time neural processing to analyze site perimeters at the hardware edge.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-xl bg-neutral-900/50 border border-neutral-800/80 hover:border-emerald-500/30 transition-all group">
+                <div className="w-10 h-10 rounded-lg bg-black border border-neutral-800 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
+                  <FaShieldAlt size={18} />
+                </div>
+                <h4 className="text-sm font-bold text-white mb-1.5">Encrypted Feeds</h4>
+                <p className="text-xs text-neutral-400 leading-relaxed font-normal">
+                  Multi-layered 256-bit encryption pipelines streaming ultra-low latency feeds directly to our monitoring consoles.
+                </p>
+              </div>
+
+              <div className="p-5 rounded-xl bg-neutral-900/50 border border-neutral-800/80 hover:border-emerald-500/30 transition-all group">
+                <div className="w-10 h-10 rounded-lg bg-black border border-neutral-800 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
+                  <FaHeadset size={18} />
+                </div>
+                <h4 className="text-sm font-bold text-white mb-1.5">24/7 Command Integration</h4>
+                <p className="text-xs text-neutral-400 leading-relaxed font-normal">
+                  Synchronized operational protocols between RDV hardware engineering and PixPerl 3D command operators.
+                </p>
               </div>
 
             </div>
+
+            <div className="mt-8 pt-6 border-t border-neutral-900 grid grid-cols-2 sm:grid-cols-4 gap-4 font-mono text-center">
+              <div className="p-3 bg-black/60 rounded-lg border border-neutral-900">
+                <span className="block text-emerald-400 font-bold text-base sm:text-lg">&lt; 200ms</span>
+                <span className="text-[9px] text-neutral-500 uppercase tracking-wider">Stream Latency</span>
+              </div>
+              <div className="p-3 bg-black/60 rounded-lg border border-neutral-900">
+                <span className="block text-emerald-400 font-bold text-base sm:text-lg">99.99%</span>
+                <span className="text-[9px] text-neutral-500 uppercase tracking-wider">Hardware Uptime</span>
+              </div>
+              <div className="p-3 bg-black/60 rounded-lg border border-neutral-900">
+                <span className="block text-emerald-400 font-bold text-base sm:text-lg">AES-256</span>
+                <span className="text-[9px] text-neutral-500 uppercase tracking-wider">Encryption Standard</span>
+              </div>
+              <div className="p-3 bg-black/60 rounded-lg border border-neutral-900">
+                <span className="block text-emerald-400 font-bold text-base sm:text-lg">Zero-Trust</span>
+                <span className="text-[9px] text-neutral-500 uppercase tracking-wider">Network Arch</span>
+              </div>
+            </div>
+
           </motion.div>
         </div>
       </section>
 
-      {/* Process Section */}
-      <section id="process" className="py-16 sm:py-28 bg-black border-b border-neutral-900">
+      {/* METHODOLOGY / HOW WE OPERATE */}
+      <section id="process" className="py-16 sm:py-28 bg-black border-b border-neutral-900 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="text-center max-w-2xl mx-auto">
-            <p className="text-xs font-mono font-extrabold tracking-widest text-emerald-400 uppercase">METHODOLOGY</p>
-            <h2 className="text-2xl sm:text-4xl font-black text-white mt-1 sm:mt-2 tracking-tight">How We Operate</h2>
+          
+          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-20">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-emerald-400 uppercase mb-3">
+              METHODOLOGY & EXECUTION PIPELINE
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">How We Operate</h2>
+            <p className="mt-3 text-neutral-400 text-xs sm:text-sm leading-relaxed font-normal">
+              A structured 5-phase operational pipeline designed to deploy enterprise security with zero operational disruption.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-6 mt-10 sm:mt-16">
-            {steps.map((st, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="p-5 sm:p-6 bg-neutral-950 border border-neutral-800 rounded-xl relative hover:border-emerald-400/50 transition-colors group"
-              >
-                <span className="font-mono text-lg sm:text-xl font-extrabold text-neutral-700 group-hover:text-emerald-400 transition-colors">
-                  {st.num}
-                </span>
-                <h3 className="text-sm font-bold text-white mt-3 sm:mt-4 mb-1.5">{st.title}</h3>
-                <p className="text-xs text-neutral-400 leading-relaxed font-normal">{st.desc}</p>
-              </motion.div>
-            ))}
+          <div className="relative">
+            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-neutral-900 via-emerald-500/40 to-neutral-900 -translate-y-12 z-0" />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
+              {steps.map((st, idx) => {
+                const StepIcon = st.icon;
+                return (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.12 }}
+                    className="p-6 bg-gradient-to-b from-neutral-950 to-black border border-neutral-800/90 hover:border-emerald-500/50 rounded-2xl flex flex-col justify-between group transition-all shadow-xl hover:-translate-y-1.5"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="px-2 py-0.5 bg-neutral-900 border border-neutral-800 rounded text-[9px] font-mono font-bold text-emerald-400">
+                          {st.phase}
+                        </span>
+                        <div className="w-8 h-8 rounded-lg bg-black border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-emerald-400 group-hover:border-emerald-400/40 transition-colors">
+                          <StepIcon size={14} />
+                        </div>
+                      </div>
+
+                      <span className="font-mono text-3xl font-black text-neutral-800 group-hover:text-emerald-400/20 transition-colors block mb-1">
+                        {st.num}
+                      </span>
+                      <h3 className="text-base font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">{st.title}</h3>
+                      <p className="text-xs text-neutral-400 leading-relaxed font-normal mb-4">{st.desc}</p>
+                    </div>
+
+                    <div className="pt-4 border-t border-neutral-900/80 font-mono text-[9px]">
+                      <span className="text-neutral-500 block uppercase font-bold">KEY DELIVERABLE:</span>
+                      <span className="text-neutral-300 font-semibold flex items-center gap-1 mt-1">
+                        <FaArrowRight className="text-emerald-400 text-[8px]" />
+                        {st.deliverable}
+                      </span>
+                    </div>
+
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
+
         </div>
       </section>
 
-      {/* Offices Section */}
-      <section id="offices" className="py-16 sm:py-28 bg-neutral-950 border-b border-neutral-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-            <p className="text-xs font-mono font-extrabold tracking-widest text-emerald-400 uppercase">GLOBAL LOCATIONS</p>
-            <h2 className="text-2xl sm:text-4xl font-black text-white mt-1 sm:mt-2 tracking-tight">Our Offices</h2>
+      {/* FULLY RESPONSIVE GLOBAL LOCATIONS / OUR OFFICES SECTION */}
+      <section id="offices" className="py-12 sm:py-20 lg:py-28 bg-neutral-950 border-b border-neutral-900 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-emerald-500/5 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-72 sm:w-96 h-72 sm:h-96 bg-emerald-500/5 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+          
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-950/50 border border-emerald-500/30 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-emerald-400 uppercase mb-3">
+              <FaGlobe className="text-emerald-400 animate-spin" style={{ animationDuration: '15s' }} />
+              24/7 DUAL COMMAND HUBS
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">Our Offices & Command Centers</h2>
+            <p className="mt-2 sm:mt-3 text-neutral-400 text-xs sm:text-sm leading-relaxed font-normal px-2">
+              Dual active command hubs providing round-the-clock shift handovers, real-time threat detection, and continuous SLA delivery.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 justify-center max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
             {offices.map((office, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className="p-6 sm:p-8 bg-black/60 border border-neutral-800 rounded-2xl hover:border-emerald-400/50 transition-all flex flex-col justify-between items-center text-center group"
+                transition={{ duration: 0.5, delay: idx * 0.15 }}
+                className="p-5 sm:p-7 md:p-8 bg-gradient-to-b from-black via-neutral-950 to-neutral-950 border border-neutral-800/90 rounded-2xl sm:rounded-3xl hover:border-emerald-500/40 transition-all flex flex-col justify-between group shadow-2xl relative overflow-hidden"
               >
-                <div className="w-full flex flex-col items-center">
-                  <div className="flex items-center justify-center gap-2 mb-4">
-                    <span className="px-2.5 py-1 bg-neutral-900 border border-neutral-800 rounded text-[9px] font-mono font-extrabold text-emerald-400 tracking-wider">
+                <div className="absolute top-0 right-0 w-28 sm:w-32 h-28 sm:h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/10 transition-colors pointer-events-none" />
+
+                <div>
+                  <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-neutral-900 mb-5 sm:mb-6">
+                    <span className="px-2.5 py-1 bg-neutral-900 border border-neutral-800 rounded text-[9px] sm:text-[10px] font-mono font-extrabold text-emerald-400 tracking-wider uppercase">
                       {office.badge}
                     </span>
-                    <FaMapMarkerAlt className="text-neutral-600 group-hover:text-emerald-400 transition-colors" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">{office.city}</h3>
-                  <p className="text-xs font-mono text-neutral-500 mb-6">{office.role}</p>
-
-                  <div className="space-y-3 font-mono text-xs text-neutral-400 border-t border-neutral-900 pt-4 w-full flex flex-col items-center">
-                    <p className="leading-relaxed">{office.address}</p>
-                    <div className="flex items-center justify-center gap-2 text-neutral-300">
-                      <FaPhoneAlt className="text-emerald-400 text-[10px]" />
-                      <span>{office.phone}</span>
+                    <div className="flex items-center gap-1.5 sm:gap-2 font-mono text-[9px] sm:text-[10px] text-emerald-400 bg-emerald-950/40 px-2.5 py-1 rounded border border-emerald-500/20">
+                      <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <span>OPERATIONAL // 24/7</span>
                     </div>
-                    <div className="flex items-center justify-center gap-2 text-neutral-300">
-                      <FaEnvelope className="text-emerald-400 text-[10px]" />
-                      <span>{office.email}</span>
+                  </div>
+
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-emerald-400 transition-colors">{office.city}</h3>
+                      <p className="text-xs font-mono text-emerald-400 font-bold mt-0.5">{office.country}</p>
+                    </div>
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-emerald-400 group-hover:border-emerald-400/40 transition-colors flex-shrink-0">
+                      <FaMapMarkerAlt size={15} />
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-neutral-300 font-medium mt-3 mb-5 leading-relaxed">{office.role}</p>
+
+                  <div className="p-3 rounded-xl bg-black/60 border border-neutral-900 font-mono text-[10px] sm:text-[11px] mb-5 sm:mb-6 flex flex-row items-center justify-between gap-2">
+                    <div className="flex items-center gap-2 text-neutral-400">
+                      <FaClock className="text-emerald-400 flex-shrink-0" />
+                      <span>LOCAL TIME:</span>
+                    </div>
+                    <span className="text-emerald-400 font-bold">
+                      <CityClock timeZone={office.timeZone} />
+                    </span>
+                  </div>
+
+                  <div className="space-y-2.5 sm:space-y-3 font-mono text-xs text-neutral-400 border-t border-neutral-900 pt-4 sm:pt-5">
+                    <div className="flex items-start gap-2.5">
+                      <FaMapMarkerAlt className="text-emerald-400 flex-shrink-0 mt-1" />
+                      <span className="leading-relaxed break-words">{office.address}</span>
+                    </div>
+                    <div className="flex items-center gap-2.5 text-neutral-300">
+                      <FaPhoneAlt className="text-emerald-400 text-[10px] flex-shrink-0" />
+                      <a href={`tel:${office.phone}`} className="hover:text-emerald-400 transition-colors">{office.phone}</a>
+                    </div>
+                    <div className="flex items-center gap-2.5 text-neutral-300">
+                      <FaEnvelope className="text-emerald-400 text-[10px] flex-shrink-0" />
+                      <a href={`mailto:${office.email}`} className="hover:text-emerald-400 transition-colors break-all">{office.email}</a>
                     </div>
                   </div>
                 </div>
+
+                <div className="mt-6 pt-4 border-t border-neutral-900/80 font-mono text-[9px] sm:text-[10px] grid grid-cols-2 gap-2 text-neutral-500">
+                  <div>
+                    <span className="block text-[8px] uppercase tracking-wider text-neutral-600">COORDINATES</span>
+                    <span className="text-neutral-400 font-semibold">{office.coordinates}</span>
+                  </div>
+                  <div className="text-right">
+                    <span className="block text-[8px] uppercase tracking-wider text-neutral-600">CAPACITY</span>
+                    <span className="text-emerald-400 font-semibold">{office.capacity}</span>
+                  </div>
+                </div>
+
               </motion.div>
             ))}
           </div>
+
+          <div className="mt-8 sm:mt-10 max-w-5xl mx-auto p-4 sm:p-5 rounded-2xl bg-black border border-neutral-800/80 font-mono text-xs text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <FaNetworkWired className="text-emerald-400 text-xl sm:text-2xl flex-shrink-0" />
+              <div>
+                <span className="text-white font-bold block">ENCRYPTED FEED // HUB LINK ACTIVE</span>
+                <span className="text-[10px] text-neutral-500 block sm:inline">Low-latency dual command redundancy between Houston, TX & Karachi, PK</span>
+              </div>
+            </div>
+            <a 
+              href={QUOTE_LINK}
+              className="w-full sm:w-auto px-5 py-2.5 bg-neutral-900 border border-emerald-500/30 rounded text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider hover:bg-emerald-400 hover:text-black transition-colors flex-shrink-0 text-center"
+            >
+              Verify System SLA
+            </a>
+          </div>
+
         </div>
       </section>
 
-      {/* Contact Banner */}
+      {/* CONTACT BANNER */}
       <section id="contact" className="py-16 sm:py-24 bg-gradient-to-r from-neutral-950 via-neutral-900 to-black border-b border-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8 text-center md:text-left">
           <div>
@@ -511,7 +821,6 @@ export default function PixPerlPage() {
               <span>256-BIT ENCRYPTED COMMAND CENTER</span>
             </div>
 
-            {/* Social Media Icons */}
             <div className="flex items-center gap-3 pt-2">
               <a 
                 href="https://facebook.com" 
@@ -547,6 +856,7 @@ export default function PixPerlPage() {
             <h4 className="text-white font-bold tracking-widest uppercase text-xs">Quick Links</h4>
             <ul className="space-y-2 text-neutral-400">
               <li><a href="#home" className="hover:text-emerald-400 transition-colors">Home</a></li>
+              <li><a href="/about" className="hover:text-emerald-400 transition-colors">About Us</a></li>
               <li><a href="#services" className="hover:text-emerald-400 transition-colors">Services</a></li>
               <li><a href="#clients" className="hover:text-emerald-400 transition-colors">Clients</a></li>
               <li><a href="#partners" className="hover:text-emerald-400 transition-colors">RDV Partnership</a></li>
@@ -588,10 +898,10 @@ export default function PixPerlPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] sm:text-xs text-neutral-600">
           <p>© {new Date().getFullYear()} PIXPERL 3D STUDIO. ALL RIGHTS RESERVED.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-neutral-400 transition-colors">PRIVACY POLICY</a>
-            <a href="#" className="hover:text-neutral-400 transition-colors">TERMS OF SERVICE</a>
-            <a href="#" className="hover:text-neutral-400 transition-colors">SLA DOCUMENTATION</a>
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
+            <a href="#" className="hover:text-emerald-400 transition-colors">SLA Documentation</a>
+            <a href="#" className="hover:text-neutral-400 transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-neutral-400 transition-colors">Terms of Service</a>
           </div>
         </div>
       </footer>

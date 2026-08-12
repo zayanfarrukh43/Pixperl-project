@@ -5,6 +5,7 @@ import SplashScreen from './Components/SplashScreen';
 import PixPerlPage from './Components/PixPerlPage';
 import GetQuotePage from './Components/GetQuotePage';
 import OfficesPage from './Components/OfficesPage';
+import AboutUsPage from './Pages/AboutUsPage';
 // import Header from './Components/Layout/Header';
 // import Footer from './Components/Layout/Footer';
 
@@ -13,8 +14,12 @@ function AnimatedRoutes() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    // Show splash screen ONLY for Home ('/') and Get Quote ('/get-quote')
-    if (location.pathname === '/' || location.pathname === '/get-quote') {
+    // Show splash screen ONLY for Home ('/'), Get Quote ('/get-quote'), and About Us ('/about')
+    if (
+      location.pathname === '/' || 
+      location.pathname === '/get-quote' || 
+      location.pathname === '/about'
+    ) {
       setLoading(true);
     } else {
       setLoading(false);
@@ -33,6 +38,7 @@ function AnimatedRoutes() {
         <Route path="/" element={<PixPerlPage />} />
         <Route path="/get-quote" element={<GetQuotePage />} />
         <Route path="/offices" element={<OfficesPage />} />
+        <Route path="/about" element={<AboutUsPage />} />
       </Routes>
     </>
   );

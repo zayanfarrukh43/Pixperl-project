@@ -9,3 +9,8 @@
   --font-sans: 'Space Grotesk', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 }
+
+/* Hide all Swiper pagination bullets */
+.swiper-pagination-bullet {
+  display: none !important;
+}
