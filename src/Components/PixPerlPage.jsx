@@ -217,7 +217,7 @@ export default function PixPerlPage() {
           
           <a href="#home" className="flex items-center gap-2 font-mono font-black text-lg sm:text-xl tracking-wider text-white">
             <FaShieldAlt className="text-emerald-400" />
-            <span>PIXPERL<span className="text-emerald-400">3D</span></span>
+            <span>PIXPERL<span className="text-emerald-400">3D STUDIO</span></span>
           </a>
 
           <nav className="hidden md:flex items-center gap-6 lg:gap-8 font-mono text-xs font-bold uppercase tracking-widest text-neutral-400">
