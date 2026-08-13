@@ -31,7 +31,8 @@ import {
   FaArrowRight,
   FaGlobe,
   FaClock,
-  FaNetworkWired
+  FaNetworkWired,
+  FaUndo
 } from 'react-icons/fa';
 
 import 'swiper/css';
@@ -68,6 +69,16 @@ function CityClock({ timeZone }) {
 export default function PixPerlPage() {
   const [activeTab, setActiveTab] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  // State to track flipped cards for touch/mobile devices
+  const [flippedCards, setFlippedCards] = useState({});
+
+  const toggleCardFlip = (index) => {
+    setFlippedCards((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
 
   const navLinks = [
     { name: 'Home', href: '#home' },
@@ -346,7 +357,7 @@ export default function PixPerlPage() {
                   className="w-full h-full object-cover grayscale contrast-125 opacity-65 group-hover:scale-105 transition-transform duration-700"
                 />
 
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:16px_16px] sm:bg-[size:24px_24px]" />
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:16px_16px] sm:bg-[size:24px_24px]" />
                 <div className="absolute inset-x-0 h-0.5 bg-emerald-400/80 shadow-[0_0_15px_#34d399] animate-[bounce_3s_infinite]" />
 
                 <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-black/80 backdrop-blur-md px-2.5 py-1 sm:px-3 sm:py-1.5 rounded border border-neutral-800 font-mono text-[9px] sm:text-[10px] text-emerald-400 flex items-center gap-2">
@@ -609,7 +620,7 @@ export default function PixPerlPage() {
         </div>
       </section>
 
-      {/* METHODOLOGY / HOW WE OPERATE */}
+      {/* METHODOLOGY / HOW WE OPERATE - FLIP CARD WITH HOVER & RESPONSIVE TOGGLE BUTTON */}
       <section id="process" className="py-16 sm:py-28 bg-black border-b border-neutral-900 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           
@@ -619,7 +630,7 @@ export default function PixPerlPage() {
             </div>
             <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">How We Operate</h2>
             <p className="mt-3 text-neutral-400 text-xs sm:text-sm leading-relaxed font-normal">
-              A structured 5-phase operational pipeline designed to deploy enterprise security with zero operational disruption.
+              Hover on desktop or tap <span className="text-emerald-400 font-mono font-bold">See Details</span> on mobile to view complete operational requirements and key deliverables.
             </p>
           </div>
 
@@ -629,6 +640,8 @@ export default function PixPerlPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
               {steps.map((st, idx) => {
                 const StepIcon = st.icon;
+                const isFlipped = !!flippedCards[idx];
+
                 return (
                   <motion.div 
                     key={idx}
@@ -636,33 +649,83 @@ export default function PixPerlPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.12 }}
-                    className="p-6 bg-gradient-to-b from-neutral-950 to-black border border-neutral-800/90 hover:border-emerald-500/50 rounded-2xl flex flex-col justify-between group transition-all shadow-xl hover:-translate-y-1.5"
+                    className="h-80 sm:h-96 w-full [perspective:1000px] group"
                   >
-                    <div>
-                      <div className="flex items-center justify-between mb-4">
-                        <span className="px-2 py-0.5 bg-neutral-900 border border-neutral-800 rounded text-[9px] font-mono font-bold text-emerald-400">
-                          {st.phase}
-                        </span>
-                        <div className="w-8 h-8 rounded-lg bg-black border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-emerald-400 group-hover:border-emerald-400/40 transition-colors">
-                          <StepIcon size={14} />
+                    <div className={`relative h-full w-full rounded-2xl transition-all duration-700 [transform-style:preserve-3d] lg:group-hover:[transform:rotateY(180deg)] shadow-xl ${
+                      isFlipped ? '[transform:rotateY(180deg)]' : ''
+                    }`}>
+                      
+                      {/* FRONT OF CARD */}
+                      <div className="absolute inset-0 h-full w-full rounded-2xl bg-neutral-950 border border-neutral-800 p-6 flex flex-col justify-between [backface-visibility:hidden]">
+                        <div>
+                          <div className="flex items-center justify-between mb-4">
+                            <span className="px-2 py-0.5 bg-neutral-900 border border-neutral-800 rounded text-[9px] font-mono font-bold text-emerald-400 tracking-wider">
+                              {st.phase}
+                            </span>
+                            <div className="w-8 h-8 rounded-lg bg-black border border-neutral-800 flex items-center justify-center text-neutral-400">
+                              <StepIcon size={14} />
+                            </div>
+                          </div>
+
+                          <span className="font-mono text-4xl sm:text-5xl font-black text-neutral-800 block my-4">
+                            {st.num}
+                          </span>
+                        </div>
+
+                        <div>
+                          <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">{st.title}</h3>
+                          
+                          {/* Desktop view helper */}
+                          <p className="hidden lg:flex text-[10px] font-mono text-neutral-500 mt-2 uppercase tracking-widest items-center gap-1">
+                            Hover for details <FaArrowRight className="text-emerald-400 text-[8px]" />
+                          </p>
+
+                          {/* Mobile/Tablet button trigger */}
+                          <button
+                            onClick={() => toggleCardFlip(idx)}
+                            className="lg:hidden mt-3 w-full py-2 bg-neutral-900 border border-emerald-500/40 rounded text-emerald-400 font-mono text-[10px] font-bold uppercase tracking-wider flex items-center justify-center gap-2 active:bg-emerald-400 active:text-black transition-colors"
+                          >
+                            <span>See Details</span>
+                            <FaArrowRight size={10} />
+                          </button>
                         </div>
                       </div>
 
-                      <span className="font-mono text-3xl font-black text-neutral-800 group-hover:text-emerald-400/20 transition-colors block mb-1">
-                        {st.num}
-                      </span>
-                      <h3 className="text-base font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">{st.title}</h3>
-                      <p className="text-xs text-neutral-400 leading-relaxed font-normal mb-4">{st.desc}</p>
-                    </div>
+                      {/* BACK OF CARD (HOVER & TOUCH STATE) */}
+                      <div className="absolute inset-0 h-full w-full rounded-2xl bg-gradient-to-b from-emerald-950/95 via-black to-neutral-950 border border-emerald-500/60 p-6 flex flex-col justify-between text-white [transform:rotateY(180deg)] [backface-visibility:hidden] shadow-[0_0_25px_rgba(52,211,153,0.15)]">
+                        <div>
+                          <div className="flex items-center justify-between mb-3">
+                            <span className="text-xs font-mono font-black text-emerald-400 uppercase tracking-wider">
+                              {st.phase}
+                            </span>
+                            <span className="font-mono font-bold text-xs text-neutral-400">{st.num}</span>
+                          </div>
 
-                    <div className="pt-4 border-t border-neutral-900/80 font-mono text-[9px]">
-                      <span className="text-neutral-500 block uppercase font-bold">KEY DELIVERABLE:</span>
-                      <span className="text-neutral-300 font-semibold flex items-center gap-1 mt-1">
-                        <FaArrowRight className="text-emerald-400 text-[8px]" />
-                        {st.deliverable}
-                      </span>
-                    </div>
+                          <h3 className="text-base font-extrabold text-emerald-400 mb-2">{st.title}</h3>
+                          <p className="text-xs text-white leading-relaxed font-normal">{st.desc}</p>
+                        </div>
 
+                        <div>
+                          <div className="pt-3 border-t border-emerald-500/30 font-mono text-[10px] mb-2">
+                            <span className="text-emerald-400 block uppercase font-bold tracking-wider">KEY DELIVERABLE:</span>
+                            <span className="text-white font-medium flex items-center gap-1.5 mt-1">
+                              <FaArrowRight className="text-emerald-400 text-[9px]" />
+                              {st.deliverable}
+                            </span>
+                          </div>
+
+                          {/* Mobile/Tablet back button trigger */}
+                          <button
+                            onClick={() => toggleCardFlip(idx)}
+                            className="lg:hidden w-full py-1.5 bg-emerald-400 text-black rounded font-mono text-[10px] font-extrabold uppercase tracking-wider flex items-center justify-center gap-1.5 mt-2"
+                          >
+                            <FaUndo size={9} />
+                            <span>Show Front</span>
+                          </button>
+                        </div>
+                      </div>
+
+                    </div>
                   </motion.div>
                 );
               })}

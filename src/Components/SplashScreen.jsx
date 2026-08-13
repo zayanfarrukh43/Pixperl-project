@@ -50,7 +50,7 @@ export default function SplashScreen({ onFinish }) {
             transition={{ delay: 0.7, duration: 0.6 }}
             className="font-mono text-[9px] sm:text-[10px] tracking-[0.25em] sm:tracking-[0.3em] text-neutral-500 uppercase mt-1"
           >
-            Surveillance Systems
+            Services Studio 
           </motion.p>
         </div>
       </motion.div>
