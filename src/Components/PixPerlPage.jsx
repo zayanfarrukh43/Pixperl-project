@@ -735,118 +735,123 @@ export default function PixPerlPage() {
         </div>
       </section>
 
-      {/* FULLY RESPONSIVE GLOBAL LOCATIONS / OUR OFFICES SECTION */}
-      <section id="offices" className="py-12 sm:py-20 lg:py-28 bg-neutral-950 border-b border-neutral-900 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-emerald-500/5 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-72 sm:w-96 h-72 sm:h-96 bg-emerald-500/5 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
+     {/* FULLY RESPONSIVE GLOBAL LOCATIONS / OUR OFFICES SECTION */}
+<section id="offices" className="py-12 sm:py-20 lg:py-28 bg-neutral-950 border-b border-neutral-900 relative overflow-hidden">
+  <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-emerald-500/5 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
+  <div className="absolute bottom-0 left-0 w-72 sm:w-96 h-72 sm:h-96 bg-emerald-500/5 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-          
-          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-950/50 border border-emerald-500/30 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-emerald-400 uppercase mb-3">
-              <FaGlobe className="text-emerald-400 animate-spin" style={{ animationDuration: '15s' }} />
-              24/7 DUAL COMMAND HUBS
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">Our Offices & Command Centers</h2>
-            <p className="mt-2 sm:mt-3 text-neutral-400 text-xs sm:text-sm leading-relaxed font-normal px-2">
-              Dual active command hubs providing round-the-clock shift handovers, real-time threat detection, and continuous SLA delivery.
-            </p>
-          </div>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+    
+    <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+      <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-950/50 border border-emerald-500/30 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-emerald-400 uppercase mb-3">
+        <FaGlobe className="text-emerald-400 animate-spin" style={{ animationDuration: '15s' }} />
+        24/7 DUAL COMMAND HUBS
+      </div>
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">Our Offices & Command Centers</h2>
+      <p className="mt-2 sm:mt-3 text-neutral-400 text-xs sm:text-sm leading-relaxed font-normal px-2">
+        Dual active command hubs providing round-the-clock shift handovers, real-time threat detection, and continuous SLA delivery.
+      </p>
+    </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-            {offices.map((office, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="p-5 sm:p-7 md:p-8 bg-gradient-to-b from-black via-neutral-950 to-neutral-950 border border-neutral-800/90 rounded-2xl sm:rounded-3xl hover:border-emerald-500/40 transition-all flex flex-col justify-between group shadow-2xl relative overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 w-28 sm:w-32 h-28 sm:h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/10 transition-colors pointer-events-none" />
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+      {offices.map((office, idx) => (
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          whileHover={{ y: -6 }}
+          viewport={{ once: true }}
+          transition={{ 
+            duration: 0.5, 
+            delay: idx * 0.15,
+            y: { duration: 0.3, ease: 'easeOut' }
+          }}
+          className="p-5 sm:p-7 md:p-8 bg-gradient-to-b from-black via-neutral-950 to-neutral-950 border border-neutral-800/90 hover:border-emerald-500/40 rounded-2xl sm:rounded-3xl transition-all duration-500 ease-out flex flex-col justify-between group shadow-2xl hover:shadow-[0_10px_30px_rgba(52,211,153,0.08)] relative overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 w-28 sm:w-32 h-28 sm:h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/15 transition-all duration-500 pointer-events-none" />
 
-                <div>
-                  <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-neutral-900 mb-5 sm:mb-6">
-                    <span className="px-2.5 py-1 bg-neutral-900 border border-neutral-800 rounded text-[9px] sm:text-[10px] font-mono font-extrabold text-emerald-400 tracking-wider uppercase">
-                      {office.badge}
-                    </span>
-                    <div className="flex items-center gap-1.5 sm:gap-2 font-mono text-[9px] sm:text-[10px] text-emerald-400 bg-emerald-950/40 px-2.5 py-1 rounded border border-emerald-500/20">
-                      <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      <span>OPERATIONAL // 24/7</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-emerald-400 transition-colors">{office.city}</h3>
-                      <p className="text-xs font-mono text-emerald-400 font-bold mt-0.5">{office.country}</p>
-                    </div>
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-emerald-400 group-hover:border-emerald-400/40 transition-colors flex-shrink-0">
-                      <FaMapMarkerAlt size={15} />
-                    </div>
-                  </div>
-
-                  <p className="text-xs text-neutral-300 font-medium mt-3 mb-5 leading-relaxed">{office.role}</p>
-
-                  <div className="p-3 rounded-xl bg-black/60 border border-neutral-900 font-mono text-[10px] sm:text-[11px] mb-5 sm:mb-6 flex flex-row items-center justify-between gap-2">
-                    <div className="flex items-center gap-2 text-neutral-400">
-                      <FaClock className="text-emerald-400 flex-shrink-0" />
-                      <span>LOCAL TIME:</span>
-                    </div>
-                    <span className="text-emerald-400 font-bold">
-                      <CityClock timeZone={office.timeZone} />
-                    </span>
-                  </div>
-
-                  <div className="space-y-2.5 sm:space-y-3 font-mono text-xs text-neutral-400 border-t border-neutral-900 pt-4 sm:pt-5">
-                    <div className="flex items-start gap-2.5">
-                      <FaMapMarkerAlt className="text-emerald-400 flex-shrink-0 mt-1" />
-                      <span className="leading-relaxed break-words">{office.address}</span>
-                    </div>
-                    <div className="flex items-center gap-2.5 text-neutral-300">
-                      <FaPhoneAlt className="text-emerald-400 text-[10px] flex-shrink-0" />
-                      <a href={`tel:${office.phone}`} className="hover:text-emerald-400 transition-colors">{office.phone}</a>
-                    </div>
-                    <div className="flex items-center gap-2.5 text-neutral-300">
-                      <FaEnvelope className="text-emerald-400 text-[10px] flex-shrink-0" />
-                      <a href={`mailto:${office.email}`} className="hover:text-emerald-400 transition-colors break-all">{office.email}</a>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-neutral-900/80 font-mono text-[9px] sm:text-[10px] grid grid-cols-2 gap-2 text-neutral-500">
-                  <div>
-                    <span className="block text-[8px] uppercase tracking-wider text-neutral-600">COORDINATES</span>
-                    <span className="text-neutral-400 font-semibold">{office.coordinates}</span>
-                  </div>
-                  <div className="text-right">
-                    <span className="block text-[8px] uppercase tracking-wider text-neutral-600">CAPACITY</span>
-                    <span className="text-emerald-400 font-semibold">{office.capacity}</span>
-                  </div>
-                </div>
-
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-8 sm:mt-10 max-w-5xl mx-auto p-4 sm:p-5 rounded-2xl bg-black border border-neutral-800/80 font-mono text-xs text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-            <div className="flex flex-col sm:flex-row items-center gap-3">
-              <FaNetworkWired className="text-emerald-400 text-xl sm:text-2xl flex-shrink-0" />
-              <div>
-                <span className="text-white font-bold block">ENCRYPTED FEED // HUB LINK ACTIVE</span>
-                <span className="text-[10px] text-neutral-500 block sm:inline">Low-latency dual command redundancy between Houston, TX & Karachi, PK</span>
+          <div>
+            <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-neutral-900 mb-5 sm:mb-6">
+              <span className="px-2.5 py-1 bg-neutral-900 border border-neutral-800 rounded text-[9px] sm:text-[10px] font-mono font-extrabold text-emerald-400 tracking-wider uppercase transition-colors duration-300 group-hover:border-emerald-500/30">
+                {office.badge}
+              </span>
+              <div className="flex items-center gap-1.5 sm:gap-2 font-mono text-[9px] sm:text-[10px] text-emerald-400 bg-emerald-950/40 px-2.5 py-1 rounded border border-emerald-500/20">
+                <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>OPERATIONAL // 24/7</span>
               </div>
             </div>
-            <a 
-              href={QUOTE_LINK}
-              className="w-full sm:w-auto px-5 py-2.5 bg-neutral-900 border border-emerald-500/30 rounded text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider hover:bg-emerald-400 hover:text-black transition-colors flex-shrink-0 text-center"
-            >
-              Verify System SLA
-            </a>
+
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-emerald-400 transition-colors duration-300">{office.city}</h3>
+                <p className="text-xs font-mono text-emerald-400 font-bold mt-0.5">{office.country}</p>
+              </div>
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-emerald-400 group-hover:border-emerald-400/40 group-hover:scale-105 transition-all duration-300 flex-shrink-0">
+                <FaMapMarkerAlt size={15} />
+              </div>
+            </div>
+
+            <p className="text-xs text-neutral-300 font-medium mt-3 mb-5 leading-relaxed">{office.role}</p>
+
+            <div className="p-3 rounded-xl bg-black/60 border border-neutral-900 font-mono text-[10px] sm:text-[11px] mb-5 sm:mb-6 flex flex-row items-center justify-between gap-2 transition-colors duration-300 group-hover:border-neutral-800">
+              <div className="flex items-center gap-2 text-neutral-400">
+                <FaClock className="text-emerald-400 flex-shrink-0" />
+                <span>LOCAL TIME:</span>
+              </div>
+              <span className="text-emerald-400 font-bold">
+                <CityClock timeZone={office.timeZone} />
+              </span>
+            </div>
+
+            <div className="space-y-2.5 sm:space-y-3 font-mono text-xs text-neutral-400 border-t border-neutral-900 pt-4 sm:pt-5">
+              <div className="flex items-start gap-2.5">
+                <FaMapMarkerAlt className="text-emerald-400 flex-shrink-0 mt-1" />
+                <span className="leading-relaxed break-words">{office.address}</span>
+              </div>
+              <div className="flex items-center gap-2.5 text-neutral-300">
+                <FaPhoneAlt className="text-emerald-400 text-[10px] flex-shrink-0" />
+                <a href={`tel:${office.phone}`} className="hover:text-emerald-400 transition-colors duration-200">{office.phone}</a>
+              </div>
+              <div className="flex items-center gap-2.5 text-neutral-300">
+                <FaEnvelope className="text-emerald-400 text-[10px] flex-shrink-0" />
+                <a href={`mailto:${office.email}`} className="hover:text-emerald-400 transition-colors duration-200 break-all">{office.email}</a>
+              </div>
+            </div>
           </div>
 
+          <div className="mt-6 pt-4 border-t border-neutral-900/80 font-mono text-[9px] sm:text-[10px] grid grid-cols-2 gap-2 text-neutral-500">
+            <div>
+              <span className="block text-[8px] uppercase tracking-wider text-neutral-600">COORDINATES</span>
+              <span className="text-neutral-400 font-semibold">{office.coordinates}</span>
+            </div>
+            <div className="text-right">
+              <span className="block text-[8px] uppercase tracking-wider text-neutral-600">CAPACITY</span>
+              <span className="text-emerald-400 font-semibold">{office.capacity}</span>
+            </div>
+          </div>
+
+        </motion.div>
+      ))}
+    </div>
+
+    <div className="mt-8 sm:mt-10 max-w-5xl mx-auto p-4 sm:p-5 rounded-2xl bg-black border border-neutral-800/80 hover:border-emerald-500/30 font-mono text-xs text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left transition-all duration-300 shadow-lg">
+      <div className="flex flex-col sm:flex-row items-center gap-3">
+        <FaNetworkWired className="text-emerald-400 text-xl sm:text-2xl flex-shrink-0" />
+        <div>
+          <span className="text-white font-bold block">ENCRYPTED FEED // HUB LINK ACTIVE</span>
+          <span className="text-[10px] text-neutral-500 block sm:inline">Low-latency dual command redundancy between Houston, TX & Karachi, PK</span>
         </div>
-      </section>
+      </div>
+      <a 
+        href={QUOTE_LINK}
+        className="w-full sm:w-auto px-5 py-2.5 bg-neutral-900 border border-emerald-500/30 rounded text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider hover:bg-emerald-400 hover:text-black hover:border-emerald-400 transition-all duration-300 flex-shrink-0 text-center shadow-md active:scale-95"
+      >
+        Verify System SLA
+      </a>
+    </div>
+
+  </div>
+</section>
 
       {/* CONTACT BANNER */}
       <section id="contact" className="py-16 sm:py-24 bg-gradient-to-r from-neutral-950 via-neutral-900 to-black border-b border-neutral-900">
