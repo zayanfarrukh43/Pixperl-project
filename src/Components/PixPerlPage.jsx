@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, EffectCoverflow } from 'swiper/modules';
+// ✅ Add 'Link' inside the curly braces
+import { Link } from 'react-router-dom';
 
-import { 
-  FaShoppingCart, 
-  FaBuilding, 
-  FaFileContract, 
-  FaDesktop, 
+import {
+  FaShoppingCart,
+  FaBuilding,
+  FaFileContract,
+  FaDesktop,
   FaChartLine,
   FaMicrochip,
   FaShieldAlt,
@@ -39,7 +41,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 
-const QUOTE_LINK = "/get-quote"; 
+const QUOTE_LINK = "/get-quote";
 
 // Helper component for live clock in office locations
 function CityClock({ timeZone }) {
@@ -69,7 +71,7 @@ function CityClock({ timeZone }) {
 export default function PixPerlPage() {
   const [activeTab, setActiveTab] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  
+
   // State to track flipped cards for touch/mobile devices
   const [flippedCards, setFlippedCards] = useState({});
 
@@ -100,37 +102,37 @@ export default function PixPerlPage() {
   ];
 
   const clients = [
-    { 
-      name: 'BOBO SUPPLIES', 
-      type: 'Retail Chain', 
-      desc: 'Full-spectrum remote coverage across 12+ high-volume retail locations in Houston, TX.', 
+    {
+      name: 'BOBO SUPPLIES',
+      type: 'Retail Chain',
+      desc: 'Full-spectrum remote coverage across 12+ high-volume retail locations in Houston, TX.',
       logoText: 'B',
       nodes: '48 Active Cams',
       uptime: '99.98% Threat Intercept',
       tenure: '3 Year SLA Partner'
     },
-    { 
-      name: 'HEAVEN DREAM HOMES', 
-      type: 'Construction & Real Estate', 
-      desc: 'Active construction zone protection, thermal fence detection, and site equipment security.', 
+    {
+      name: 'HEAVEN DREAM HOMES',
+      type: 'Construction & Real Estate',
+      desc: 'Active construction zone protection, thermal fence detection, and site equipment security.',
       logoText: 'H',
       nodes: '18 Thermal Arrays',
       uptime: '100% Perimeter Guard',
       tenure: '2 Year SLA Partner'
     },
-    { 
-      name: 'APEX LOGISTICS', 
-      type: 'Warehouse Operations', 
-      desc: 'Multi-point perimeter monitoring and automated vehicle log analytics.', 
+    {
+      name: 'APEX LOGISTICS',
+      type: 'Warehouse Operations',
+      desc: 'Multi-point perimeter monitoring and automated vehicle log analytics.',
       logoText: 'A',
       nodes: '64 HD Nodes',
       uptime: '<15s Threat Alert',
       tenure: '4 Year SLA Partner'
     },
-    { 
-      name: 'VANGUARD MEDICAL HUB', 
-      type: 'Healthcare Facility', 
-      desc: 'Strict access control monitoring and continuous emergency lane watch.', 
+    {
+      name: 'VANGUARD MEDICAL HUB',
+      type: 'Healthcare Facility',
+      desc: 'Strict access control monitoring and continuous emergency lane watch.',
       logoText: 'V',
       nodes: '32 Secure Nodes',
       uptime: 'Zero Breach Record',
@@ -139,42 +141,42 @@ export default function PixPerlPage() {
   ];
 
   const steps = [
-    { 
-      num: '01', 
+    {
+      num: '01',
       phase: 'PHASE 01',
-      title: 'Requirement Analysis', 
+      title: 'Requirement Analysis',
       desc: 'Detailed physical and digital site survey analyzing blind spots, perimeter vulnerabilities, and network bandwidth.',
       icon: FaSearch,
       deliverable: 'Site Risk & Coverage Audit'
     },
-    { 
-      num: '02', 
+    {
+      num: '02',
       phase: 'PHASE 02',
-      title: 'Proposal & Tender', 
+      title: 'Proposal & Tender',
       desc: 'Customized surveillance architecture, hardware allocation blueprints, and transparent SLA pricing tiers.',
       icon: FaFileContract,
       deliverable: 'Custom System Specification'
     },
-    { 
-      num: '03', 
+    {
+      num: '03',
       phase: 'PHASE 03',
-      title: 'Contract Signing', 
+      title: 'Contract Signing',
       desc: 'Finalizing structured 12-month SLA terms, incident escalation paths, and guaranteed uptime protocols.',
       icon: FaFileSignature,
       deliverable: 'Binding SLA Agreement'
     },
-    { 
-      num: '04', 
+    {
+      num: '04',
       phase: 'PHASE 04',
-      title: 'Setup & Deployment', 
+      title: 'Setup & Deployment',
       desc: 'RDV hardware installation, zero-trust network encryption setup, and streaming link to our 24/7 command center.',
       icon: FaTools,
       deliverable: 'Hardware Sync & Calibration'
     },
-    { 
-      num: '05', 
+    {
+      num: '05',
       phase: 'LIVE OPERATIONS',
-      title: 'Active Protection', 
+      title: 'Active Protection',
       desc: 'Continuous real-time monitoring, instant threat suppression dispatch, and weekly operational analytics logs.',
       icon: FaEye,
       deliverable: '24/7 Command Watch'
@@ -210,11 +212,11 @@ export default function PixPerlPage() {
 
   return (
     <div className="min-h-screen bg-black text-neutral-100 font-sans selection:bg-emerald-400 selection:text-black antialiased overflow-x-hidden">
-      
+
       {/* HEADER SECTION */}
       <header className="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between h-16 sm:h-20">
-          
+
           <a href="#home" className="flex items-center gap-2 font-mono font-black text-lg sm:text-xl tracking-wider text-white">
             <FaShieldAlt className="text-emerald-400" />
             <span>PIXPERL<span className="text-emerald-400">3D STUDIO</span></span>
@@ -222,14 +224,14 @@ export default function PixPerlPage() {
 
           <nav className="hidden md:flex items-center gap-6 lg:gap-8 font-mono text-xs font-bold uppercase tracking-widest text-neutral-400">
             {navLinks.map((link, idx) => (
-              <a 
-                key={idx} 
+              <a
+                key={idx}
                 href={link.href}
                 onClick={() => {
                   if (!link.externalPage) {
                     setActiveTab(link.name.toLowerCase());
                   }
-                }} 
+                }}
                 className={`transition-colors hover:text-emerald-400 ${activeTab === link.name.toLowerCase() ? 'text-emerald-400' : ''}`}
               >
                 {link.name}
@@ -287,8 +289,8 @@ export default function PixPerlPage() {
       <section id="home" className="relative pt-12 sm:pt-20 pb-16 sm:pb-28 border-b border-neutral-900 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-neutral-900 via-black to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
@@ -342,14 +344,14 @@ export default function PixPerlPage() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative group w-full"
             >
               <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500/30 to-neutral-800 rounded-2xl blur-xl opacity-50 group-hover:opacity-100 transition duration-700" />
-              
+
               <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-2xl bg-neutral-950 border border-neutral-800 overflow-hidden shadow-2xl">
                 <img
                   src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80&w=1000"
@@ -374,7 +376,7 @@ export default function PixPerlPage() {
       {/* SERVICES SECTION */}
       <section id="services" className="py-16 sm:py-28 bg-neutral-950 border-b border-neutral-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          
+
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 sm:mb-16 gap-4">
             <div>
               <p className="text-xs font-mono font-extrabold tracking-widest text-emerald-400 uppercase">CORE CAPABILITIES</p>
@@ -407,7 +409,7 @@ export default function PixPerlPage() {
                       <h3 className="text-lg sm:text-xl font-bold text-white mt-2 sm:mt-3 mb-2 sm:mb-3 group-hover:text-emerald-400 transition-colors">{s.title}</h3>
                       <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">{s.desc}</p>
                     </div>
-                    
+
                     <div className="pt-4 sm:pt-6 mt-4 border-t border-neutral-900 flex items-center justify-between text-xs font-mono text-neutral-500 group-hover:text-white transition-colors">
                       <span>CONTRACT SERVICE</span>
                       <span>→</span>
@@ -426,7 +428,7 @@ export default function PixPerlPage() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-950/40 border border-emerald-500/20 rounded-full text-[9px] sm:text-[10px] font-mono font-bold tracking-widest text-emerald-400 uppercase mb-3">
               <FaCheckCircle className="text-emerald-400" />
@@ -515,7 +517,7 @@ export default function PixPerlPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-emerald-500/5 blur-[120px] pointer-events-none rounded-full" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-950/60 border border-emerald-500/30 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-emerald-400 uppercase mb-3">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -529,7 +531,7 @@ export default function PixPerlPage() {
             </p>
           </div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -537,7 +539,7 @@ export default function PixPerlPage() {
             className="relative max-w-5xl mx-auto rounded-3xl bg-gradient-to-b from-neutral-900 via-neutral-950 to-black border border-neutral-800/80 hover:border-emerald-500/40 transition-all shadow-2xl p-6 sm:p-10 lg:p-12"
           >
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8 pb-8 border-b border-neutral-800/80">
-              
+
               <div className="flex items-center gap-5 text-center sm:text-left">
                 <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-black border-2 border-emerald-400/50 flex flex-col items-center justify-center p-3 shadow-[0_0_35px_rgba(52,211,153,0.15)] flex-shrink-0">
                   <span className="font-mono font-black text-3xl sm:text-4xl tracking-widest text-white">RDV</span>
@@ -564,7 +566,7 @@ export default function PixPerlPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 pt-8">
-              
+
               <div className="p-5 rounded-xl bg-neutral-900/50 border border-neutral-800/80 hover:border-emerald-500/30 transition-all group">
                 <div className="w-10 h-10 rounded-lg bg-black border border-neutral-800 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
                   <FaMicrochip size={18} />
@@ -623,7 +625,7 @@ export default function PixPerlPage() {
       {/* METHODOLOGY / HOW WE OPERATE - FLIP CARD WITH HOVER & RESPONSIVE TOGGLE BUTTON */}
       <section id="process" className="py-16 sm:py-28 bg-black border-b border-neutral-900 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          
+
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-20">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-neutral-900 border border-neutral-800 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-emerald-400 uppercase mb-3">
               METHODOLOGY & EXECUTION PIPELINE
@@ -643,7 +645,7 @@ export default function PixPerlPage() {
                 const isFlipped = !!flippedCards[idx];
 
                 return (
-                  <motion.div 
+                  <motion.div
                     key={idx}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -651,10 +653,9 @@ export default function PixPerlPage() {
                     transition={{ duration: 0.5, delay: idx * 0.12 }}
                     className="h-80 sm:h-96 w-full [perspective:1000px] group"
                   >
-                    <div className={`relative h-full w-full rounded-2xl transition-all duration-700 [transform-style:preserve-3d] lg:group-hover:[transform:rotateY(180deg)] shadow-xl ${
-                      isFlipped ? '[transform:rotateY(180deg)]' : ''
-                    }`}>
-                      
+                    <div className={`relative h-full w-full rounded-2xl transition-all duration-700 [transform-style:preserve-3d] lg:group-hover:[transform:rotateY(180deg)] shadow-xl ${isFlipped ? '[transform:rotateY(180deg)]' : ''
+                      }`}>
+
                       {/* FRONT OF CARD */}
                       <div className="absolute inset-0 h-full w-full rounded-2xl bg-neutral-950 border border-neutral-800 p-6 flex flex-col justify-between [backface-visibility:hidden]">
                         <div>
@@ -674,7 +675,7 @@ export default function PixPerlPage() {
 
                         <div>
                           <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">{st.title}</h3>
-                          
+
                           {/* Desktop view helper */}
                           <p className="hidden lg:flex text-[10px] font-mono text-neutral-500 mt-2 uppercase tracking-widest items-center gap-1">
                             Hover for details <FaArrowRight className="text-emerald-400 text-[8px]" />
@@ -735,123 +736,123 @@ export default function PixPerlPage() {
         </div>
       </section>
 
-     {/* FULLY RESPONSIVE GLOBAL LOCATIONS / OUR OFFICES SECTION */}
-<section id="offices" className="py-12 sm:py-20 lg:py-28 bg-neutral-950 border-b border-neutral-900 relative overflow-hidden">
-  <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-emerald-500/5 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
-  <div className="absolute bottom-0 left-0 w-72 sm:w-96 h-72 sm:h-96 bg-emerald-500/5 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
+      {/* FULLY RESPONSIVE GLOBAL LOCATIONS / OUR OFFICES SECTION */}
+      <section id="offices" className="py-12 sm:py-20 lg:py-28 bg-neutral-950 border-b border-neutral-900 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-emerald-500/5 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-72 sm:w-96 h-72 sm:h-96 bg-emerald-500/5 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
 
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
-    
-    <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
-      <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-950/50 border border-emerald-500/30 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-emerald-400 uppercase mb-3">
-        <FaGlobe className="text-emerald-400 animate-spin" style={{ animationDuration: '15s' }} />
-        24/7 DUAL COMMAND HUBS
-      </div>
-      <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">Our Offices & Command Centers</h2>
-      <p className="mt-2 sm:mt-3 text-neutral-400 text-xs sm:text-sm leading-relaxed font-normal px-2">
-        Dual active command hubs providing round-the-clock shift handovers, real-time threat detection, and continuous SLA delivery.
-      </p>
-    </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
 
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-      {offices.map((office, idx) => (
-        <motion.div
-          key={idx}
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          whileHover={{ y: -6 }}
-          viewport={{ once: true }}
-          transition={{ 
-            duration: 0.5, 
-            delay: idx * 0.15,
-            y: { duration: 0.3, ease: 'easeOut' }
-          }}
-          className="p-5 sm:p-7 md:p-8 bg-gradient-to-b from-black via-neutral-950 to-neutral-950 border border-neutral-800/90 hover:border-emerald-500/40 rounded-2xl sm:rounded-3xl transition-all duration-500 ease-out flex flex-col justify-between group shadow-2xl hover:shadow-[0_10px_30px_rgba(52,211,153,0.08)] relative overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 w-28 sm:w-32 h-28 sm:h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/15 transition-all duration-500 pointer-events-none" />
-
-          <div>
-            <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-neutral-900 mb-5 sm:mb-6">
-              <span className="px-2.5 py-1 bg-neutral-900 border border-neutral-800 rounded text-[9px] sm:text-[10px] font-mono font-extrabold text-emerald-400 tracking-wider uppercase transition-colors duration-300 group-hover:border-emerald-500/30">
-                {office.badge}
-              </span>
-              <div className="flex items-center gap-1.5 sm:gap-2 font-mono text-[9px] sm:text-[10px] text-emerald-400 bg-emerald-950/40 px-2.5 py-1 rounded border border-emerald-500/20">
-                <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>OPERATIONAL // 24/7</span>
-              </div>
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-950/50 border border-emerald-500/30 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-emerald-400 uppercase mb-3">
+              <FaGlobe className="text-emerald-400 animate-spin" style={{ animationDuration: '15s' }} />
+              24/7 DUAL COMMAND HUBS
             </div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">Our Offices & Command Centers</h2>
+            <p className="mt-2 sm:mt-3 text-neutral-400 text-xs sm:text-sm leading-relaxed font-normal px-2">
+              Dual active command hubs providing round-the-clock shift handovers, real-time threat detection, and continuous SLA delivery.
+            </p>
+          </div>
 
-            <div className="flex items-start justify-between gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+            {offices.map((office, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 25 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -6 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: idx * 0.15,
+                  y: { duration: 0.3, ease: 'easeOut' }
+                }}
+                className="p-5 sm:p-7 md:p-8 bg-gradient-to-b from-black via-neutral-950 to-neutral-950 border border-neutral-800/90 hover:border-emerald-500/40 rounded-2xl sm:rounded-3xl transition-all duration-500 ease-out flex flex-col justify-between group shadow-2xl hover:shadow-[0_10px_30px_rgba(52,211,153,0.08)] relative overflow-hidden"
+              >
+                <div className="absolute top-0 right-0 w-28 sm:w-32 h-28 sm:h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/15 transition-all duration-500 pointer-events-none" />
+
+                <div>
+                  <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-neutral-900 mb-5 sm:mb-6">
+                    <span className="px-2.5 py-1 bg-neutral-900 border border-neutral-800 rounded text-[9px] sm:text-[10px] font-mono font-extrabold text-emerald-400 tracking-wider uppercase transition-colors duration-300 group-hover:border-emerald-500/30">
+                      {office.badge}
+                    </span>
+                    <div className="flex items-center gap-1.5 sm:gap-2 font-mono text-[9px] sm:text-[10px] text-emerald-400 bg-emerald-950/40 px-2.5 py-1 rounded border border-emerald-500/20">
+                      <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <span>OPERATIONAL // 24/7</span>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-emerald-400 transition-colors duration-300">{office.city}</h3>
+                      <p className="text-xs font-mono text-emerald-400 font-bold mt-0.5">{office.country}</p>
+                    </div>
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-emerald-400 group-hover:border-emerald-400/40 group-hover:scale-105 transition-all duration-300 flex-shrink-0">
+                      <FaMapMarkerAlt size={15} />
+                    </div>
+                  </div>
+
+                  <p className="text-xs text-neutral-300 font-medium mt-3 mb-5 leading-relaxed">{office.role}</p>
+
+                  <div className="p-3 rounded-xl bg-black/60 border border-neutral-900 font-mono text-[10px] sm:text-[11px] mb-5 sm:mb-6 flex flex-row items-center justify-between gap-2 transition-colors duration-300 group-hover:border-neutral-800">
+                    <div className="flex items-center gap-2 text-neutral-400">
+                      <FaClock className="text-emerald-400 flex-shrink-0" />
+                      <span>LOCAL TIME:</span>
+                    </div>
+                    <span className="text-emerald-400 font-bold">
+                      <CityClock timeZone={office.timeZone} />
+                    </span>
+                  </div>
+
+                  <div className="space-y-2.5 sm:space-y-3 font-mono text-xs text-neutral-400 border-t border-neutral-900 pt-4 sm:pt-5">
+                    <div className="flex items-start gap-2.5">
+                      <FaMapMarkerAlt className="text-emerald-400 flex-shrink-0 mt-1" />
+                      <span className="leading-relaxed break-words">{office.address}</span>
+                    </div>
+                    <div className="flex items-center gap-2.5 text-neutral-300">
+                      <FaPhoneAlt className="text-emerald-400 text-[10px] flex-shrink-0" />
+                      <a href={`tel:${office.phone}`} className="hover:text-emerald-400 transition-colors duration-200">{office.phone}</a>
+                    </div>
+                    <div className="flex items-center gap-2.5 text-neutral-300">
+                      <FaEnvelope className="text-emerald-400 text-[10px] flex-shrink-0" />
+                      <a href={`mailto:${office.email}`} className="hover:text-emerald-400 transition-colors duration-200 break-all">{office.email}</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 pt-4 border-t border-neutral-900/80 font-mono text-[9px] sm:text-[10px] grid grid-cols-2 gap-2 text-neutral-500">
+                  <div>
+                    <span className="block text-[8px] uppercase tracking-wider text-neutral-600">COORDINATES</span>
+                    <span className="text-neutral-400 font-semibold">{office.coordinates}</span>
+                  </div>
+                  <div className="text-right">
+                    <span className="block text-[8px] uppercase tracking-wider text-neutral-600">CAPACITY</span>
+                    <span className="text-emerald-400 font-semibold">{office.capacity}</span>
+                  </div>
+                </div>
+
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mt-8 sm:mt-10 max-w-5xl mx-auto p-4 sm:p-5 rounded-2xl bg-black border border-neutral-800/80 hover:border-emerald-500/30 font-mono text-xs text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left transition-all duration-300 shadow-lg">
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <FaNetworkWired className="text-emerald-400 text-xl sm:text-2xl flex-shrink-0" />
               <div>
-                <h3 className="text-xl sm:text-2xl font-black text-white group-hover:text-emerald-400 transition-colors duration-300">{office.city}</h3>
-                <p className="text-xs font-mono text-emerald-400 font-bold mt-0.5">{office.country}</p>
-              </div>
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 group-hover:text-emerald-400 group-hover:border-emerald-400/40 group-hover:scale-105 transition-all duration-300 flex-shrink-0">
-                <FaMapMarkerAlt size={15} />
+                <span className="text-white font-bold block">ENCRYPTED FEED // HUB LINK ACTIVE</span>
+                <span className="text-[10px] text-neutral-500 block sm:inline">Low-latency dual command redundancy between Houston, TX & Karachi, PK</span>
               </div>
             </div>
-
-            <p className="text-xs text-neutral-300 font-medium mt-3 mb-5 leading-relaxed">{office.role}</p>
-
-            <div className="p-3 rounded-xl bg-black/60 border border-neutral-900 font-mono text-[10px] sm:text-[11px] mb-5 sm:mb-6 flex flex-row items-center justify-between gap-2 transition-colors duration-300 group-hover:border-neutral-800">
-              <div className="flex items-center gap-2 text-neutral-400">
-                <FaClock className="text-emerald-400 flex-shrink-0" />
-                <span>LOCAL TIME:</span>
-              </div>
-              <span className="text-emerald-400 font-bold">
-                <CityClock timeZone={office.timeZone} />
-              </span>
-            </div>
-
-            <div className="space-y-2.5 sm:space-y-3 font-mono text-xs text-neutral-400 border-t border-neutral-900 pt-4 sm:pt-5">
-              <div className="flex items-start gap-2.5">
-                <FaMapMarkerAlt className="text-emerald-400 flex-shrink-0 mt-1" />
-                <span className="leading-relaxed break-words">{office.address}</span>
-              </div>
-              <div className="flex items-center gap-2.5 text-neutral-300">
-                <FaPhoneAlt className="text-emerald-400 text-[10px] flex-shrink-0" />
-                <a href={`tel:${office.phone}`} className="hover:text-emerald-400 transition-colors duration-200">{office.phone}</a>
-              </div>
-              <div className="flex items-center gap-2.5 text-neutral-300">
-                <FaEnvelope className="text-emerald-400 text-[10px] flex-shrink-0" />
-                <a href={`mailto:${office.email}`} className="hover:text-emerald-400 transition-colors duration-200 break-all">{office.email}</a>
-              </div>
-            </div>
+            <a
+              href={QUOTE_LINK}
+              className="w-full sm:w-auto px-5 py-2.5 bg-neutral-900 border border-emerald-500/30 rounded text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider hover:bg-emerald-400 hover:text-black hover:border-emerald-400 transition-all duration-300 flex-shrink-0 text-center shadow-md active:scale-95"
+            >
+              Verify System SLA
+            </a>
           </div>
 
-          <div className="mt-6 pt-4 border-t border-neutral-900/80 font-mono text-[9px] sm:text-[10px] grid grid-cols-2 gap-2 text-neutral-500">
-            <div>
-              <span className="block text-[8px] uppercase tracking-wider text-neutral-600">COORDINATES</span>
-              <span className="text-neutral-400 font-semibold">{office.coordinates}</span>
-            </div>
-            <div className="text-right">
-              <span className="block text-[8px] uppercase tracking-wider text-neutral-600">CAPACITY</span>
-              <span className="text-emerald-400 font-semibold">{office.capacity}</span>
-            </div>
-          </div>
-
-        </motion.div>
-      ))}
-    </div>
-
-    <div className="mt-8 sm:mt-10 max-w-5xl mx-auto p-4 sm:p-5 rounded-2xl bg-black border border-neutral-800/80 hover:border-emerald-500/30 font-mono text-xs text-neutral-400 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left transition-all duration-300 shadow-lg">
-      <div className="flex flex-col sm:flex-row items-center gap-3">
-        <FaNetworkWired className="text-emerald-400 text-xl sm:text-2xl flex-shrink-0" />
-        <div>
-          <span className="text-white font-bold block">ENCRYPTED FEED // HUB LINK ACTIVE</span>
-          <span className="text-[10px] text-neutral-500 block sm:inline">Low-latency dual command redundancy between Houston, TX & Karachi, PK</span>
         </div>
-      </div>
-      <a 
-        href={QUOTE_LINK}
-        className="w-full sm:w-auto px-5 py-2.5 bg-neutral-900 border border-emerald-500/30 rounded text-emerald-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider hover:bg-emerald-400 hover:text-black hover:border-emerald-400 transition-all duration-300 flex-shrink-0 text-center shadow-md active:scale-95"
-      >
-        Verify System SLA
-      </a>
-    </div>
-
-  </div>
-</section>
+      </section>
 
       {/* CONTACT BANNER */}
       <section id="contact" className="py-16 sm:py-24 bg-gradient-to-r from-neutral-950 via-neutral-900 to-black border-b border-neutral-900">
@@ -875,7 +876,7 @@ export default function PixPerlPage() {
       {/* FOOTER SECTION */}
       <footer className="bg-black pt-16 pb-8 border-t border-neutral-900 font-sans text-neutral-400">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-neutral-900">
-          
+
           <div className="space-y-4 md:col-span-1">
             <div className="flex items-center gap-2 font-mono font-black text-xl tracking-wider text-white">
               <FaShieldAlt className="text-emerald-400" />
@@ -890,27 +891,27 @@ export default function PixPerlPage() {
             </div>
 
             <div className="flex items-center gap-3 pt-2">
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
+              <a
+                href="https://facebook.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
                 className="w-8 h-8 rounded bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-emerald-400 hover:border-emerald-400/50 transition-colors"
               >
                 <FaFacebookF size={13} />
               </a>
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
+              <a
+                href="https://instagram.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="w-8 h-8 rounded bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-emerald-400 hover:border-emerald-400/50 transition-colors"
               >
                 <FaInstagram size={14} />
               </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
+              <a
+                href="https://linkedin.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="w-8 h-8 rounded bg-neutral-900 border border-neutral-800 flex items-center justify-center text-neutral-400 hover:text-emerald-400 hover:border-emerald-400/50 transition-colors"
@@ -964,12 +965,22 @@ export default function PixPerlPage() {
 
         </div>
 
+
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] sm:text-xs text-neutral-600">
           <p>© {new Date().getFullYear()} PIXPERL 3D STUDIO. ALL RIGHTS RESERVED.</p>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-            <a href="#" className="hover:text-emerald-400 transition-colors">SLA Documentation</a>
-            <a href="#" className="hover:text-neutral-400 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-neutral-400 transition-colors">Terms of Service</a>
+            <Link to="/sla-documentation" className="hover:text-emerald-400 transition-colors">
+              SLA Documentation
+            </Link>
+
+            <Link to="/privacy-policy" className="hover:text-emerald-400 transition-colors">
+              Privacy Policy
+            </Link>
+
+            <Link to="/terms-of-service" className="hover:text-emerald-400 transition-colors">
+              Terms of Service
+            </Link>
           </div>
         </div>
       </footer>

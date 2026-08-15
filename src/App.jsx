@@ -6,9 +6,9 @@ import PixPerlPage from './Components/PixPerlPage';
 import GetQuotePage from './Components/GetQuotePage';
 import OfficesPage from './Components/OfficesPage';
 import AboutUsPage from './Pages/AboutUsPage';
-// import Header from './Components/Layout/Header';
-// import Footer from './Components/Layout/Footer';
-
+import SLADocumentationPage from './Components/SLADocumentation'; // Updated path & filename
+import PrivacyPolicyPage from './Components/PrivacyPolicy'; // Updated path & filename
+import TermsOfServicePage from './Components/TermsOfService'; // Updated path & filename
 function AnimatedRoutes() {
   const location = useLocation();
   const [loading, setLoading] = useState(false);
@@ -18,7 +18,10 @@ function AnimatedRoutes() {
     if (
       location.pathname === '/' || 
       location.pathname === '/get-quote' || 
-      location.pathname === '/about'
+      location.pathname === '/about' ||
+      location.pathname === '/sla-documentation' ||
+      location.pathname === '/privacy-policy' ||
+      location.pathname === '/terms-of-service'
     ) {
       setLoading(true);
     } else {
@@ -39,6 +42,9 @@ function AnimatedRoutes() {
         <Route path="/get-quote" element={<GetQuotePage />} />
         <Route path="/offices" element={<OfficesPage />} />
         <Route path="/about" element={<AboutUsPage />} />
+        <Route path="/sla-documentation" element={<SLADocumentationPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-of-service" element={<TermsOfServicePage />} />
       </Routes>
     </>
   );
