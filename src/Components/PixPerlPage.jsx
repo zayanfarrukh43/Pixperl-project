@@ -191,7 +191,7 @@ export default function PixPerlPage() {
       role: 'Global HQ & Primary Command Center',
       address: '1200 Smith St, Suite 1800, Houston, TX 77002, USA',
       phone: '+1 (800) 555-PIX3D',
-      email: 'houston@pixperl3d.com',
+      email: 'info@pixperl.com',
       badge: 'GLOBAL HQ',
       coordinates: '29.7604° N, 95.3698° W',
       capacity: '60+ Console Desks'
@@ -202,8 +202,8 @@ export default function PixPerlPage() {
       timeZone: 'Asia/Karachi',
       role: 'Regional Operations & AI Analytics Hub',
       address: 'Shahrah-e-Faisal, Karachi, Sindh, Pakistan',
-      phone: '+92 (21) 3555-7493',
-      email: 'karachi@pixperl3d.com',
+      phone: '+1 (800) 555-PIX3D',
+      email: 'info@pixperl.com',
       badge: 'REGIONAL HUB',
       coordinates: '24.8607° N, 67.0011° E',
       capacity: '40+ Neural Array Monitors'
@@ -958,7 +958,7 @@ export default function PixPerlPage() {
               </div>
               <div className="flex items-center gap-2 pt-2">
                 <FaEnvelope className="text-emerald-400 flex-shrink-0" />
-                <span>contact@pixperl3d.com</span>
+                <span>info@pixperl.com</span>
               </div>
             </div>
           </div>

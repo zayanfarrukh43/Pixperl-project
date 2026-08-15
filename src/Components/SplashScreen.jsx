@@ -17,7 +17,8 @@ export default function SplashScreen({ onFinish }) {
       initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.8, ease: 'easeInOut' } }}
-      className="fixed inset-0 h-screen h-[100dvh] w-screen z-[9999] flex flex-col items-center justify-center bg-black text-white select-none overflow-hidden touch-none"
+      className="fixed inset-0 h-[100dvh] w-screen z-[9999] flex flex-col items-center justify-center bg-black text-white select-none overflow-hidden touch-none"
+      style={{ backgroundColor: '#000000' }}
     >
       {/* Background Radial Glow (Scaled for mobile & desktop) */}
       <div className="absolute w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -70,7 +71,7 @@ export default function SplashScreen({ onFinish }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: [0, 1, 0.5, 1] }}
         transition={{ delay: 0.3, repeat: Infinity, duration: 1.5 }}
-        className="font-mono text-[9px] text-emerald-400/80 tracking-widest uppercase mt-3 z-10"
+        className="font-mono font-semibold text-xs sm:text-sm tracking-[0.3em] text-emerald-400/90 uppercase mt-4 z-10 text-center px-4"
       >
         INITIALIZING SYSTEM...
       </motion.span>

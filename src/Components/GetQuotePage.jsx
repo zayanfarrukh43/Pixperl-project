@@ -85,7 +85,7 @@ export default function GetQuotePage() {
     servicesNeeded: [],
     contractDuration: '12 Months',
     projectDetails: '',
-    urgency: 'Standard (Within 1-2 weeks)',
+    urgency: 'Standard',
   });
 
   const serviceOptions = [
@@ -95,7 +95,8 @@ export default function GetQuotePage() {
     { id: 'rdv_hardware', label: 'RDV Systems & Hardware Setup', icon: ShieldIcon },
     { id: 'analytics', label: 'Reporting & AI Analytics', icon: AnalyticsIcon },
   ];
-
+const [loading, setLoading] = useState(false);
+const [ticketId, setTicketId] = useState("");
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -112,12 +113,38 @@ export default function GetQuotePage() {
       };
     });
   };
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  try {
+    setLoading(true);
+
+    const response = await fetch(
+      "https://pixelperl-backend.vercel.app/api/quotes",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.message || "Something went wrong");
+    }
+
+    setTicketId(data.data.ticketId);
     setIsSubmitted(true);
-  };
-
+  } catch (err) {
+    alert(err.message);
+    console.error(err);
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <div className="min-h-screen bg-black text-neutral-100 font-sans selection:bg-emerald-400 selection:text-black antialiased overflow-x-hidden">
       
@@ -205,9 +232,9 @@ export default function GetQuotePage() {
                 <p className="text-xs sm:text-sm text-neutral-400 max-w-md mx-auto font-normal leading-relaxed px-2">
                   Thank you, <strong>{formData.fullName}</strong>. Your request for <strong>{formData.companyName || 'your business'}</strong> has been received by PixPerl 3D Studio & RDV.
                 </p>
-                <div className="p-3 sm:p-4 bg-neutral-900 rounded-xl border border-neutral-800 text-[11px] sm:text-xs font-mono text-neutral-400 inline-block">
-                  TICKET ID: <span className="text-emerald-400 font-bold">#PX-{Math.floor(100000 + Math.random() * 900000)}</span>
-                </div>
+              <div className="p-3 sm:p-4 bg-neutral-900 rounded-xl border border-neutral-800 text-[11px] sm:text-xs font-mono text-neutral-400 inline-block">
+  TICKET ID: <span className="text-emerald-400 font-bold">{ticketId}</span>
+</div>
                 <div className="pt-2 sm:pt-4">
                   <a
                     href="/"
@@ -497,12 +524,13 @@ export default function GetQuotePage() {
                       >
                         ← Back
                       </button>
-                      <button
-                        type="submit"
-                        className="w-full sm:w-auto px-8 py-3.5 bg-emerald-400 text-black font-mono text-xs font-extrabold uppercase tracking-widest rounded-md shadow-[0_0_20px_rgba(52,211,153,0.3)] hover:shadow-[0_0_30px_rgba(52,211,153,0.5)] transition-all active:scale-[0.98]"
-                      >
-                        Submit Quote Request
-                      </button>
+                   <button
+  type="submit"
+  disabled={loading}
+  className="w-full sm:w-auto px-8 py-3.5 bg-emerald-400 text-black font-mono text-xs font-extrabold uppercase tracking-widest rounded-md shadow-[0_0_20px_rgba(52,211,153,0.3)] hover:shadow-[0_0_30px_rgba(52,211,153,0.5)] transition-all active:scale-[0.98] disabled:opacity-60"
+>
+  {loading ? "Submitting..." : "Submit Quote Request"}
+</button>
                     </div>
                   </motion.div>
                 )}
