@@ -17,11 +17,11 @@ export default function SplashScreen({ onFinish }) {
       initial={{ opacity: 1 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, transition: { duration: 0.8, ease: 'easeInOut' } }}
-      className="fixed inset-0 h-[100dvh] w-screen z-[9999] flex flex-col items-center justify-center bg-black text-white select-none overflow-hidden touch-none"
-      style={{ backgroundColor: '#000000' }}
+      className="fixed inset-0 h-[100dvh] w-screen z-[9999] flex flex-col items-center justify-center bg-white text-neutral-900 select-none overflow-hidden touch-none"
+      style={{ backgroundColor: '#ffffff' }}
     >
-      {/* Background Radial Glow (Scaled for mobile & desktop) */}
-      <div className="absolute w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Background Radial Glow (Blue tint for light theme) */}
+      <div className="absolute w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
       {/* Main Logo Animation */}
       <motion.div
@@ -30,9 +30,9 @@ export default function SplashScreen({ onFinish }) {
         transition={{ duration: 1, ease: 'easeOut' }}
         className="flex flex-col items-center gap-4 z-10 px-4"
       >
-        <div className="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-neutral-950 border border-neutral-800 shadow-[0_0_40px_rgba(52,211,153,0.2)]">
-          <FaShieldAlt className="text-emerald-400 text-3xl sm:text-4xl" />
-          <div className="absolute inset-0 rounded-2xl border border-emerald-400/40 animate-ping opacity-25" />
+        <div className="relative flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-neutral-100 border border-neutral-200 shadow-[0_0_40px_rgba(37,99,235,0.15)]">
+          <FaShieldAlt className="text-blue-600 text-3xl sm:text-4xl" />
+          <div className="absolute inset-0 rounded-2xl border border-blue-600/40 animate-ping opacity-25" />
         </div>
 
         <div className="text-center">
@@ -40,9 +40,9 @@ export default function SplashScreen({ onFinish }) {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="font-mono font-black text-2xl sm:text-3xl tracking-widest text-white"
+            className="font-mono font-black text-2xl sm:text-3xl tracking-widest text-neutral-900"
           >
-            PIXPERL<span className="text-emerald-400">3D</span>
+            PIXPERL<span className="text-blue-600">3D</span>
           </motion.h1>
 
           <motion.p
@@ -57,12 +57,12 @@ export default function SplashScreen({ onFinish }) {
       </motion.div>
 
       {/* Loading Progress Bar */}
-      <div className="w-40 sm:w-48 h-1 bg-neutral-900 rounded-full overflow-hidden mt-8 z-10 border border-neutral-800">
+      <div className="w-40 sm:w-48 h-1 bg-neutral-200 rounded-full overflow-hidden mt-8 z-10 border border-neutral-300">
         <motion.div
           initial={{ x: '-100%' }}
           animate={{ x: '0%' }}
           transition={{ duration: 1.8, ease: 'easeInOut' }}
-          className="w-full h-full bg-gradient-to-r from-emerald-500 to-emerald-300"
+          className="w-full h-full bg-gradient-to-r from-blue-600 to-blue-400"
         />
       </div>
 
@@ -71,7 +71,7 @@ export default function SplashScreen({ onFinish }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: [0, 1, 0.5, 1] }}
         transition={{ delay: 0.3, repeat: Infinity, duration: 1.5 }}
-        className="font-mono font-semibold text-xs sm:text-sm tracking-[0.3em] text-emerald-400/90 uppercase mt-4 z-10 text-center px-4"
+        className="font-mono font-semibold text-xs sm:text-sm tracking-[0.3em] text-blue-600/90 uppercase mt-4 z-10 text-center px-4"
       >
         INITIALIZING SYSTEM...
       </motion.span>
