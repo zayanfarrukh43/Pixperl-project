@@ -25,10 +25,10 @@ export default function TermsOfService() {
     <div className="min-h-screen bg-white text-neutral-800 font-sans selection:bg-blue-600 selection:text-white antialiased">
       
       {/* HEADER BAR WITH FULL BRAND LOGO & BACK BUTTON */}
-      <header className="border-b border-neutral-200 bg-white/85 backdrop-blur-xl sticky top-0 z-50">
+      {/* <header className="border-b border-neutral-200 bg-white/85 backdrop-blur-xl sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
           
-          {/* FULL BRAND LOGO */}
+         
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-600 font-black text-lg shadow-sm group-hover:scale-105 transition-transform duration-300">
               <FaShieldAlt className="text-blue-600 text-lg" />
@@ -37,13 +37,11 @@ export default function TermsOfService() {
               <span className="font-extrabold text-neutral-900 text-base sm:text-lg tracking-wider font-mono leading-none">
                 PIX<span className="text-blue-600">PERL</span>
               </span>
-              {/* <span className="text-[9px] font-mono text-neutral-500 tracking-[0.25em] leading-tight uppercase font-semibold">
-                3D STUDIO
-              </span> */}
+              
             </div>
           </Link>
 
-          {/* BACK TO HOME BUTTON */}
+          
           <Link 
             to="/" 
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-neutral-100 border border-neutral-200 text-xs font-mono text-neutral-600 hover:text-blue-600 hover:border-blue-500/30 hover:bg-white transition-all duration-300 group"
@@ -53,7 +51,7 @@ export default function TermsOfService() {
           </Link>
 
         </div>
-      </header>
+      </header> */}
 
       {/* HERO SECTION */}
       <section className="relative pt-12 pb-16 border-b border-neutral-200 overflow-hidden bg-white">

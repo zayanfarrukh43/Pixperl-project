@@ -165,7 +165,7 @@ export default function GetQuotePage() {
     <div className="min-h-screen bg-white text-neutral-800 font-sans selection:bg-blue-600 selection:text-white antialiased overflow-x-hidden">
       
       {/* Navigation Header */}
-      <header className="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-neutral-200">
+      {/* <header className="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-neutral-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="flex items-center justify-between h-14 sm:h-20">
             <a href="/" className="shrink-0">
@@ -182,7 +182,7 @@ export default function GetQuotePage() {
             </div>
           </div>
         </div>
-      </header>
+      </header> */}
 
       {/* Main Container */}
       <main className="py-6 sm:py-16 md:py-20 px-3.5 sm:px-6 lg:px-12 max-w-5xl mx-auto">
@@ -560,9 +560,9 @@ export default function GetQuotePage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-neutral-200 py-6 text-center text-[10px] sm:text-xs font-mono text-neutral-500 px-4">
+      {/* <footer className="border-t border-neutral-200 py-6 text-center text-[10px] sm:text-xs font-mono text-neutral-500 px-4">
         &copy; {new Date().getFullYear()} PixPerl. All Rights Reserved.
-      </footer>
+      </footer> */}
 
     </div>
   );

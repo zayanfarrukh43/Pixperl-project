@@ -2,34 +2,33 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { 
-  FaUserShield, 
-  FaDatabase, 
-  FaLock, 
-  FaEye, 
-  FaFileContract,
+  FaShieldAlt, 
+  FaServer, 
+  FaClock, 
+  FaSync, 
+  FaHeadset, 
   FaEnvelope,
-  FaArrowLeft,
-  FaShieldAlt
+  FaArrowLeft
 } from 'react-icons/fa';
 
-export default function PrivacyPolicy() {
-  const [activeTab, setActiveTab] = useState('collection');
+export default function SLADocumentation() {
+  const [activeTab, setActiveTab] = useState('uptime');
 
-  const privacyHighlights = [
-    { label: "Data Encryption", value: "AES-256", detail: "At rest & in transit" },
-    { label: "Data Retention", value: "30 Days", detail: "Automatic log purging" },
-    { label: "Third-Party Sale", value: "Zero", detail: "Never sold or monetized" },
-    { label: "Compliance Status", value: "GDPR Ready", detail: "Full user data rights" }
+  const slaMetrics = [
+    { label: "Uptime SLA Guarantee", value: "99.9%", detail: "High-availability clusters" },
+    { label: "Render Target Speed", value: "< 120s", detail: "Per complex 3D frame" },
+    { label: "Support Response", value: "< 1 Hour", detail: "24/7 dedicated queue" },
+    { label: "Data Redundancy", value: "3x Sync", detail: "Multi-region backup" }
   ];
 
   return (
     <div className="min-h-screen bg-white text-neutral-800 font-sans selection:bg-blue-600 selection:text-white antialiased">
       
       {/* HEADER BAR WITH FULL BRAND LOGO & BACK BUTTON */}
-      <header className="border-b border-neutral-200 bg-white/85 backdrop-blur-xl sticky top-0 z-50">
+      {/* <header className="border-b border-neutral-200 bg-white/85 backdrop-blur-xl sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
           
-          {/* FULL BRAND LOGO */}
+        
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-600 font-black text-lg shadow-sm group-hover:scale-105 transition-transform duration-300">
               <FaShieldAlt className="text-blue-600 text-lg" />
@@ -38,13 +37,11 @@ export default function PrivacyPolicy() {
               <span className="font-extrabold text-neutral-900 text-base sm:text-lg tracking-wider font-mono leading-none">
                 PIX<span className="text-blue-600">PERL</span>
               </span>
-              {/* <span className="text-[9px] font-mono text-neutral-500 tracking-[0.25em] leading-tight uppercase font-semibold">
-                3D STUDIO
-              </span> */}
+              
             </div>
           </Link>
 
-          {/* BACK TO HOME BUTTON */}
+        
           <Link 
             to="/" 
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-neutral-100 border border-neutral-200 text-xs font-mono text-neutral-600 hover:text-blue-600 hover:border-blue-500/30 hover:bg-white transition-all duration-300 group"
@@ -54,7 +51,7 @@ export default function PrivacyPolicy() {
           </Link>
 
         </div>
-      </header>
+      </header> */}
 
       {/* HERO SECTION */}
       <section className="relative pt-12 pb-16 border-b border-neutral-200 overflow-hidden bg-white">
@@ -70,26 +67,26 @@ export default function PrivacyPolicy() {
             className="text-center max-w-3xl mx-auto"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-neutral-100 border border-neutral-200 rounded-full text-[10px] font-mono font-extrabold tracking-widest text-blue-600 uppercase mb-4">
-              <FaUserShield className="text-blue-600" />
-              DATA PROTECTION & TRUST
+              <FaShieldAlt className="text-blue-600" />
+              SERVICE LEVEL AGREEMENT
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-neutral-900 tracking-tight">
-              Privacy <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-neutral-800">Policy</span>
+              SLA <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-neutral-800">Documentation</span>
             </h1>
             <p className="mt-4 text-neutral-600 text-xs sm:text-sm md:text-base leading-relaxed font-normal">
-              How PixPerl collects, protects, and handles your digital assets and personal details with complete transparency.
+              Our performance benchmarks, infrastructure reliability standards, and support turnaround guarantees.
             </p>
             
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
-              <span className="text-neutral-500">EFFECTIVE DATE: <span className="text-neutral-800 font-semibold">August 2026</span></span>
+              <span className="text-neutral-500">REVISION DATE: <span className="text-neutral-800 font-semibold">August 2026</span></span>
               <span className="text-neutral-300">•</span>
-              <span className="text-neutral-500">VERSION: <span className="text-blue-600 font-bold">v2.1.0</span></span>
+              <span className="text-neutral-500">AGREEMENT TIER: <span className="text-blue-600 font-bold">Enterprise Standard</span></span>
             </div>
           </motion.div>
 
           {/* HIGHLIGHTS GRID */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-5xl mx-auto">
-            {privacyHighlights.map((item, idx) => (
+            {slaMetrics.map((item, idx) => (
               <motion.div 
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
@@ -106,17 +103,17 @@ export default function PrivacyPolicy() {
         </div>
       </section>
 
-      {/* POLICY MAIN CONTENT */}
+      {/* SLA DETAILS CONTENT */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-12">
           
           {/* TAB NAVIGATION */}
           <div className="flex flex-wrap items-center justify-center gap-2 mb-10 border-b border-neutral-200 pb-4">
             {[
-              { id: 'collection', label: '1. Data Collection' },
-              { id: 'usage', label: '2. Asset Usage' },
-              { id: 'security', label: '3. Security & Storage' },
-              { id: 'rights', label: '4. Your Rights' }
+              { id: 'uptime', label: '1. Uptime Commitment' },
+              { id: 'rendering', label: '2. Render Pipeline SLA' },
+              { id: 'support', label: '3. Support Response' },
+              { id: 'maintenance', label: '4. Scheduled Maintenance' }
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -135,78 +132,84 @@ export default function PrivacyPolicy() {
           {/* TAB CONTENTS */}
           <div className="bg-white border border-neutral-200 rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
             
-            {/* 1. DATA COLLECTION */}
-            {activeTab === 'collection' && (
+            {/* 1. UPTIME COMMITMENT */}
+            {activeTab === 'uptime' && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} className="space-y-6">
                 <div className="flex items-center gap-3">
-                  <FaDatabase className="text-blue-600 text-xl" />
-                  <h2 className="text-xl sm:text-2xl font-black text-neutral-900">Information We Collect</h2>
+                  <FaServer className="text-blue-600 text-xl" />
+                  <h2 className="text-xl sm:text-2xl font-black text-neutral-900">System Uptime & Availability</h2>
                 </div>
                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  We collect information necessary to deliver 3D visualization, studio rendering, and web services.
+                  PixPerl guarantees 99.9% monthly uptime for production web viewer endpoints and asset delivery CDNs.
                 </p>
 
                 <div className="space-y-3 font-mono text-xs">
                   <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
-                    <span className="text-blue-600 font-bold block mb-1">Project & Account Data</span>
-                    <p className="text-neutral-600 text-[11px] leading-relaxed">Names, corporate email addresses, billing details, and project briefs submitted through quote request forms.</p>
+                    <span className="text-blue-600 font-bold block mb-1">Service Credits</span>
+                    <p className="text-neutral-600 text-[11px] leading-relaxed">If monthly availability drops below 99.9%, enterprise clients receive automatic service credit billing adjustments.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
-                    <span className="text-blue-600 font-bold block mb-1">3D Assets & CAD Uploads</span>
-                    <p className="text-neutral-600 text-[11px] leading-relaxed">Proprietary product models, texture files, and scene descriptions provided for rendering.</p>
+                    <span className="text-blue-600 font-bold block mb-1">Redundant Infrastructure</span>
+                    <p className="text-neutral-600 text-[11px] leading-relaxed">Automated failover across multi-region GPU clusters ensures persistent viewer availability.</p>
                   </div>
                 </div>
               </motion.div>
             )}
 
-            {/* 2. ASSET USAGE */}
-            {activeTab === 'usage' && (
+            {/* 2. RENDER PIPELINE SLA */}
+            {activeTab === 'rendering' && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} className="space-y-6">
                 <div className="flex items-center gap-3">
-                  <FaEye className="text-blue-600 text-xl" />
-                  <h2 className="text-xl sm:text-2xl font-black text-neutral-900">How We Use Your Assets</h2>
+                  <FaClock className="text-blue-600 text-xl" />
+                  <h2 className="text-xl sm:text-2xl font-black text-neutral-900">Render Processing Speed</h2>
                 </div>
                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  Your uploaded 3D models and creative files remain strictly confidential and are used solely for fulfilling rendering pipelines.
+                  Our cloud GPU render farm targets high-priority throughput times for model conversions and 3D baking.
                 </p>
                 <ul className="list-disc list-inside text-xs text-neutral-600 space-y-2 leading-relaxed">
-                  <li>To compute, render, and refine interactive 3D assets per client specifications.</li>
-                  <li>To provide customer support and process requested quotes.</li>
-                  <li>We strictly do not train public AI models on client CAD files or 3D renders without express permission.</li>
+                  <li>Standard 3D Scene Baking: Processed within 2 hours of upload.</li>
+                  <li>Real-time WebGL/3D Viewer Asset Optimization: Instantaneous or sub-30 second conversion.</li>
+                  <li>Priority Render Queue available for enterprise subscribers.</li>
                 </ul>
               </motion.div>
             )}
 
-            {/* 3. SECURITY & STORAGE */}
-            {activeTab === 'security' && (
+            {/* 3. SUPPORT RESPONSE */}
+            {activeTab === 'support' && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} className="space-y-6">
                 <div className="flex items-center gap-3">
-                  <FaLock className="text-blue-600 text-xl" />
-                  <h2 className="text-xl sm:text-2xl font-black text-neutral-900">Security & Encryption</h2>
+                  <FaHeadset className="text-blue-600 text-xl" />
+                  <h2 className="text-xl sm:text-2xl font-black text-neutral-900">Technical Support SLA</h2>
                 </div>
                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  All active assets and database entries are encrypted end-to-end using TLS 1.3 in transit and AES-256 at rest.
+                  Our engineering team monitors system health 24/7 and responds to support tickets based on severity levels.
                 </p>
-                <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-xs text-neutral-600 font-mono">
-                  <strong className="text-neutral-900 block mb-1">Asset Purge Guarantee:</strong>
-                  Temporary render cache files are permanently purged from staging servers 30 days after project delivery.
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs">
+                  <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+                    <span className="text-red-600 font-bold block mb-1">P1 - Critical Outage</span>
+                    <span className="text-neutral-800 text-[11px]">Initial Response &lt; 15 mins</span>
+                  </div>
+                  <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+                    <span className="text-blue-600 font-bold block mb-1">P2 - Standard Query</span>
+                    <span className="text-neutral-800 text-[11px]">Initial Response &lt; 2 hours</span>
+                  </div>
                 </div>
               </motion.div>
             )}
 
-            {/* 4. YOUR RIGHTS */}
-            {activeTab === 'rights' && (
+            {/* 4. MAINTENANCE */}
+            {activeTab === 'maintenance' && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} className="space-y-6">
                 <div className="flex items-center gap-3">
-                  <FaFileContract className="text-blue-600 text-xl" />
-                  <h2 className="text-xl sm:text-2xl font-black text-neutral-900">Your Data Rights</h2>
+                  <FaSync className="text-blue-600 text-xl" />
+                  <h2 className="text-xl sm:text-2xl font-black text-neutral-900">Scheduled Maintenance</h2>
                 </div>
                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  You hold full ownership over your personal data and project assets. You may request full data export or complete account erasure at any time.
+                  Routine infrastructure upgrades occur during low-traffic windows (Sundays 02:00 - 04:00 UTC).
                 </p>
-                <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-xs">
-                  <span className="text-blue-600 font-bold block mb-1 font-mono">Submit Data Requests:</span>
-                  <p className="text-neutral-600 leading-relaxed">Email our privacy officer directly at <span className="text-neutral-900 font-mono font-semibold">privacy@pixperl.com</span> to request account deletion or data exports.</p>
+                <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-xs text-neutral-600">
+                  <strong className="text-neutral-900 block mb-1 font-mono">Advance Notice:</strong>
+                  Clients receive at least 72 hours advance email notice for any scheduled maintenance that requires brief endpoint pauses.
                 </div>
               </motion.div>
             )}
@@ -218,15 +221,15 @@ export default function PrivacyPolicy() {
             <div className="flex items-center gap-3 text-left">
               <FaEnvelope className="text-blue-600 text-xl flex-shrink-0" />
               <div>
-                <span className="text-neutral-900 font-bold block">HAVE PRIVACY CONCERNS?</span>
-                <span className="text-[10px] text-neutral-500">Reach out to our Data Protection Officer for inquiries.</span>
+                <span className="text-neutral-900 font-bold block">NEED CUSTOM SLA TERMS?</span>
+                <span className="text-[10px] text-neutral-500">Contact our technical sales team for dedicated GPU instances and custom SLAs.</span>
               </div>
             </div>
             <a 
-              href="mailto:privacy@pixperl.com"
+              href="mailto:support@pixperl.com"
               className="w-full sm:w-auto px-5 py-2.5 bg-neutral-900 text-white rounded text-xs font-bold uppercase tracking-wider hover:bg-blue-600 transition-all duration-300 flex items-center justify-center gap-2 flex-shrink-0"
             >
-              Contact DPO
+              Contact Support
             </a>
           </div>
 

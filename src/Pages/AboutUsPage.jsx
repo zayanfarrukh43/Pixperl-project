@@ -48,38 +48,38 @@ export default function AboutUsPage() {
     }
   ];
 
-  const team = [
-    {
-      name: "Zayan Farrukh",
-      role: "Chief Executive Officer - Pix Perl",
-      location: "Karachi, PK",
-      bio: "Directs vision, operational logistics, and site network expansion."
-    },
-    {
-      name: "Muneeb Ali Irfan",
-      role: "Representative - Pix Perl 3D Studio",
-      location: "Karachi, PK",
-      bio: "Manages technical surveillance integrations and studio client relations."
-    },
-    {
-      name: "Zainab Khurram",
-      role: "Chief Executive Officer - Pix Perl",
-      location: "Houston, TX",
-      bio: "Oversees US enterprise growth, partner relations, and regional command operations."
-    },
-    {
-      name: "Muhammad Hamza",
-      role: "Head of Systems Architecture",
-      location: "Karachi, PK",
-      bio: "Leads technical infrastructure development, AI vision models, and streaming network operations."
-    }
-  ];
+  // const team = [
+  //   {
+  //     name: "Zayan Farrukh",
+  //     role: "Chief Executive Officer - Pix Perl",
+  //     location: "Karachi, PK",
+  //     bio: "Directs vision, operational logistics, and site network expansion."
+  //   },
+  //   {
+  //     name: "Muneeb Ali Irfan",
+  //     role: "Representative - Pix Perl 3D Studio",
+  //     location: "Karachi, PK",
+  //     bio: "Manages technical surveillance integrations and studio client relations."
+  //   },
+  //   {
+  //     name: "Zainab Khurram",
+  //     role: "Chief Executive Officer - Pix Perl",
+  //     location: "Houston, TX",
+  //     bio: "Oversees US enterprise growth, partner relations, and regional command operations."
+  //   },
+  //   {
+  //     name: "Muhammad Hamza",
+  //     role: "Head of Systems Architecture",
+  //     location: "Karachi, PK",
+  //     bio: "Leads technical infrastructure development, AI vision models, and streaming network operations."
+  //   }
+  // ];
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-600 selection:text-white antialiased overflow-x-hidden">
       
       {/* HEADER / NAV */}
-      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+      {/* <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between h-16 sm:h-20">
           <a href="/" className="flex items-center gap-2 font-mono font-black text-lg sm:text-xl tracking-wider text-slate-900">
             <FaShieldAlt className="text-blue-600" />
@@ -103,7 +103,7 @@ export default function AboutUsPage() {
             </a>
           </div>
         </div>
-      </header>
+      </header> */}
 
       {/* HERO SECTION */}
       <section className="relative pt-12 sm:pt-20 pb-16 border-b border-slate-200 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-50/50 via-white to-white">
@@ -245,7 +245,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* LEADERSHIP SECTION */}
-      <section className="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
+      {/* <section className="py-16 sm:py-24 bg-slate-50 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-xs font-mono font-extrabold tracking-widest text-blue-600 uppercase">LEADERSHIP</span>
@@ -276,7 +276,7 @@ export default function AboutUsPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* BOTTOM CTA */}
       <section className="py-16 sm:py-20 bg-gradient-to-r from-blue-50 via-white to-blue-50 border-b border-slate-200 text-center">
@@ -301,7 +301,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-white pt-12 pb-8 border-t border-slate-200 font-sans text-slate-600">
+      {/* <footer className="bg-white pt-12 pb-8 border-t border-slate-200 font-sans text-slate-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-200 font-mono text-xs">
           <div className="flex items-center gap-2 font-black text-lg text-slate-900">
             <FaShieldAlt className="text-blue-600" />
@@ -325,7 +325,7 @@ export default function AboutUsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-6 text-center font-mono text-[10px] text-slate-400">
           © {new Date().getFullYear()} PIXPERL 3D STUDIO. ALL RIGHTS RESERVED.
         </div>
-      </footer>
+      </footer> */}
 
     </div>
   );
