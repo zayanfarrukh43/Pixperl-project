@@ -580,13 +580,13 @@ export default function PixPerlPage() {
               className="h-80 sm:h-96 w-full [perspective:1000px] group"
             >
               <div 
-                className={`relative h-full w-full rounded-2xl transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] ${
+                className={`relative h-full w-full rounded-2xl transition-all duration-700 [transform-style:preserve-3d] [-webkit-transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] ${
                   isFlipped ? '[transform:rotateY(180deg)]' : ''
                 }`}
               >
 
                 {/* FRONT CARD */}
-                <div className="absolute inset-0 h-full w-full rounded-2xl bg-white border border-neutral-200 p-6 flex flex-col justify-between [backface-visibility:hidden] shadow-sm group-hover:shadow-xl group-hover:border-blue-400 transition-all duration-300 overflow-hidden">
+                <div className="absolute inset-0 h-full w-full rounded-2xl bg-white border border-neutral-200 p-6 flex flex-col justify-between [backface-visibility:hidden] [webkit-backface-visibility:hidden] [transform:rotateY(0deg)] z-20 shadow-sm group-hover:shadow-xl group-hover:border-blue-400 transition-all duration-300 overflow-hidden">
                   {/* Subtle Front Hover Gradient Glow */}
                   <div className="absolute -inset-full rounded-2xl bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.08),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
@@ -613,7 +613,7 @@ export default function PixPerlPage() {
                 </div>
 
                 {/* BACK CARD */}
-                <div className="absolute inset-0 h-full w-full rounded-2xl bg-gradient-to-br from-neutral-900 via-blue-950 to-blue-900 p-6 text-white flex flex-col justify-between [transform:rotateY(180deg)] [backface-visibility:hidden] shadow-2xl border border-blue-400/20 overflow-hidden">
+                <div className="absolute inset-0 h-full w-full rounded-2xl bg-gradient-to-br from-neutral-900 via-blue-950 to-blue-900 p-6 text-white flex flex-col justify-between [transform:rotateY(180deg)] [backface-visibility:hidden] [webkit-backface-visibility:hidden] z-10 shadow-2xl border border-blue-400/20 overflow-hidden">
                   {/* Ambient Light Accent inside Back Card */}
                   <div className="absolute -top-12 -right-12 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl pointer-events-none" />
                   <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl pointer-events-none" />
