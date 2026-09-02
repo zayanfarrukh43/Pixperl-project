@@ -895,7 +895,7 @@ export default function PixPerlPage() {
                   to="/get-quote"
                   className="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all shadow-lg shadow-blue-600/30 text-sm text-center active:scale-95"
                 >
-                  Get an instant estimate
+                  Request a Quote
                 </Link>
               </div>
 
