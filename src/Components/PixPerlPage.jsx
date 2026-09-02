@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, EffectCoverflow } from 'swiper/modules';
 import { Link } from 'react-router-dom';
-
+import surveillanceImg from "../assets/survellince.avif";
 import {
   FaShoppingCart,
   FaBuilding,
@@ -226,7 +226,7 @@ export default function PixPerlPage() {
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/80 border border-blue-200 rounded-full text-[9px] sm:text-[10px] font-mono font-bold tracking-widest text-blue-900 uppercase mb-4 sm:mb-6 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-blue-600 animate-ping" />
-                PIXPERL 3D STUDIO // LIVE SYSTEM
+                PIXPERL // LIVE SYSTEM
               </div>
 
               <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-black leading-tight sm:leading-none">
@@ -259,17 +259,17 @@ export default function PixPerlPage() {
                 </motion.a>
               </div>
 
-              <div className="mt-8 sm:mt-12 flex items-center gap-4 text-xs font-mono text-neutral-500">
-                <div className="flex items-center gap-1.5">
-                  <FaMapMarkerAlt className="text-blue-600" />
-                  <span>Houston, TX, USA</span>
-                </div>
-                <span>•</span>
-                <div className="flex items-center gap-1.5">
-                  <FaMapMarkerAlt className="text-blue-600" />
-                  <span>Karachi, PK</span>
-                </div>
-              </div>
+              {/* <div className="mt-8 sm:mt-12 flex items-center gap-4 text-xs font-mono text-neutral-500">
+          <div className="flex items-center gap-1.5">
+            <FaMapMarkerAlt className="text-blue-600" />
+            <span>Houston, TX, USA</span>
+          </div>
+          <span>•</span>
+          <div className="flex items-center gap-1.5">
+            <FaMapMarkerAlt className="text-blue-600" />
+            <span>Karachi, PK</span>
+          </div>
+        </div> */}
             </motion.div>
 
             <motion.div
@@ -282,7 +282,7 @@ export default function PixPerlPage() {
 
               <div className="relative w-full h-64 sm:h-80 md:h-96 rounded-2xl bg-white border border-neutral-200 overflow-hidden shadow-xl">
                 <img
-                  src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80&w=1000"
+                  src={surveillanceImg}
                   alt="PixPerl Surveillance Feed"
                   className="w-full h-full object-cover contrast-110 opacity-90 group-hover:scale-105 transition-transform duration-700"
                 />
@@ -303,158 +303,158 @@ export default function PixPerlPage() {
 
       {/* INCIDENT RESPONSE SECTION */}
       <section className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-12 text-neutral-900 border-b border-neutral-200">
-  <div className="max-w-7xl mx-auto">
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start mb-12">
-      <div className="lg:col-span-7">
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight font-mono text-neutral-900 leading-tight">
-          An incident. A call. A button press.{' '}
-          <span className="text-blue-600">
-            Pixperl responds to all of it.
-          </span>
-        </h2>
-      </div>
-      <div className="lg:col-span-5">
-        <p className="text-neutral-600 font-mono text-xs sm:text-sm leading-relaxed">
-          Our mission is to deliver security, operational efficiency, and peace
-          of mind to every business through trained operators, data
-          analytics, and intelligent technology working together, 24/7.
-        </p>
-      </div>
-    </div>
-
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-      {incidentSteps.map((item, idx) => (
-        <div
-          key={idx}
-          className="relative bg-white border border-neutral-200 rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all hover:border-blue-500 hover:shadow-lg"
-        >
-          <div>
-            <div className="flex items-center justify-between mb-4">
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${item.iconBg}`}>
-                {item.icon}
-              </div>
-              <span className={`font-mono text-xs font-bold ${item.badgeColor}`}>
-                {item.step}
-              </span>
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start mb-12">
+            <div className="lg:col-span-7">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight font-mono text-neutral-900 leading-tight">
+                An incident. A call. A button press.{' '}
+                <span className="text-blue-600">
+                  Pixperl responds to all of it.
+                </span>
+              </h2>
             </div>
+            <div className="lg:col-span-5">
+              <p className="text-neutral-600 font-mono text-xs sm:text-sm leading-relaxed">
+                Our mission is to deliver security, operational efficiency, and peace
+                of mind to every business through trained operators, data
+                analytics, and intelligent technology working together, 24/7.
+              </p>
+            </div>
+          </div>
 
-            <span className="block font-mono text-[10px] font-bold uppercase tracking-wider text-neutral-500 mb-1.5">
-              {item.action}
-            </span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {incidentSteps.map((item, idx) => (
+              <div
+                key={idx}
+                className="relative bg-white border border-neutral-200 rounded-2xl p-5 sm:p-6 flex flex-col justify-between transition-all hover:border-blue-500 hover:shadow-lg"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className={`w-10 h-10 rounded-xl flex items-center justify-center border ${item.iconBg}`}>
+                      {item.icon}
+                    </div>
+                    <span className={`font-mono text-xs font-bold ${item.badgeColor}`}>
+                      {item.step}
+                    </span>
+                  </div>
 
-            <h3 className="text-base sm:text-lg font-mono font-bold text-neutral-900 mb-2 leading-snug">
-              {item.title}
-            </h3>
+                  <span className="block font-mono text-[10px] font-bold uppercase tracking-wider text-neutral-500 mb-1.5">
+                    {item.action}
+                  </span>
 
-            <p className="text-neutral-600 font-mono text-xs leading-relaxed">
-              {item.description}
-            </p>
+                  <h3 className="text-base sm:text-lg font-mono font-bold text-neutral-900 mb-2 leading-snug">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-neutral-600 font-mono text-xs leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* SERVICES SECTION */}
       <section id="services" className="py-12 sm:py-20 bg-neutral-50 border-b border-neutral-200 relative overflow-hidden">
-  {/* Background tech accent pattern */}
-  <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+        {/* Background tech accent pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
 
-    {/* Header with Navigation Controls */}
-    <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4">
-      <div>
-        <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-blue-50 border border-blue-200 rounded-full text-[9px] font-mono font-bold tracking-widest text-blue-700 uppercase mb-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-          CORE CAPABILITIES
-        </div>
-        <h2 className="text-2xl sm:text-3xl font-black text-black tracking-tight">
-          Surveillance Solutions
-        </h2>
-      </div>
-
-      <div className="flex items-center gap-3">
-        <span className="text-neutral-400 font-mono text-[11px] hidden sm:inline">
-          Swipe or navigate →
-        </span>
-        {/* Custom Navigation Controls */}
-        <div className="flex items-center gap-1.5">
-          <button 
-            id="swiper-prev"
-            aria-label="Previous Slide"
-            className="w-9 h-9 rounded-xl border border-neutral-200 bg-white flex items-center justify-center text-neutral-600 hover:text-blue-600 hover:border-blue-300 hover:shadow-sm active:scale-95 transition-all"
-          >
-            ←
-          </button>
-          <button 
-            id="swiper-next"
-            aria-label="Next Slide"
-            className="w-9 h-9 rounded-xl border border-neutral-200 bg-white flex items-center justify-center text-neutral-600 hover:text-blue-600 hover:border-blue-300 hover:shadow-sm active:scale-95 transition-all"
-          >
-            →
-          </button>
-        </div>
-      </div>
-    </div>
-
-    {/* Swiper Slider */}
-    <Swiper
-      modules={[Autoplay, Navigation]}
-      navigation={{
-        prevEl: '#swiper-prev',
-        nextEl: '#swiper-next',
-      }}
-      spaceBetween={16}
-      slidesPerView={1}
-      autoplay={{ delay: 4000, disableOnInteraction: false }}
-      breakpoints={{
-        640: { slidesPerView: 2, spaceBetween: 20 },
-        1024: { slidesPerView: 3, spaceBetween: 24 },
-      }}
-      className="pb-4 !overflow-visible"
-    >
-      {services.map((s, idx) => {
-        const ServiceIcon = s.icon;
-        return (
-          <SwiperSlide key={s.id || idx} className="h-auto">
-            <div className="h-full p-6 sm:p-7 bg-white border border-neutral-200/80 rounded-2xl hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 flex flex-col justify-between group min-h-[250px] sm:min-h-[280px]">
-              <div>
-                <div className="flex justify-between items-center mb-4">
-                  <span className="font-mono text-[10px] font-bold tracking-widest text-blue-600 bg-blue-50/80 border border-blue-100 px-2 py-0.5 rounded">
-                    {s.tag}
-                  </span>
-                  <div className="w-8 h-8 rounded-lg bg-neutral-50 border border-neutral-100 flex items-center justify-center text-neutral-400 group-hover:text-blue-600 group-hover:bg-blue-50 group-hover:border-blue-200 transition-all">
-                    <ServiceIcon size={16} />
-                  </div>
-                </div>
-
-                <h3 className="text-base sm:text-lg font-bold text-black group-hover:text-blue-600 transition-colors mb-2">
-                  {s.title}
-                </h3>
-                <p className="text-xs text-neutral-600 leading-relaxed font-normal">
-                  {s.desc}
-                </p>
+          {/* Header with Navigation Controls */}
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12 gap-4">
+            <div>
+              <div className="inline-flex items-center gap-2 px-2.5 py-0.5 bg-blue-50 border border-blue-200 rounded-full text-[9px] font-mono font-bold tracking-widest text-blue-700 uppercase mb-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+                CORE CAPABILITIES
               </div>
-
-              <a
-                href={s.quoteUrl || QUOTE_LINK}
-                className="pt-4 mt-6 border-t border-neutral-100 flex items-center justify-between text-xs font-mono font-bold text-neutral-500 group-hover:text-blue-600 transition-colors cursor-pointer"
-              >
-                <span className="tracking-wider">REQUEST QUOTE</span>
-                <div className="w-6 h-6 rounded-md bg-neutral-100 group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center transition-all">
-                  <span className="transform group-hover:translate-x-0.5 transition-transform text-[10px]">→</span>
-                </div>
-              </a>
+              <h2 className="text-2xl sm:text-3xl font-black text-black tracking-tight">
+                Surveillance Solutions
+              </h2>
             </div>
-          </SwiperSlide>
-        );
-      })}
-    </Swiper>
 
-  </div>
-</section>
+            <div className="flex items-center gap-3">
+              <span className="text-neutral-400 font-mono text-[11px] hidden sm:inline">
+                Swipe or navigate →
+              </span>
+              {/* Custom Navigation Controls */}
+              <div className="flex items-center gap-1.5">
+                <button
+                  id="swiper-prev"
+                  aria-label="Previous Slide"
+                  className="w-9 h-9 rounded-xl border border-neutral-200 bg-white flex items-center justify-center text-neutral-600 hover:text-blue-600 hover:border-blue-300 hover:shadow-sm active:scale-95 transition-all"
+                >
+                  ←
+                </button>
+                <button
+                  id="swiper-next"
+                  aria-label="Next Slide"
+                  className="w-9 h-9 rounded-xl border border-neutral-200 bg-white flex items-center justify-center text-neutral-600 hover:text-blue-600 hover:border-blue-300 hover:shadow-sm active:scale-95 transition-all"
+                >
+                  →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Swiper Slider */}
+          <Swiper
+            modules={[Autoplay, Navigation]}
+            navigation={{
+              prevEl: '#swiper-prev',
+              nextEl: '#swiper-next',
+            }}
+            spaceBetween={16}
+            slidesPerView={1}
+            autoplay={{ delay: 4000, disableOnInteraction: false }}
+            breakpoints={{
+              640: { slidesPerView: 2, spaceBetween: 20 },
+              1024: { slidesPerView: 3, spaceBetween: 24 },
+            }}
+            className="pb-4 !overflow-visible"
+          >
+            {services.map((s, idx) => {
+              const ServiceIcon = s.icon;
+              return (
+                <SwiperSlide key={s.id || idx} className="h-auto">
+                  <div className="h-full p-6 sm:p-7 bg-white border border-neutral-200/80 rounded-2xl hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 flex flex-col justify-between group min-h-[250px] sm:min-h-[280px]">
+                    <div>
+                      <div className="flex justify-between items-center mb-4">
+                        <span className="font-mono text-[10px] font-bold tracking-widest text-blue-600 bg-blue-50/80 border border-blue-100 px-2 py-0.5 rounded">
+                          {s.tag}
+                        </span>
+                        <div className="w-8 h-8 rounded-lg bg-neutral-50 border border-neutral-100 flex items-center justify-center text-neutral-400 group-hover:text-blue-600 group-hover:bg-blue-50 group-hover:border-blue-200 transition-all">
+                          <ServiceIcon size={16} />
+                        </div>
+                      </div>
+
+                      <h3 className="text-base sm:text-lg font-bold text-black group-hover:text-blue-600 transition-colors mb-2">
+                        {s.title}
+                      </h3>
+                      <p className="text-xs text-neutral-600 leading-relaxed font-normal">
+                        {s.desc}
+                      </p>
+                    </div>
+
+                    <a
+                      href={s.quoteUrl || QUOTE_LINK}
+                      className="pt-4 mt-6 border-t border-neutral-100 flex items-center justify-between text-xs font-mono font-bold text-neutral-500 group-hover:text-blue-600 transition-colors cursor-pointer"
+                    >
+                      <span className="tracking-wider">REQUEST QUOTE</span>
+                      <div className="w-6 h-6 rounded-md bg-neutral-100 group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center transition-all">
+                        <span className="transform group-hover:translate-x-0.5 transition-transform text-[10px]">→</span>
+                      </div>
+                    </a>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+
+        </div>
+      </section>
 
       {/* CLIENTS SECTION */}
       <section id="clients" className="py-16 sm:py-28 bg-white border-b border-neutral-200 relative overflow-hidden">
@@ -546,173 +546,172 @@ export default function PixPerlPage() {
       </section>
 
       {/* METHODOLOGY SECTION */}
-<section id="process" className="py-16 sm:py-28 bg-neutral-50 border-b border-neutral-200 relative overflow-hidden">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+      <section id="process" className="py-16 sm:py-28 bg-neutral-50 border-b border-neutral-200 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
 
-    {/* Header */}
-    <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-20">
-      <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/80 border border-blue-200 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-blue-800 uppercase mb-3">
-        METHODOLOGY & EXECUTION PIPELINE
-      </div>
-      <h2 className="text-2xl sm:text-4xl font-black text-black tracking-tight">How We Operate</h2>
-      <p className="mt-3 text-neutral-600 text-xs sm:text-sm leading-relaxed font-normal">
-        Hover on desktop or tap <span className="text-blue-600 font-mono font-bold">See Details</span> on mobile to view complete operational requirements and key deliverables.
-      </p>
-    </div>
-
-    {/* Pipeline Grid */}
-    <div className="relative">
-      {/* Background Pipeline Connector Line */}
-      <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent -translate-y-12 z-0" />
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
-        {methodologySteps.map((st, idx) => {
-          const StepIcon = st.icon;
-          const isFlipped = !!flippedCards[idx];
-
-          return (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.12 }}
-              className="h-80 sm:h-96 w-full [perspective:1000px] group"
-            >
-              <div 
-                className={`relative h-full w-full rounded-2xl transition-all duration-700 [transform-style:preserve-3d] [-webkit-transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] ${
-                  isFlipped ? '[transform:rotateY(180deg)]' : ''
-                }`}
-              >
-
-                {/* FRONT CARD */}
-                <div className="absolute inset-0 h-full w-full rounded-2xl bg-white border border-neutral-200 p-6 flex flex-col justify-between [backface-visibility:hidden] [webkit-backface-visibility:hidden] [transform:rotateY(0deg)] z-20 shadow-sm group-hover:shadow-xl group-hover:border-blue-400 transition-all duration-300 overflow-hidden">
-                  {/* Subtle Front Hover Gradient Glow */}
-                  <div className="absolute -inset-full rounded-2xl bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.08),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-                  <div className="relative z-10">
-                    <div className="flex justify-between items-center mb-4">
-                      <span className="font-mono text-2xl font-black text-blue-600 tracking-tighter">{st.num}</span>
-                      <div className="w-9 h-9 rounded-xl bg-neutral-50 border border-neutral-100 flex items-center justify-center text-neutral-400 group-hover:text-blue-600 group-hover:border-blue-200 group-hover:bg-blue-50 transition-all">
-                        <StepIcon size={18} />
-                      </div>
-                    </div>
-                    <span className="text-[9px] font-mono font-bold text-blue-700 uppercase tracking-widest block mb-1">{st.phase}</span>
-                    <h3 className="text-base font-bold text-black mb-2 leading-snug">{st.title}</h3>
-                    <p className="text-xs text-neutral-600 leading-relaxed font-normal">{st.desc}</p>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => toggleCardFlip(idx)}
-                    className="relative z-10 lg:hidden mt-4 py-2 px-3 bg-blue-50 border border-blue-200 text-blue-800 rounded-lg text-xs font-mono font-bold flex items-center justify-center gap-2 hover:bg-blue-100 transition-colors"
-                  >
-                    <span>See Details</span>
-                    <FaArrowRight size={10} />
-                  </button>
-                </div>
-
-                {/* BACK CARD */}
-                <div className="absolute inset-0 h-full w-full rounded-2xl bg-gradient-to-br from-neutral-900 via-blue-950 to-blue-900 p-6 text-white flex flex-col justify-between [transform:rotateY(180deg)] [backface-visibility:hidden] [webkit-backface-visibility:hidden] z-10 shadow-2xl border border-blue-400/20 overflow-hidden">
-                  {/* Ambient Light Accent inside Back Card */}
-                  <div className="absolute -top-12 -right-12 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl pointer-events-none" />
-                  <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl pointer-events-none" />
-
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-3">
-                      <span className="text-[9px] font-mono font-black tracking-widest text-blue-400 uppercase bg-blue-950/80 border border-blue-800/60 px-2 py-0.5 rounded">
-                        DELIVERABLE
-                      </span>
-                      <span className="font-mono text-xs text-neutral-400">{st.num}</span>
-                    </div>
-
-                    <h4 className="text-base font-black text-white mb-2 leading-snug">{st.deliverable}</h4>
-                    <p className="text-xs text-neutral-300 font-normal leading-relaxed">
-                      Full operational setup, real-time sync, and SLA verified reporting pipelines tailored to your architecture.
-                    </p>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => toggleCardFlip(idx)}
-                    className="relative z-10 lg:hidden mt-4 py-2 px-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-lg text-xs font-mono font-bold flex items-center justify-center gap-2 transition-colors"
-                  >
-                    <FaUndo size={10} />
-                    <span>Flip Back</span>
-                  </button>
-                </div>
-
-              </div>
-            </motion.div>
-          );
-        })}
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<section className="py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 bg-neutral-100/70 border-b border-neutral-200 overflow-hidden">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
-    
-    {/* Left Column: Text & Narrative */}
-    <div className="lg:col-span-5 relative">
-      {/* Background Watermark Accent */}
-      <div className="absolute -top-10 -left-10 sm:-top-12 sm:-left-12 w-60 h-60 sm:w-96 sm:h-96 opacity-10 pointer-events-none select-none z-0">
-        <svg viewBox="0 0 200 200" fill="currentColor" className="w-full h-full text-neutral-900">
-          <path d="M40 30 Q 60 10, 100 20 T 160 50 Q 180 90, 150 140 T 80 180 Q 30 150, 20 100 Z" />
-        </svg>
-      </div>
-
-      <div className="relative z-10 text-left">
-        <div className="inline-flex items-center gap-2 px-2.5 py-1 sm:px-3 sm:py-1 bg-blue-100/80 border border-blue-200 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-blue-800 uppercase mb-3 sm:mb-4">
-          <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-          AI ANALYTICS + HUMAN RESPONSE
-        </div>
-
-        <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 tracking-tight leading-tight mb-3 sm:mb-4">
-          Trusted across <br className="hidden sm:inline" />
-          North America
-        </h2>
-
-        <p className="text-xs sm:text-sm font-mono font-bold text-blue-600 mb-4 sm:mb-6">
-          Real operators. Real-time response.
-        </p>
-
-        <p className="text-xs sm:text-base text-neutral-600 leading-relaxed font-normal">
-          Behind every alert is a trained operator in Pixperl&apos;s command center watching live, verifying in seconds, and acting before damage escalates. AI surfaces the threat; people make the call.
-        </p>
-      </div>
-    </div>
-
-    {/* Right Column: AI Analytics & Threat Detection Bento Grid */}
-    <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5">
-      
-      {/* Top Large Featured Image: Parking Lot / Facility AI Bounding Box Detection */}
-      <div className="sm:col-span-2 relative group overflow-hidden rounded-xl sm:rounded-2xl border border-neutral-200 bg-neutral-950 aspect-[16/10] sm:aspect-[2/1] shadow-md">
-        <img
-          src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&q=80&w=1200"
-          alt="AI Parking Lot Space & Vehicle Detection"
-          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-70"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent" />
-        
-        {/* Simulated Parking Space & Vehicle Detection Overlay Grid */}
-        <div className="absolute inset-3 sm:inset-5 lg:inset-6 flex flex-col justify-between pointer-events-none">
-          <div className="flex items-center justify-between gap-2">
-            <div className="flex items-center gap-1.5 sm:gap-2 bg-neutral-900/90 backdrop-blur-md border border-neutral-700/70 px-2.5 py-1 rounded-md sm:rounded-lg">
-              <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-ping" />
-              <span className="text-[8px] sm:text-[10px] font-mono text-neutral-200 font-bold tracking-wider uppercase">
-                PERIMETER ANALYTICS • 32 ZONES
-              </span>
+          {/* Header */}
+          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-20">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/80 border border-blue-200 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-blue-800 uppercase mb-3">
+              METHODOLOGY & EXECUTION PIPELINE
             </div>
-            <span className="font-mono text-[8px] sm:text-[10px] text-blue-400 bg-blue-950/90 border border-blue-800/80 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded font-bold">
-              LIVE FEED
-            </span>
+            <h2 className="text-2xl sm:text-4xl font-black text-black tracking-tight">How We Operate</h2>
+            <p className="mt-3 text-neutral-600 text-xs sm:text-sm leading-relaxed font-normal">
+              Hover on desktop or tap <span className="text-blue-600 font-mono font-bold">See Details</span> on mobile to view complete operational requirements and key deliverables.
+            </p>
           </div>
 
-          {/* Simulated Bounding Box HUD Elements */}
-          {/* <div className="grid grid-cols-4 gap-1.5 sm:gap-2 opacity-80">
+          {/* Pipeline Grid */}
+          <div className="relative">
+            {/* Background Pipeline Connector Line */}
+            <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent -translate-y-12 z-0" />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
+              {methodologySteps.map((st, idx) => {
+                const StepIcon = st.icon;
+                const isFlipped = !!flippedCards[idx];
+
+                return (
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: idx * 0.12 }}
+                    className="h-80 sm:h-96 w-full [perspective:1000px] group"
+                  >
+                    <div
+                      className={`relative h-full w-full rounded-2xl transition-all duration-700 [transform-style:preserve-3d] [-webkit-transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] ${isFlipped ? '[transform:rotateY(180deg)]' : ''
+                        }`}
+                    >
+
+                      {/* FRONT CARD */}
+                      <div className="absolute inset-0 h-full w-full rounded-2xl bg-white border border-neutral-200 p-6 flex flex-col justify-between [backface-visibility:hidden] [webkit-backface-visibility:hidden] [transform:rotateY(0deg)] z-20 shadow-sm group-hover:shadow-xl group-hover:border-blue-400 transition-all duration-300 overflow-hidden">
+                        {/* Subtle Front Hover Gradient Glow */}
+                        <div className="absolute -inset-full rounded-2xl bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.08),transparent_50%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+                        <div className="relative z-10">
+                          <div className="flex justify-between items-center mb-4">
+                            <span className="font-mono text-2xl font-black text-blue-600 tracking-tighter">{st.num}</span>
+                            <div className="w-9 h-9 rounded-xl bg-neutral-50 border border-neutral-100 flex items-center justify-center text-neutral-400 group-hover:text-blue-600 group-hover:border-blue-200 group-hover:bg-blue-50 transition-all">
+                              <StepIcon size={18} />
+                            </div>
+                          </div>
+                          <span className="text-[9px] font-mono font-bold text-blue-700 uppercase tracking-widest block mb-1">{st.phase}</span>
+                          <h3 className="text-base font-bold text-black mb-2 leading-snug">{st.title}</h3>
+                          <p className="text-xs text-neutral-600 leading-relaxed font-normal">{st.desc}</p>
+                        </div>
+
+                        <button
+                          type="button"
+                          onClick={() => toggleCardFlip(idx)}
+                          className="relative z-10 lg:hidden mt-4 py-2 px-3 bg-blue-50 border border-blue-200 text-blue-800 rounded-lg text-xs font-mono font-bold flex items-center justify-center gap-2 hover:bg-blue-100 transition-colors"
+                        >
+                          <span>See Details</span>
+                          <FaArrowRight size={10} />
+                        </button>
+                      </div>
+
+                      {/* BACK CARD */}
+                      <div className="absolute inset-0 h-full w-full rounded-2xl bg-gradient-to-br from-neutral-900 via-blue-950 to-blue-900 p-6 text-white flex flex-col justify-between [transform:rotateY(180deg)] [backface-visibility:hidden] [webkit-backface-visibility:hidden] z-10 shadow-2xl border border-blue-400/20 overflow-hidden">
+                        {/* Ambient Light Accent inside Back Card */}
+                        <div className="absolute -top-12 -right-12 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl pointer-events-none" />
+                        <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl pointer-events-none" />
+
+                        <div className="relative z-10">
+                          <div className="flex items-center justify-between mb-3">
+                            <span className="text-[9px] font-mono font-black tracking-widest text-blue-400 uppercase bg-blue-950/80 border border-blue-800/60 px-2 py-0.5 rounded">
+                              DELIVERABLE
+                            </span>
+                            <span className="font-mono text-xs text-neutral-400">{st.num}</span>
+                          </div>
+
+                          <h4 className="text-base font-black text-white mb-2 leading-snug">{st.deliverable}</h4>
+                          <p className="text-xs text-neutral-300 font-normal leading-relaxed">
+                            Full operational setup, real-time sync, and SLA verified reporting pipelines tailored to your architecture.
+                          </p>
+                        </div>
+
+                        <button
+                          type="button"
+                          onClick={() => toggleCardFlip(idx)}
+                          className="relative z-10 lg:hidden mt-4 py-2 px-3 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-lg text-xs font-mono font-bold flex items-center justify-center gap-2 transition-colors"
+                        >
+                          <FaUndo size={10} />
+                          <span>Flip Back</span>
+                        </button>
+                      </div>
+
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-12 bg-neutral-100/70 border-b border-neutral-200 overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
+
+          {/* Left Column: Text & Narrative */}
+          <div className="lg:col-span-5 relative">
+            {/* Background Watermark Accent */}
+            <div className="absolute -top-10 -left-10 sm:-top-12 sm:-left-12 w-60 h-60 sm:w-96 sm:h-96 opacity-10 pointer-events-none select-none z-0">
+              <svg viewBox="0 0 200 200" fill="currentColor" className="w-full h-full text-neutral-900">
+                <path d="M40 30 Q 60 10, 100 20 T 160 50 Q 180 90, 150 140 T 80 180 Q 30 150, 20 100 Z" />
+              </svg>
+            </div>
+
+            <div className="relative z-10 text-left">
+              <div className="inline-flex items-center gap-2 px-2.5 py-1 sm:px-3 sm:py-1 bg-blue-100/80 border border-blue-200 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-blue-800 uppercase mb-3 sm:mb-4">
+                <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+                AI ANALYTICS + HUMAN RESPONSE
+              </div>
+
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-neutral-900 tracking-tight leading-tight mb-3 sm:mb-4">
+                Trusted across <br className="hidden sm:inline" />
+                North America
+              </h2>
+
+              <p className="text-xs sm:text-sm font-mono font-bold text-blue-600 mb-4 sm:mb-6">
+                Real operators. Real-time response.
+              </p>
+
+              <p className="text-xs sm:text-base text-neutral-600 leading-relaxed font-normal">
+                Behind every alert is a trained operator in Pixperl&apos;s command center watching live, verifying in seconds, and acting before damage escalates. AI surfaces the threat; people make the call.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column: AI Analytics & Threat Detection Bento Grid */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 lg:gap-5">
+
+            {/* Top Large Featured Image: Parking Lot / Facility AI Bounding Box Detection */}
+            <div className="sm:col-span-2 relative group overflow-hidden rounded-xl sm:rounded-2xl border border-neutral-200 bg-neutral-950 aspect-[16/10] sm:aspect-[2/1] shadow-md">
+              <img
+                src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&q=80&w=1200"
+                alt="AI Parking Lot Space & Vehicle Detection"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-70"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-neutral-950/20 to-transparent" />
+
+              {/* Simulated Parking Space & Vehicle Detection Overlay Grid */}
+              <div className="absolute inset-3 sm:inset-5 lg:inset-6 flex flex-col justify-between pointer-events-none">
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-1.5 sm:gap-2 bg-neutral-900/90 backdrop-blur-md border border-neutral-700/70 px-2.5 py-1 rounded-md sm:rounded-lg">
+                    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-ping" />
+                    <span className="text-[8px] sm:text-[10px] font-mono text-neutral-200 font-bold tracking-wider uppercase">
+                      PERIMETER ANALYTICS • 32 ZONES
+                    </span>
+                  </div>
+                  <span className="font-mono text-[8px] sm:text-[10px] text-blue-400 bg-blue-950/90 border border-blue-800/80 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded font-bold">
+                    LIVE FEED
+                  </span>
+                </div>
+
+                {/* Simulated Bounding Box HUD Elements */}
+                {/* <div className="grid grid-cols-4 gap-1.5 sm:gap-2 opacity-80">
             <div className="border border-emerald-400/80 bg-emerald-500/10 h-7 sm:h-10 rounded flex items-end p-0.5 sm:p-1">
               <span className="text-[7px] sm:text-[8px] font-mono text-emerald-400 font-bold">VACANT</span>
             </div>
@@ -726,59 +725,59 @@ export default function PixPerlPage() {
               <span className="text-[7px] sm:text-[8px] font-mono text-blue-400 font-bold">SCANNING</span>
             </div>
           </div> */}
-        </div>
-      </div>
-
-      {/* Bottom Left Image: Smart City / Overhead Vehicle & Pedestrian Signal Tracking */}
-      <div className="relative group overflow-hidden rounded-xl sm:rounded-2xl border border-neutral-200 bg-neutral-950 aspect-[16/10] sm:aspect-[4/3] shadow-md">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbWLOstBHi-u0llE6dHThWfzHSmdLv_7_zWbsHCJck1w&s=10"
-          alt="Aerial Intelligent Signal & Traffic Tracking"
-          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-75"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent" />
-
-        {/* HUD Overlay for Intersection/Pedestrian Detection */}
-        <div className="absolute inset-0 p-3 sm:p-4 flex flex-col justify-between pointer-events-none">
-          <div className="self-start bg-blue-600/90 text-white font-mono text-[8px] sm:text-[9px] font-bold px-2 py-0.5 rounded backdrop-blur-sm">
-            VEHICLE & PEDESTRIAN DETECTED
-          </div>
-
-          <div className="border border-blue-400/60 bg-blue-950/60 rounded-lg p-1.5 sm:p-2 backdrop-blur-sm">
-            <div className="flex items-center justify-between text-[8px] sm:text-[9px] font-mono text-blue-200 font-bold">
-              <span>INTELLIGENT SIGNALS</span>
-              <span className="text-emerald-400">ACTIVE</span>
+              </div>
             </div>
+
+            {/* Bottom Left Image: Smart City / Overhead Vehicle & Pedestrian Signal Tracking */}
+            <div className="relative group overflow-hidden rounded-xl sm:rounded-2xl border border-neutral-200 bg-neutral-950 aspect-[16/10] sm:aspect-[4/3] shadow-md">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbWLOstBHi-u0llE6dHThWfzHSmdLv_7_zWbsHCJck1w&s=10"
+                alt="Aerial Intelligent Signal & Traffic Tracking"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-75"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/80 via-transparent to-transparent" />
+
+              {/* HUD Overlay for Intersection/Pedestrian Detection */}
+              <div className="absolute inset-0 p-3 sm:p-4 flex flex-col justify-between pointer-events-none">
+                <div className="self-start bg-blue-600/90 text-white font-mono text-[8px] sm:text-[9px] font-bold px-2 py-0.5 rounded backdrop-blur-sm">
+                  VEHICLE & PEDESTRIAN DETECTED
+                </div>
+
+                <div className="border border-blue-400/60 bg-blue-950/60 rounded-lg p-1.5 sm:p-2 backdrop-blur-sm">
+                  <div className="flex items-center justify-between text-[8px] sm:text-[9px] font-mono text-blue-200 font-bold">
+                    <span>INTELLIGENT SIGNALS</span>
+                    <span className="text-emerald-400">ACTIVE</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Right Image: Intruder Detection & Mobile App Sync */}
+            <div className="relative group overflow-hidden rounded-xl sm:rounded-2xl border border-neutral-200 bg-neutral-950 aspect-[16/10] sm:aspect-[4/3] shadow-md">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFsI5VfSlYGFtigGLhx6iH2FeL7Yz1H3GXL_o_IGiEEA&s=10"
+                alt="Outdoor Camera Intruder Detection and Mobile Sync"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-75"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-transparent to-transparent" />
+
+              {/* Security Alert Badge */}
+              <div className="absolute inset-0 p-3 sm:p-4 flex flex-col justify-between pointer-events-none">
+                <div className="self-end flex items-center gap-1.5 bg-rose-600 text-white font-mono text-[8px] sm:text-[9px] font-bold px-2 py-0.5 rounded animate-pulse">
+                  <span>INTRUSION ALERT</span>
+                </div>
+
+                <div className="flex items-center justify-between text-[9px] sm:text-[10px] font-mono text-neutral-300 font-medium">
+                  <span className="text-blue-400 font-bold">INSTANT MOBILE SYNC</span>
+                  <span className="w-2 h-2 rounded-full bg-blue-500" />
+                </div>
+              </div>
+            </div>
+
           </div>
+
         </div>
-      </div>
-
-      {/* Bottom Right Image: Intruder Detection & Mobile App Sync */}
-      <div className="relative group overflow-hidden rounded-xl sm:rounded-2xl border border-neutral-200 bg-neutral-950 aspect-[16/10] sm:aspect-[4/3] shadow-md">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFsI5VfSlYGFtigGLhx6iH2FeL7Yz1H3GXL_o_IGiEEA&s=10"
-          alt="Outdoor Camera Intruder Detection and Mobile Sync"
-          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 opacity-75"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-transparent to-transparent" />
-
-        {/* Security Alert Badge */}
-        <div className="absolute inset-0 p-3 sm:p-4 flex flex-col justify-between pointer-events-none">
-          <div className="self-end flex items-center gap-1.5 bg-rose-600 text-white font-mono text-[8px] sm:text-[9px] font-bold px-2 py-0.5 rounded animate-pulse">
-            <span>INTRUSION ALERT</span>
-          </div>
-
-          <div className="flex items-center justify-between text-[9px] sm:text-[10px] font-mono text-neutral-300 font-medium">
-            <span className="text-blue-400 font-bold">INSTANT MOBILE SYNC</span>
-            <span className="w-2 h-2 rounded-full bg-blue-500" />
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-</section>
+      </section>
 
       {/* OFFICES SECTION */}
       <section id="offices" className="py-12 sm:py-20 lg:py-28 bg-neutral-50 border-b border-neutral-200 relative overflow-hidden">
@@ -855,59 +854,59 @@ export default function PixPerlPage() {
         </div>
       </section>
 
-<section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-12 bg-white">
-      <div className="max-w-7xl mx-auto">
-        <div className="relative overflow-hidden rounded-3xl bg-neutral-950 text-white min-h-[440px] sm:min-h-[500px] flex items-center">
-          
-          {/* Background Image & Dual-Layer Ambient Overlay */}
-          <div className="absolute inset-0 z-0">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRByKnoQ8-PILL5EcPP41xDnJNaX9MZAs0UHSjLO3-sQA&s=10"
-              alt="Pixperl Live Dispatch & Command Team"
-              className="w-full h-full object-cover object-right lg:object-center opacity-45 mix-blend-luminosity"
-            />
-            {/* Responsive Left-to-Right gradient overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/90 md:via-neutral-950/75 to-transparent" />
-            {/* Subtle Blue Glow Accent */}
-            <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-          </div>
+      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-12 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative overflow-hidden rounded-3xl bg-neutral-950 text-white min-h-[440px] sm:min-h-[500px] flex items-center">
 
-          {/* Content Container */}
-          <div className="relative z-10 max-w-2xl p-6 sm:p-12 lg:p-16">
-            
-            {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-950/80 border border-blue-800/60 rounded-full text-[10px] font-mono font-bold tracking-widest text-blue-400 uppercase mb-4 sm:mb-6 backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-              LIVE OPERATOR SUPPORT
+            {/* Background Image & Dual-Layer Ambient Overlay */}
+            <div className="absolute inset-0 z-0">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRByKnoQ8-PILL5EcPP41xDnJNaX9MZAs0UHSjLO3-sQA&s=10"
+                alt="Pixperl Live Dispatch & Command Team"
+                className="w-full h-full object-cover object-right lg:object-center opacity-45 mix-blend-luminosity"
+              />
+              {/* Responsive Left-to-Right gradient overlay for text readability */}
+              <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/90 md:via-neutral-950/75 to-transparent" />
+              {/* Subtle Blue Glow Accent */}
+              <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
             </div>
 
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-4 sm:mb-6">
-              Be the reason <br className="hidden sm:inline" />
-              nothing happened.
-            </h2>
+            {/* Content Container */}
+            <div className="relative z-10 max-w-2xl p-6 sm:p-12 lg:p-16">
 
-            <p className="text-sm sm:text-lg text-neutral-300 font-normal mb-8 sm:mb-10 max-w-lg leading-relaxed">
-              Pixperl detects, verifies, and responds before damage escalates.
-            </p>
+              {/* Status Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-950/80 border border-blue-800/60 rounded-full text-[10px] font-mono font-bold tracking-widest text-blue-400 uppercase mb-4 sm:mb-6 backdrop-blur-md">
+                <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                LIVE OPERATOR SUPPORT
+              </div>
 
-            {/* Action Button linked to /quote route */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-4">
-              <Link
-                to="/get-quote"
-                className="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all shadow-lg shadow-blue-600/30 text-sm text-center active:scale-95"
-              >
-                Get an instant estimate
-              </Link>
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-4 sm:mb-6">
+                Be the reason <br className="hidden sm:inline" />
+                nothing happened.
+              </h2>
+
+              <p className="text-sm sm:text-lg text-neutral-300 font-normal mb-8 sm:mb-10 max-w-lg leading-relaxed">
+                Pixperl detects, verifies, and responds before damage escalates.
+              </p>
+
+              {/* Action Button linked to /quote route */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-4">
+                <Link
+                  to="/get-quote"
+                  className="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all shadow-lg shadow-blue-600/30 text-sm text-center active:scale-95"
+                >
+                  Get an instant estimate
+                </Link>
+              </div>
+
+              <p className="text-[11px] sm:text-xs font-mono text-neutral-400 tracking-wide">
+                3 quick questions. No calls, no forms, no obligation.
+              </p>
             </div>
 
-            <p className="text-[11px] sm:text-xs font-mono text-neutral-400 tracking-wide">
-              3 quick questions. No calls, no forms, no obligation.
-            </p>
           </div>
-
         </div>
-      </div>
-    </section>
+      </section>
     </div>
   );
 }

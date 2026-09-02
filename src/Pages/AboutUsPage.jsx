@@ -116,7 +116,7 @@ export default function AboutUsPage() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-200 rounded-full text-[9px] sm:text-[10px] font-mono font-bold tracking-widest text-blue-700 uppercase mb-4 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-blue-600" />
-              ABOUT PIXPERL 3D STUDIO
+              ABOUT PIXPERL SERVICES STUDIO
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight">

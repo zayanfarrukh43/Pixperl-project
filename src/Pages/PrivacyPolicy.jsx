@@ -1,57 +1,26 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { 
   FaUserShield, 
   FaDatabase, 
   FaLock, 
   FaEye, 
   FaFileContract,
-  FaEnvelope,
-  FaArrowLeft,
-  FaShieldAlt
+  FaEnvelope
 } from 'react-icons/fa';
 
 export default function PrivacyPolicy() {
   const [activeTab, setActiveTab] = useState('collection');
 
   const privacyHighlights = [
-    { label: "Data Encryption", value: "AES-256", detail: "At rest & in transit" },
-    { label: "Data Retention", value: "30 Days", detail: "Automatic log purging" },
+    { label: "Data Encryption", value: "AES-256", detail: "At rest & stream in transit" },
+    { label: "Log Retention", value: "30 Days", detail: "Automated stream log purging" },
     { label: "Third-Party Sale", value: "Zero", detail: "Never sold or monetized" },
-    { label: "Compliance Status", value: "GDPR Ready", detail: "Full user data rights" }
+    { label: "Compliance Status", value: "GDPR & SOC2", detail: "Full security & data rights" }
   ];
 
   return (
     <div className="min-h-screen bg-white text-neutral-800 font-sans selection:bg-blue-600 selection:text-white antialiased">
-      
-      {/* HEADER BAR WITH FULL BRAND LOGO & BACK BUTTON */}
-      {/* <header className="border-b border-neutral-200 bg-white/85 backdrop-blur-xl sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
-          
-         
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-600 font-black text-lg shadow-sm group-hover:scale-105 transition-transform duration-300">
-              <FaShieldAlt className="text-blue-600 text-lg" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-neutral-900 text-base sm:text-lg tracking-wider font-mono leading-none">
-                PIX<span className="text-blue-600">PERL</span>
-              </span>
-               </div>
-          </Link>
-
-         
-          <Link 
-            to="/" 
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-neutral-100 border border-neutral-200 text-xs font-mono text-neutral-600 hover:text-blue-600 hover:border-blue-500/30 hover:bg-white transition-all duration-300 group"
-          >
-            <FaArrowLeft className="group-hover:-translate-x-1 transition-transform duration-300 text-blue-600" />
-            BACK TO HOME
-          </Link>
-
-        </div>
-      </header> */}
 
       {/* HERO SECTION */}
       <section className="relative pt-12 pb-16 border-b border-neutral-200 overflow-hidden bg-white">
@@ -74,7 +43,7 @@ export default function PrivacyPolicy() {
               Privacy <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-neutral-800">Policy</span>
             </h1>
             <p className="mt-4 text-neutral-600 text-xs sm:text-sm md:text-base leading-relaxed font-normal">
-              How PixPerl collects, protects, and handles your digital assets and personal details with complete transparency.
+              How PixPerl secures, handles, and protects your surveillance video streams, facility logs, and business details with full regulatory compliance.
             </p>
             
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
@@ -111,9 +80,9 @@ export default function PrivacyPolicy() {
           <div className="flex flex-wrap items-center justify-center gap-2 mb-10 border-b border-neutral-200 pb-4">
             {[
               { id: 'collection', label: '1. Data Collection' },
-              { id: 'usage', label: '2. Asset Usage' },
+              { id: 'usage', label: '2. Feed & Video Usage' },
               { id: 'security', label: '3. Security & Storage' },
-              { id: 'rights', label: '4. Your Rights' }
+              { id: 'rights', label: '4. Your Data Rights' }
             ].map((tab) => (
               <button
                 key={tab.id}
@@ -140,36 +109,36 @@ export default function PrivacyPolicy() {
                   <h2 className="text-xl sm:text-2xl font-black text-neutral-900">Information We Collect</h2>
                 </div>
                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  We collect information necessary to deliver 3D visualization, studio rendering, and web services.
+                  We collect data strictly required to deliver 24/7 remote video surveillance, threat monitoring, and command center dispatch operations.
                 </p>
 
                 <div className="space-y-3 font-mono text-xs">
                   <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
-                    <span className="text-blue-600 font-bold block mb-1">Project & Account Data</span>
-                    <p className="text-neutral-600 text-[11px] leading-relaxed">Names, corporate email addresses, billing details, and project briefs submitted through quote request forms.</p>
+                    <span className="text-blue-600 font-bold block mb-1">Account & Facility Credentials</span>
+                    <p className="text-neutral-600 text-[11px] leading-relaxed">Corporate contacts, site addresses, local emergency dispatch contact numbers, and site access protocols.</p>
                   </div>
                   <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
-                    <span className="text-blue-600 font-bold block mb-1">3D Assets & CAD Uploads</span>
-                    <p className="text-neutral-600 text-[11px] leading-relaxed">Proprietary product models, texture files, and scene descriptions provided for rendering.</p>
+                    <span className="text-blue-600 font-bold block mb-1">CCTV & Camera Stream Data</span>
+                    <p className="text-neutral-600 text-[11px] leading-relaxed">Encrypted video feeds, RTSP/ONVIF stream credentials, and motion-triggered event logs provided for live monitoring.</p>
                   </div>
                 </div>
               </motion.div>
             )}
 
-            {/* 2. ASSET USAGE */}
+            {/* 2. FEED & VIDEO USAGE */}
             {activeTab === 'usage' && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} className="space-y-6">
                 <div className="flex items-center gap-3">
                   <FaEye className="text-blue-600 text-xl" />
-                  <h2 className="text-xl sm:text-2xl font-black text-neutral-900">How We Use Your Assets</h2>
+                  <h2 className="text-xl sm:text-2xl font-black text-neutral-900">How We Use Your Surveillance Feeds</h2>
                 </div>
                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  Your uploaded 3D models and creative files remain strictly confidential and are used solely for fulfilling rendering pipelines.
+                  Your live security camera feeds and archived incident clips remain strictly confidential and are accessed exclusively by authorized command center operators.
                 </p>
-                <ul className="list-disc list-inside text-xs text-neutral-600 space-y-2 leading-relaxed">
-                  <li>To compute, render, and refine interactive 3D assets per client specifications.</li>
-                  <li>To provide customer support and process requested quotes.</li>
-                  <li>We strictly do not train public AI models on client CAD files or 3D renders without express permission.</li>
+                <ul className="list-disc list-inside text-xs text-neutral-600 space-y-2 leading-relaxed font-mono">
+                  <li>To provide continuous 24/7 proactive live video guarding and perimeter alarm verification.</li>
+                  <li>To trigger live speaker voice-downs and dispatch emergency law enforcement during active incidents.</li>
+                  <li>We strictly do not sell, stream, or expose client video feeds to unauthorized third parties or public networks.</li>
                 </ul>
               </motion.div>
             )}
@@ -179,31 +148,31 @@ export default function PrivacyPolicy() {
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} className="space-y-6">
                 <div className="flex items-center gap-3">
                   <FaLock className="text-blue-600 text-xl" />
-                  <h2 className="text-xl sm:text-2xl font-black text-neutral-900">Security & Encryption</h2>
+                  <h2 className="text-xl sm:text-2xl font-black text-neutral-900">Security & Video Encryption</h2>
                 </div>
                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  All active assets and database entries are encrypted end-to-end using TLS 1.3 in transit and AES-256 at rest.
+                  All stream connections and video cloud backups are encrypted end-to-end using TLS 1.3 in transit and AES-256 at rest.
                 </p>
                 <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-xs text-neutral-600 font-mono">
-                  <strong className="text-neutral-900 block mb-1">Asset Purge Guarantee:</strong>
-                  Temporary render cache files are permanently purged from staging servers 30 days after project delivery.
+                  <strong className="text-neutral-900 block mb-1">Automated Video Purge Policy:</strong>
+                  Routine monitoring logs and non-incident video recordings are automatically purged from primary servers after 30 days unless extended retention is requested for legal audits.
                 </div>
               </motion.div>
             )}
 
-            {/* 4. YOUR RIGHTS */}
+            {/* 4. YOUR DATA RIGHTS */}
             {activeTab === 'rights' && (
               <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.3 }} className="space-y-6">
                 <div className="flex items-center gap-3">
                   <FaFileContract className="text-blue-600 text-xl" />
-                  <h2 className="text-xl sm:text-2xl font-black text-neutral-900">Your Data Rights</h2>
+                  <h2 className="text-xl sm:text-2xl font-black text-neutral-900">Your Data Ownership & Rights</h2>
                 </div>
                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  You hold full ownership over your personal data and project assets. You may request full data export or complete account erasure at any time.
+                  Clients retain 100% ownership over all video footage and site logs. You may request specific incident clip exports, stream credential revocation, or account deletion at any time.
                 </p>
                 <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-xs">
-                  <span className="text-blue-600 font-bold block mb-1 font-mono">Submit Data Requests:</span>
-                  <p className="text-neutral-600 leading-relaxed">Email our privacy officer directly at <span className="text-neutral-900 font-mono font-semibold">privacy@pixperl.com</span> to request account deletion or data exports.</p>
+                  <span className="text-blue-600 font-bold block mb-1 font-mono">Submit Data & Video Requests:</span>
+                  <p className="text-neutral-600 leading-relaxed">Email our Data Protection Officer directly at <span className="text-neutral-900 font-mono font-semibold">info@pixperl.com</span> to request footage exports or security configuration changes.</p>
                 </div>
               </motion.div>
             )}
@@ -215,12 +184,12 @@ export default function PrivacyPolicy() {
             <div className="flex items-center gap-3 text-left">
               <FaEnvelope className="text-blue-600 text-xl flex-shrink-0" />
               <div>
-                <span className="text-neutral-900 font-bold block">HAVE PRIVACY CONCERNS?</span>
+                <span className="text-neutral-900 font-bold block">HAVE PRIVACY OR SECURITY CONCERNS?</span>
                 <span className="text-[10px] text-neutral-500">Reach out to our Data Protection Officer for inquiries.</span>
               </div>
             </div>
             <a 
-              href="mailto:privacy@pixperl.com"
+              href="mailto:info@pixperl.com"
               className="w-full sm:w-auto px-5 py-2.5 bg-neutral-900 text-white rounded text-xs font-bold uppercase tracking-wider hover:bg-blue-600 transition-all duration-300 flex items-center justify-center gap-2 flex-shrink-0"
             >
               Contact DPO

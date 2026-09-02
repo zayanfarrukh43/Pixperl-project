@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  FaIndustry, 
-  FaCubes, 
+  FaShieldAlt, 
+  FaVideo, 
   FaShoppingBag, 
   FaBuilding, 
   FaCar, 
-  FaGamepad, 
+  FaHardHat, 
   FaArrowRight, 
   FaCheckCircle,
   FaCloud,          // Vape / Smoke Shop
@@ -23,136 +23,136 @@ export default function IndustriesPage() {
       id: 'ecommerce',
       icon: FaShoppingBag,
       title: 'E-Commerce & Retail',
-      tagline: 'Interactive 3D configurators & ultra-realistic product renders',
-      description: 'Transform online shopping experiences with dynamic 3D asset viewports, AR previewing, and photorealistic CGI visuals that boost conversion rates and minimize returns.',
+      tagline: 'Loss prevention & inventory protection surveillance',
+      description: 'Protect high-value fulfillment centers, retail storefronts, and warehouses with 24/7 proactive live video monitoring, organized access logging, and instant threat response.',
       stats: [
-        { value: '40%', label: 'Conversion Boost' },
-        { value: '30%', label: 'Lower Return Rates' }
+        { value: '24/7', label: 'Live Monitoring' },
+        { value: '99.9%', label: 'Uptime Reliability' }
       ],
       deliverables: [
-        'Web3D & WebGL Product Viewers',
-        'Augmented Reality (AR) USDZ / GLTF Files',
-        '360° Interactive Product Spinners',
-        'Batch Photorealistic CGI Still Renders'
+        'Real-Time CCTV Stream Integration',
+        'Loss Prevention & Shrinkage Analytics',
+        'Automated Perimeter Breach Alerts',
+        'Incident Archiving & SLA Reports'
       ]
     },
     {
       id: 'vape-smoke',
       icon: FaCloud,
       title: 'Vape & Smoke Shops',
-      tagline: 'Photorealistic hardware renders & packaging visualization',
-      description: 'Showcase e-liquid bottles, vape hardware mods, disposables, and glass accessories with hyper-realistic liquid rendering, metallic shaders, and compliant digital packaging mocks.',
+      tagline: 'High-risk retail surveillance & after-hours security',
+      description: 'Mitigate smash-and-grab risks and point-of-sale theft with dedicated live remote monitoring, instant audio talk-back deterrents, and age-compliance auditing.',
       stats: [
-        { value: '100%', label: 'Label Accuracy' },
-        { value: '360°', label: 'Device Spinners' }
+        { value: '< 10s', label: 'Alert Dispatch' },
+        { value: '100%', label: 'Store Coverage' }
       ],
       deliverables: [
-        '3D Mod & Tank Hardware Renderings',
-        'Custom E-Liquid Bottle & Label Mockups',
-        'Interactive Vaporizer Color Configurators',
-        'Digital Storefront & POS Visual Assets'
+        'After-Hours Live Guard Monitoring',
+        'POS & Counter Surveillance Feed',
+        'Two-Way Voice Deterrent Audio',
+        'Remote Incident Verification'
       ]
     },
     {
       id: 'grocery',
       icon: FaShoppingBasket,
       title: 'Grocery Stores',
-      tagline: 'Virtual shelf planning & digital produce visualization',
-      description: 'Optimize retail layouts, planograms, and delivery platforms with 3D product models, packaging renders, and immersive virtual grocery aisle walkthroughs.',
+      tagline: 'Multi-aisle monitoring & loading dock perimeter security',
+      description: 'Monitor high-foot-traffic retail spaces, loading bays, and cash registers to prevent shoplifting, unauthorized after-hours entry, and operational bottlenecks.',
       stats: [
-        { value: '99%', label: 'Model Realism' },
-        { value: 'Fast', label: 'Planogram Setup' }
+        { value: '24/7', label: 'Command Center' },
+        { value: '0%', label: 'Blind Spots' }
       ],
       deliverables: [
-        'High-Resolution CPG & Package Renders',
-        'Virtual Planogram & Aisle Visualizers',
-        'Interactive Produce & Fresh Goods Models',
-        'AR Mobile Shopping Previews'
+        'Loading Dock & Storage Security',
+        'Continuous Checkout Counter Oversight',
+        'Perimeter Intrusion Detection',
+        'Daily Security Audit Summaries'
       ]
     },
     {
       id: 'gas-station',
       icon: FaGasPump,
       title: 'Gas Stations',
-      tagline: 'Forecourt architectural CGI & station design concepts',
-      description: 'Visualize station re-branding, fuel canopy architectural models, and integrated pump equipment displays before physical construction begins.',
+      tagline: 'Forecourt surveillance & pump-island threat monitoring',
+      description: 'Secure fuel islands, C-store entrances, and remote registers with real-time camera oversight, license plate recognition, and emergency remote intervention.',
       stats: [
-        { value: '3D CAD', label: 'Ingestion' },
-        { value: '24/7', label: 'Lighting Sims' }
+        { value: 'HD', label: 'Video Feeds' },
+        { value: '24/7', label: 'Live Protection' }
       ],
       deliverables: [
-        'Fuel Station & Canopy Exterior CGI',
-        'Digital Pump & Payment Kiosk Renders',
-        'Site Plan Layouts & Traffic Flow 3D',
-        'Night & Day LED Lighting Simulations'
+        'Forecourt & Fuel Canopy Surveillance',
+        'Drive-Off & License Plate Logging',
+        'Night-Shift Lone Worker Protection',
+        'Instant Law Enforcement Dispatch'
       ]
     },
     {
       id: 'convenience-stores',
       icon: FaStore,
       title: 'Convenience Stores',
-      tagline: 'High-density store design & POS layout optimization',
-      description: 'Max out revenue per square foot with 3D interior floor planning, hot food counter visualization, and interactive grabs-and-go product displays.',
+      tagline: 'Compact storefront remote guarding & incident prevention',
+      description: 'Protect late-night operators and high-risk urban locations with remote command monitoring, panic button integrations, and live vocal warnings.',
       stats: [
-        { value: '+25%', label: 'Floor Space Opt' },
-        { value: 'Real-Time', label: 'Layout Tweaks' }
+        { value: '100%', label: 'Remote Guarding' },
+        { value: 'Real-Time', label: 'Threat Response' }
       ],
       deliverables: [
-        'C-Store Interior Architectural Renders',
-        'Beverage & Snack Cooler Display Models',
-        'Point-of-Sale (POS) Station Mockups',
-        'Interactive Virtual Store Walkthroughs'
+        '24/7 Remote Video Command Center',
+        'POS & Cash Management Oversight',
+        'Live Speaker Voice-Down Intercom',
+        'Cloud Incident Video Archives'
       ]
     },
     {
       id: 'architecture',
       icon: FaBuilding,
-      title: 'Architecture & Real Estate',
-      tagline: 'Immersive BIM visualization & architectural CGI walk-throughs',
-      description: 'Empower real estate developers and architects with photorealistic 3D interior/exterior renderings, VR walkthroughs, and spatial lighting simulations.',
+      title: 'Commercial & Real Estate',
+      tagline: 'Property management & multi-tenant building security',
+      description: 'Safeguard commercial buildings, corporate parks, and residential complexes through intelligent remote access control and real-time perimeter monitoring.',
       stats: [
-        { value: '8K', label: 'Max Render Res' },
-        { value: '100%', label: 'BIM Accuracy' }
+        { value: '100%', label: 'Property Access' },
+        { value: 'SLA', label: 'Verified Service' }
       ],
       deliverables: [
-        'Photorealistic Architectural Renders',
-        'Virtual Property Walkthroughs & VR',
-        '3D Floor Plans & Spatial Layouts',
-        'Exterior Daylight & Night Lighting Sims'
+        'Lobby & Access Control Surveillance',
+        'Parking Garage Perimeter Protection',
+        'Visitor Entry Verification Systems',
+        'Centralized Multi-Site Monitoring'
       ]
     },
     {
       id: 'automotive',
       icon: FaCar,
-      title: 'Automotive & Mobility',
-      tagline: 'Precision CAD rendering & real-time vehicle customizers',
-      description: 'Bring automotive engineering to life with high-fidelity CAD ingestion, real-time material swappers, studio lighting rigs, and marketing-ready CGI scenes.',
+      title: 'Automotive & Dealerships',
+      tagline: 'High-value lot surveillance & perimeter guarding',
+      description: 'Secure open car lots, service bays, and showroom assets against vandalism, catalytic converter theft, and unauthorized vehicle access.',
       stats: [
-        { value: '0.1mm', label: 'CAD Precision' },
-        { value: 'Real-time', label: 'Material Swap' }
+        { value: '360°', label: 'Lot Coverage' },
+        { value: 'Instant', label: 'Alarm Trigger' }
       ],
       deliverables: [
-        'Interactive Vehicle Configurators',
-        'Studio Quality Cinematic Teasers',
-        'Exploded View Technical Animations',
-        'Interior Trim & Material Renderings'
+        'Outdoor Lot Motion-Triggered Monitoring',
+        'After-Hours Thermal & Camera Tracking',
+        'Audio Voice-Down Crime Deterrence',
+        'Service Bay Operational Audit'
       ]
     },
     {
-      id: 'gaming',
-      icon: FaGamepad,
-      title: 'Gaming & Entertainment',
-      tagline: 'Production-ready 3D game assets & environment models',
-      description: 'Accelerate game production pipelines with optimized low-poly/high-poly 3D models, AAA texture maps, character rigs, and real-time environment assets.',
+      id: 'construction',
+      icon: FaHardHat,
+      title: 'Construction Sites',
+      tagline: 'Jobsite surveillance & equipment protection',
+      description: 'Prevent material theft, equipment damage, and unauthorized site entry with solar-powered remote camera units and 24/7 live monitoring operators.',
       stats: [
-        { value: 'PBR', label: '4K Textures' },
-        { value: 'Unreal/Unity', label: 'Ready Pipelines' }
+        { value: '24/7', label: 'Jobsite Guarding' },
+        { value: 'Zero', label: 'Downtime Setup' }
       ],
       deliverables: [
-        'Game-Ready PBR Textured Assets',
-        'Character Modeling & Skeletal Rigging',
-        'Environment & Props Asset Libraries',
-        'Real-Time VFX & Cinematic Cutscenes'
+        'Solar / Mobile Surveillance Integration',
+        'Heavy Equipment & Material Protection',
+        'After-Hours Intrusion Warnings',
+        'Safety Compliance Monitoring'
       ]
     }
   ];
@@ -176,20 +176,20 @@ export default function IndustriesPage() {
             className="text-center max-w-3xl mx-auto"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-neutral-100 border border-neutral-200 rounded-full text-[10px] font-mono font-extrabold tracking-widest text-blue-600 uppercase mb-4">
-              <FaIndustry className="text-blue-600" />
-              TAILORED 3D SOLUTIONS
+              <FaShieldAlt className="text-blue-600" />
+              REMOTE MONITORING & SURVEILLANCE
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-neutral-900 tracking-tight">
-              Industries We <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-neutral-800">Transform</span>
+              Industries We <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-neutral-800">Protect</span>
             </h1>
             <p className="mt-4 text-neutral-600 text-xs sm:text-sm md:text-base leading-relaxed font-normal">
-              From retail & convenience stores to WebGL configurators, AAA game assets, and architectural visualization—discover how PixPerl powers digital transformation across sectors.
+              From retail & convenience chains to commercial real estate and construction sites—discover how PixPerl delivers 24/7 proactive remote monitoring, security command control, and threat mitigation.
             </p>
             
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
               <span className="text-neutral-500">COVERAGE: <span className="text-neutral-800 font-semibold">Global Enterprise & Retail</span></span>
               <span className="text-neutral-300">•</span>
-              <span className="text-neutral-500">PIPELINES: <span className="text-blue-600 font-bold">Unreal Engine / WebGL / Blender</span></span>
+              <span className="text-neutral-500">PIPELINES: <span className="text-blue-600 font-bold">24/7 Live Stream / CCTV Command Center</span></span>
             </div>
           </motion.div>
 
@@ -257,7 +257,7 @@ export default function IndustriesPage() {
               <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <div className="flex items-center gap-2 text-xs font-mono font-bold text-neutral-900 uppercase">
-                    <FaCubes className="text-blue-600" />
+                    <FaVideo className="text-blue-600" />
                     How We Help
                   </div>
                   <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">

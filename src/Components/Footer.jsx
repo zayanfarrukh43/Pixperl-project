@@ -31,7 +31,7 @@ const Footer = () => {
 
           <div className="flex items-center gap-3 pt-2">
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/share/1CHkHu7Tgm/?mibextid=wwXIfr"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -40,7 +40,8 @@ const Footer = () => {
               <FaFacebookF size={13} />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/pixperl_servicesstudio?igsi=eG9xbXpsZDB3Yjh4
+"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -49,7 +50,7 @@ const Footer = () => {
               <FaInstagram size={14} />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/pixperl-services-studio-5b9027281?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -115,7 +116,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] sm:text-xs text-neutral-500">
-        <p>© {new Date().getFullYear()} PIXPERL 3D STUDIO. ALL RIGHTS RESERVED.</p>
+        <p>© {new Date().getFullYear()} PIXPERL SERVICES STUDIO. ALL RIGHTS RESERVED.</p>
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
           <Link to="/sla-documentation" className="hover:text-blue-600 transition-colors">
             SLA Documentation

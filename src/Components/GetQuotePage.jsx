@@ -4,57 +4,57 @@ import { motion, AnimatePresence } from 'framer-motion';
 // Professional SVG Icon Components for Step Options
 const StoreIcon = ({ className }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/>
-    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
-    <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/>
-    <path d="M2 7h20"/>
-    <path d="M22 7v3a2 2 0 0 1-2 2v0a2 2 0 0 1-2-2V7"/>
-    <path d="M18 7v3a2 2 0 0 1-2 2v0a2 2 0 0 1-2-2V7"/>
-    <path d="M14 7v3a2 2 0 0 1-2 2v0a2 2 0 0 1-2-2V7"/>
-    <path d="M10 7v3a2 2 0 0 1-2 2v0a2 2 0 0 1-2-2V7"/>
-    <path d="M6 7v3a2 2 0 0 1-2 2v0a2 2 0 0 1-2-2V7"/>
+    <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
+    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+    <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
+    <path d="M2 7h20" />
+    <path d="M22 7v3a2 2 0 0 1-2 2v0a2 2 0 0 1-2-2V7" />
+    <path d="M18 7v3a2 2 0 0 1-2 2v0a2 2 0 0 1-2-2V7" />
+    <path d="M14 7v3a2 2 0 0 1-2 2v0a2 2 0 0 1-2-2V7" />
+    <path d="M10 7v3a2 2 0 0 1-2 2v0a2 2 0 0 1-2-2V7" />
+    <path d="M6 7v3a2 2 0 0 1-2 2v0a2 2 0 0 1-2-2V7" />
   </svg>
 );
 
 const ConstructionIcon = ({ className }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/>
-    <path d="M9 22v-4h6v4"/>
-    <path d="M8 6h.01"/>
-    <path d="M16 6h.01"/>
-    <path d="M12 6h.01"/>
-    <path d="M12 10h.01"/>
-    <path d="M12 14h.01"/>
-    <path d="M16 10h.01"/>
-    <path d="M16 14h.01"/>
-    <path d="M8 10h.01"/>
-    <path d="M8 14h.01"/>
+    <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
+    <path d="M9 22v-4h6v4" />
+    <path d="M8 6h.01" />
+    <path d="M16 6h.01" />
+    <path d="M12 6h.01" />
+    <path d="M12 10h.01" />
+    <path d="M12 14h.01" />
+    <path d="M16 10h.01" />
+    <path d="M16 14h.01" />
+    <path d="M8 10h.01" />
+    <path d="M8 14h.01" />
   </svg>
 );
 
 const RemoteIcon = ({ className }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/>
-    <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/>
-    <circle cx="12" cy="12" r="2"/>
-    <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/>
-    <path d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1"/>
+    <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9" />
+    <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5" />
+    <circle cx="12" cy="12" r="2" />
+    <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" />
+    <path d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1" />
   </svg>
 );
 
 const ShieldIcon = ({ className }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
-    <path d="m9 12 2 2 4-4"/>
+    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+    <path d="m9 12 2 2 4-4" />
   </svg>
 );
 
 const AnalyticsIcon = ({ className }) => (
   <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M3 3v18h18"/>
-    <path d="M18 17V9"/>
-    <path d="M13 17V5"/>
-    <path d="M8 17v-3"/>
+    <path d="M3 3v18h18" />
+    <path d="M18 17V9" />
+    <path d="M13 17V5" />
+    <path d="M8 17v-3" />
   </svg>
 );
 
@@ -113,7 +113,24 @@ export default function GetQuotePage() {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    if (name === 'phone') {
+      const digits = value.replace(/\D/g, '').slice(0, 10);
+      let formattedPhone = '';
+      if (digits.length > 0) {
+        formattedPhone = `(${digits.slice(0, 3)}`;
+      }
+      if (digits.length >= 4) {
+        formattedPhone += `) ${digits.slice(3, 6)}`;
+      }
+      if (digits.length >= 7) {
+        formattedPhone += `-${digits.slice(6, 10)}`;
+      }
+
+      setFormData((prev) => ({ ...prev, [name]: formattedPhone }));
+    } else {
+      setFormData((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const toggleService = (id) => {
@@ -163,30 +180,10 @@ export default function GetQuotePage() {
 
   return (
     <div className="min-h-screen bg-white text-neutral-800 font-sans selection:bg-blue-600 selection:text-white antialiased overflow-x-hidden">
-      
-      {/* Navigation Header */}
-      {/* <header className="sticky top-0 z-50 bg-white/85 backdrop-blur-xl border-b border-neutral-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="flex items-center justify-between h-14 sm:h-20">
-            <a href="/" className="shrink-0">
-              <PixPerlLogo />
-            </a>
-
-            <div className="flex items-center gap-2 sm:gap-4">
-              <a
-                href="/"
-                className="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider sm:tracking-widest text-neutral-600 hover:text-blue-600 transition-colors py-2"
-              >
-                ← <span className="hidden sm:inline">Back to </span>Home
-              </a>
-            </div>
-          </div>
-        </div>
-      </header> */}
 
       {/* Main Container */}
       <main className="py-6 sm:py-16 md:py-20 px-3.5 sm:px-6 lg:px-12 max-w-5xl mx-auto">
-        
+
         {/* Header Text */}
         <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-neutral-100 border border-neutral-200 rounded-full text-[9px] sm:text-[10px] font-mono font-bold tracking-wider sm:tracking-widest text-blue-600 uppercase mb-3 sm:mb-4">
@@ -233,7 +230,7 @@ export default function GetQuotePage() {
 
         {/* Form Box */}
         <div className="bg-white border border-neutral-200 rounded-xl sm:rounded-2xl p-4 sm:p-8 md:p-10 shadow-xl relative">
-          
+
           <AnimatePresence mode="wait">
             {isSubmitted ? (
               <motion.div
@@ -262,7 +259,7 @@ export default function GetQuotePage() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit}>
-                
+
                 {/* STEP 1: Business Requirements */}
                 {currentStep === 1 && (
                   <motion.div
@@ -291,6 +288,7 @@ export default function GetQuotePage() {
                           <option value="Construction Site">Construction & Building Site</option>
                           <option value="Warehouse">Warehouse & Logistics</option>
                           <option value="Commercial Office">Commercial Real Estate</option>
+                          <option value="Vape & Smoke Shops">Vape & Smoke Shops</option>
                           <option value="Other">Other Enterprise</option>
                         </select>
                       </div>
@@ -380,24 +378,21 @@ export default function GetQuotePage() {
                           <div
                             key={srv.id}
                             onClick={() => toggleService(srv.id)}
-                            className={`p-3.5 sm:p-4 rounded-xl border cursor-pointer transition-all duration-200 flex items-center justify-between gap-3 group ${
-                              isSelected
-                                ? 'bg-blue-50/70 border-blue-600 text-neutral-900 shadow-[0_0_20px_rgba(37,99,235,0.15)]'
-                                : 'bg-white border-neutral-200 text-neutral-600 hover:border-blue-300 hover:bg-blue-50/20'
-                            }`}
+                            className={`p-3.5 sm:p-4 rounded-xl border cursor-pointer transition-all duration-200 flex items-center justify-between gap-3 group ${isSelected
+                              ? 'bg-blue-50/70 border-blue-600 text-neutral-900 shadow-[0_0_20px_rgba(37,99,235,0.15)]'
+                              : 'bg-white border-neutral-200 text-neutral-600 hover:border-blue-300 hover:bg-blue-50/20'
+                              }`}
                           >
                             <div className="flex items-center gap-3.5 min-w-0">
-                              <div className={`p-2 rounded-lg border transition-all duration-300 shrink-0 ${
-                                isSelected 
-                                  ? 'bg-blue-600 border-blue-600 text-white' 
-                                  : 'bg-blue-50 border-blue-200 text-blue-600 group-hover:bg-blue-100'
-                              }`}>
+                              <div className={`p-2 rounded-lg border transition-all duration-300 shrink-0 ${isSelected
+                                ? 'bg-blue-600 border-blue-600 text-white'
+                                : 'bg-blue-50 border-blue-200 text-blue-600 group-hover:bg-blue-100'
+                                }`}>
                                 <IconComponent
-                                  className={`w-5 h-5 transition-all duration-300 ${
-                                    isSelected
-                                      ? 'text-white scale-105'
-                                      : 'text-blue-600 group-hover:scale-105'
-                                  }`}
+                                  className={`w-5 h-5 transition-all duration-300 ${isSelected
+                                    ? 'text-white scale-105'
+                                    : 'text-blue-600 group-hover:scale-105'
+                                    }`}
                                 />
                               </div>
 
@@ -406,11 +401,10 @@ export default function GetQuotePage() {
                               </span>
                             </div>
 
-                            <div className={`w-4 h-4 rounded border flex items-center justify-center text-[10px] font-bold shrink-0 transition-colors ${
-                              isSelected 
-                                ? 'bg-blue-600 text-white border-blue-600' 
-                                : 'border-neutral-300 bg-neutral-100'
-                            }`}>
+                            <div className={`w-4 h-4 rounded border flex items-center justify-center text-[10px] font-bold shrink-0 transition-colors ${isSelected
+                              ? 'bg-blue-600 text-white border-blue-600'
+                              : 'border-neutral-300 bg-neutral-100'
+                              }`}>
                               {isSelected ? '✓' : ''}
                             </div>
                           </div>
@@ -505,7 +499,8 @@ export default function GetQuotePage() {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          placeholder="+1 (713) 000-0000"
+                          placeholder="(713) 000-0000"
+                          maxLength={14}
                           className="w-full bg-neutral-50 border border-neutral-200 rounded-md px-3.5 py-3 text-base sm:text-sm text-neutral-900 focus:border-blue-600 focus:bg-white focus:outline-none transition-colors"
                         />
                       </div>
@@ -558,11 +553,6 @@ export default function GetQuotePage() {
         </div>
 
       </main>
-
-      {/* Footer */}
-      {/* <footer className="border-t border-neutral-200 py-6 text-center text-[10px] sm:text-xs font-mono text-neutral-500 px-4">
-        &copy; {new Date().getFullYear()} PixPerl. All Rights Reserved.
-      </footer> */}
 
     </div>
   );
