@@ -22,11 +22,51 @@ export default function ContactPage() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Process form submission here
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch(
+      'https://pixelperl-backend.vercel.app/api/contact',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(
+        data.message || 'Failed to submit your message.'
+      );
+    }
+
+    console.log('Contact submitted successfully:', data);
+
     setSubmitted(true);
-  };
+
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      company: '',
+      service: 'General Inquiry',
+      message: '',
+    });
+
+  } catch (error) {
+    console.error('Contact form error:', error);
+
+    alert(
+      error.message ||
+      'Something went wrong. Please try again.'
+    );
+  }
+};
 
   const handleChange = (e) => {
     const { name, value } = e.target;
