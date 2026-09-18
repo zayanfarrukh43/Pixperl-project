@@ -212,7 +212,7 @@ export default function ContactPage() {
                   <FaCheckCircle className="text-4xl sm:text-5xl text-emerald-500 mx-auto animate-bounce" />
                   <h3 className="text-xl sm:text-2xl font-mono font-bold text-white uppercase">Message Dispatched</h3>
                   <p className="text-neutral-400 font-mono text-xs sm:text-sm max-w-md mx-auto">
-                    Thank you for reaching out to PIXPERL. A team engineer will review your inquiry and follow up shortly.
+                    Thank you for reaching out to Retailers Surveillance. A team engineer will review your inquiry and follow up shortly.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
