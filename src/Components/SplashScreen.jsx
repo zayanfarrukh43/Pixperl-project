@@ -42,7 +42,7 @@ export default function SplashScreen({ onFinish }) {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="font-mono font-black text-2xl sm:text-3xl tracking-widest text-neutral-900"
           >
-            PIX<span className="text-blue-600">PERL</span>
+            RETAILERS<span className="text-blue-600"> SURVEILLANCE</span>
           </motion.h1>
 
           <motion.p

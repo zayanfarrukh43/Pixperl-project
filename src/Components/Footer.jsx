@@ -17,10 +17,17 @@ const Footer = () => {
 
         {/* Brand Section */}
         <div className="space-y-4 md:col-span-1">
-          <div className="flex items-center gap-2 font-mono font-black text-xl tracking-wider text-neutral-900">
-            <FaShieldAlt className="text-blue-600" />
-            <span>PIXPERL</span>
-          </div>
+          <Link to="/" className="flex items-center gap-2 group">
+            <FaShieldAlt className="text-blue-600 text-xl sm:text-2xl flex-shrink-0" />
+            <div className="flex flex-col sm:flex-row sm:items-baseline gap-0 sm:gap-1.5 font-mono tracking-tight leading-none">
+              <span className="font-black text-base sm:text-lg text-black uppercase">
+                RETAILERS
+              </span>
+              <span className="font-bold text-[10px] sm:text-xs text-blue-600 uppercase tracking-widest">
+                SURVEILLANCE
+              </span>
+            </div>
+          </Link>
           <p className="text-xs leading-relaxed text-neutral-600 font-normal">
             Next-generation 24/7 security management tailored for retail chains and construction operations.
           </p>
@@ -31,29 +38,28 @@ const Footer = () => {
 
           <div className="flex items-center gap-3 pt-2">
             <a
-              href="https://www.facebook.com/share/1CHkHu7Tgm/?mibextid=wwXIfr"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
+              // href="https://www.facebook.com/share/1CHkHu7Tgm/?mibextid=wwXIfr"
+              // target="_blank"
+              // rel="noopener noreferrer"
+              // aria-label="Facebook"
               className="w-8 h-8 rounded bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-600 hover:text-blue-600 hover:border-blue-600/50 transition-colors"
             >
               <FaFacebookF size={13} />
             </a>
             <a
-              href="https://www.instagram.com/pixperl_servicesstudio?igsi=eG9xbXpsZDB3Yjh4
-"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
+              // href="https://www.instagram.com/pixperl_servicesstudio?igsi=eG9xbXpsZDB3Yjh4"
+              // target="_blank"
+              // rel="noopener noreferrer"
+              // aria-label="Instagram"
               className="w-8 h-8 rounded bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-600 hover:text-blue-600 hover:border-blue-600/50 transition-colors"
             >
               <FaInstagram size={14} />
             </a>
             <a
-              href="https://www.linkedin.com/in/pixperl-services-studio-5b9027281?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
+              // href="https://www.linkedin.com/in/pixperl-services-studio-5b9027281?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+              // target="_blank"
+              // rel="noopener noreferrer"
+              // aria-label="LinkedIn"
               className="w-8 h-8 rounded bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-600 hover:text-blue-600 hover:border-blue-600/50 transition-colors"
             >
               <FaLinkedinIn size={13} />
@@ -101,12 +107,12 @@ const Footer = () => {
             <div className="flex items-center gap-2 pt-2">
               <FaEnvelope className="text-blue-600 flex-shrink-0" />
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=info@pixperl.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=info@retailerssurveillance.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-600 transition-colors"
               >
-                info@pixperl.com
+                info@retailerssurveillance.com
               </a>
             </div>
           </div>
@@ -116,7 +122,7 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-[10px] sm:text-xs text-neutral-500">
-        <p>© {new Date().getFullYear()} PIXPERL SERVICES STUDIO. ALL RIGHTS RESERVED.</p>
+        <p>© {new Date().getFullYear()} RETAILERS SURVEILLANCE. ALL RIGHTS RESERVED.</p>
         <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
           <Link to="/sla-documentation" className="hover:text-blue-600 transition-colors">
             SLA Documentation

@@ -43,7 +43,7 @@ export default function PrivacyPolicy() {
               Privacy <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-neutral-800">Policy</span>
             </h1>
             <p className="mt-4 text-neutral-600 text-xs sm:text-sm md:text-base leading-relaxed font-normal">
-              How PixPerl secures, handles, and protects your surveillance video streams, facility logs, and business details with full regulatory compliance.
+              How Retailers Surveillance secures, handles, and protects your surveillance video streams, facility logs, and business details with full regulatory compliance.
             </p>
             
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
@@ -172,7 +172,7 @@ export default function PrivacyPolicy() {
                 </p>
                 <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200 text-xs">
                   <span className="text-blue-600 font-bold block mb-1 font-mono">Submit Data & Video Requests:</span>
-                  <p className="text-neutral-600 leading-relaxed">Email our Data Protection Officer directly at <span className="text-neutral-900 font-mono font-semibold">info@pixperl.com</span> to request footage exports or security configuration changes.</p>
+                  <p className="text-neutral-600 leading-relaxed">Email our Data Protection Officer directly at <span className="text-neutral-900 font-mono font-semibold">info@retailerssurveillance.com</span> to request footage exports or security configuration changes.</p>
                 </div>
               </motion.div>
             )}
@@ -189,7 +189,7 @@ export default function PrivacyPolicy() {
               </div>
             </div>
             <a 
-              href="mailto:info@pixperl.com"
+              href="mailto:info@retailerssurveillance.com"
               className="w-full sm:w-auto px-5 py-2.5 bg-neutral-900 text-white rounded text-xs font-bold uppercase tracking-wider hover:bg-blue-600 transition-all duration-300 flex items-center justify-center gap-2 flex-shrink-0"
             >
               Contact DPO

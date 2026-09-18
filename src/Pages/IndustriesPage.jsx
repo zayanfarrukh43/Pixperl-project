@@ -9,7 +9,7 @@ import {
   FaHardHat, 
   FaArrowRight, 
   FaCheckCircle,
-  FaCloud,          // Vape / Smoke Shop
+  FaCloud,        // Vape / Smoke Shop
   FaShoppingBasket, // Grocery Stores
   FaGasPump,        // Gas Station
   FaStore           // Convenience Stores
@@ -183,7 +183,7 @@ export default function IndustriesPage() {
               Industries We <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-neutral-800">Protect</span>
             </h1>
             <p className="mt-4 text-neutral-600 text-xs sm:text-sm md:text-base leading-relaxed font-normal">
-              From retail & convenience chains to commercial real estate and construction sites—discover how PixPerl delivers 24/7 proactive remote monitoring, security command control, and threat mitigation.
+              From retail & convenience chains to commercial real estate and construction sites—discover how Retailers Surveillance delivers 24/7 proactive remote monitoring, security command control, and threat mitigation.
             </p>
             
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-mono">

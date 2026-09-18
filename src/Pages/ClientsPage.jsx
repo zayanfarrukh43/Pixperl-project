@@ -21,8 +21,8 @@ export default function ClientsPage() {
       category: 'Retail & Commercial Logistics',
       status: 'Active Deployment',
       location: 'Multi-Location Warehouses & Retail Outlets',
-      badge: 'Enterprise Retail',
-      summary: 'Centralized multi-store VMS surveillance protecting inventory, monitoring floor activities, and securing loading docks across multiple branch locations.',
+      badge: 'Retailers Surveillance Partner',
+      summary: 'Centralized multi-store Retailers Surveillance platform protecting inventory, monitoring floor activities, and securing loading docks across multiple branch locations.',
       metrics: [
         { label: 'Active Feeds', value: '32 HD Cameras' },
         { label: 'Storage Retention', value: '60 Days Cloud Sync' },
@@ -43,7 +43,7 @@ export default function ClientsPage() {
         }
       ],
       highlights: [
-        'Synchronized multi-store camera management from a single web dashboard',
+        'Synchronized multi-store camera management via Retailers Surveillance dashboard',
         'Automated perimeter breach alerts during after-hours inventory shifts',
         'Bandwidth-optimized high-definition live streaming for remote management'
       ]
@@ -54,8 +54,8 @@ export default function ClientsPage() {
       category: 'Luxury Residential & Gated Communities',
       status: 'Active Deployment',
       location: 'Residential Developments & Gated Properties',
-      badge: 'Residential Security',
-      summary: 'High-security perimeter monitoring, automated vehicle license plate recognition (ALPR), and gate entry management for luxury residential properties.',
+      badge: 'Retailers Surveillance Secured',
+      summary: 'High-security perimeter monitoring, automated vehicle license plate recognition (ALPR), and gate entry management powered by Retailers Surveillance.',
       metrics: [
         { label: 'Active Feeds', value: '48 Outdoor & Gate Cameras' },
         { label: 'AI Analytics', value: 'ALPR & Tripwire Active' },
@@ -76,7 +76,7 @@ export default function ClientsPage() {
         }
       ],
       highlights: [
-        'Automated gate entry logging connected directly to VMS playback',
+        'Automated gate entry logging connected directly to Retailers Surveillance VMS',
         '24/7 Night-vision infrared perimeter scanning with AI intrusion tracking',
         'Instant security team push notifications upon unauthorized boundary access'
       ]
@@ -99,13 +99,13 @@ export default function ClientsPage() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-200 rounded-full text-[10px] font-mono font-extrabold tracking-widest text-blue-600 uppercase mb-4">
               <FaShieldAlt className="text-blue-600" />
-              CLIENT DEPLOYMENTS & PARTNERS
+              RETAILERS SURVEILLANCE CLIENT DEPLOYMENTS
             </div>
             <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-neutral-900 tracking-tight leading-tight">
-              Trusted Surveillance <span className="text-blue-600">Deployments</span>
+              Trusted Retailers <span className="text-blue-600">Surveillance Deployments</span>
             </h1>
             <p className="mt-3 sm:mt-4 text-neutral-600 text-xs sm:text-sm md:text-base leading-relaxed font-normal px-2">
-              Explore how we empower leading enterprises, retail hubs, and residential developments with high-definition Cloud VMS and AI vision analytics.
+              Explore how Retailers Surveillance empowers leading enterprises, retail hubs, and residential developments with high-definition Cloud VMS and AI vision analytics.
             </p>
           </motion.div>
 
@@ -174,7 +174,7 @@ export default function ClientsPage() {
                   <div>
                     <div className="flex items-center gap-2 text-[10px] sm:text-xs font-mono font-bold text-blue-600 uppercase tracking-wider mb-2">
                       <FaBuilding />
-                      ACTIVE ENTERPRISE CLIENT
+                      RETAILERS SURVEILLANCE ACTIVE DEPLOYMENT
                     </div>
                     <h2 className="text-2xl sm:text-3xl font-black text-neutral-900 font-mono tracking-tight">{currentClientData.name}</h2>
                     <p className="text-xs text-neutral-500 flex items-center gap-1.5 mt-1 font-mono">
@@ -215,9 +215,9 @@ export default function ClientsPage() {
                   <div>
                     <h3 className="text-lg sm:text-xl font-bold text-neutral-900 font-mono uppercase tracking-tight flex items-center gap-2">
                       <FaTv className="text-blue-600 flex-shrink-0" />
-                      <span>Active Camera Feeds & Video Surveillance</span>
+                      <span>Retailers Surveillance Active Camera Feeds</span>
                     </h3>
-                    <p className="text-xs text-neutral-500 mt-0.5">Live feed previews integrated with Cloud VMS infrastructure</p>
+                    <p className="text-xs text-neutral-500 mt-0.5">Live feed previews integrated with Retailers Surveillance VMS platform</p>
                   </div>
                   <span className="self-start sm:self-auto text-[10px] font-mono bg-blue-50 text-blue-600 px-3 py-1 rounded-full border border-blue-200 font-bold">
                     H.265 ENCODED
@@ -263,8 +263,8 @@ export default function ClientsPage() {
                   <span className="text-[10px] font-mono text-blue-400 font-bold uppercase tracking-widest block mb-1">
                     ENTERPRISE INTEGRATION
                   </span>
-                  <h4 className="text-base sm:text-lg md:text-xl font-extrabold">Need Custom Surveillance For Your Business?</h4>
-                  <p className="text-xs text-neutral-400 mt-1 max-w-xl">We connect your IP cameras directly to our unified cloud monitoring dashboard.</p>
+                  <h4 className="text-base sm:text-lg md:text-xl font-extrabold">Need Retailers Surveillance For Your Business?</h4>
+                  <p className="text-xs text-neutral-400 mt-1 max-w-xl">We connect your IP cameras directly to our Retailers Surveillance unified cloud monitoring dashboard.</p>
                 </div>
 
                 <Link 

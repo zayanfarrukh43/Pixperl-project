@@ -116,7 +116,7 @@ export default function AboutUsPage() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-200 rounded-full text-[9px] sm:text-[10px] font-mono font-bold tracking-widest text-blue-700 uppercase mb-4 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-blue-600" />
-              ABOUT PIXPERL SERVICES STUDIO
+              ABOUT RETAILERS SURVEILLANCE
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight">
@@ -127,7 +127,7 @@ export default function AboutUsPage() {
             </h1>
 
             <p className="mt-6 text-slate-600 text-sm sm:text-base leading-relaxed font-normal">
-              PixPerl 3D Studio was founded on a singular directive: transform passive video recording into active, intelligence-driven threat response for modern enterprise sites, retail chains, and commercial operations.
+              Retailers Surveillance was founded on a singular directive: transform passive video recording into active, intelligence-driven threat response for modern enterprise sites, retail chains, and commercial operations.
             </p>
           </motion.div>
 
@@ -159,7 +159,7 @@ export default function AboutUsPage() {
               <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">Proactive Security Built For High-Risk Assets</h2>
               
               <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
-                Standard security cameras are reactive tools—useful only after a theft or breach has already occurred. At PixPerl 3D Studio, we bridge hardware and human oversight to create real-time response infrastructure.
+                Standard security cameras are reactive tools—useful only after a theft or breach has already occurred. At Retailers Surveillance, we bridge hardware and human oversight to create real-time response infrastructure.
               </p>
 
               <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">
@@ -192,10 +192,10 @@ export default function AboutUsPage() {
               </div>
               
               <h3 className="text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">
-                <FaMicrochip className="text-blue-600" /> Powered by PixPerl Neural Core
+                <FaMicrochip className="text-blue-600" /> Powered by Retailers Surveillance Neural Core
               </h3>
               <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
-                Engineered internally by our tech team, <strong>PixPerl Neural Core</strong> combines high-throughput video pipelines, end-to-end encrypted channels, and automated edge analytics that deliver sub-second feeds straight to command monitoring consoles.
+                Engineered internally by our tech team, <strong>Retailers Surveillance Neural Core</strong> combines high-throughput video pipelines, end-to-end encrypted channels, and automated edge analytics that deliver sub-second feeds straight to command monitoring consoles.
               </p>
 
               <div className="p-4 bg-blue-50/50 rounded-lg border border-blue-100 font-mono text-xs text-slate-700">

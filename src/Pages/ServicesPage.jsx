@@ -90,7 +90,7 @@ export default function ServicesPage() {
       subtitle: 'Seamless integration with IP cameras, NVRs, and access control.',
       badge: 'Enterprise',
       heroImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
-      description: 'Upgrade your existing security systems without tearing down existing hardware. Our surveillance solution connects directly with legacy ONVIF-compliant IP cameras, RTSP streams, and physical access control systems.',
+      description: 'Upgrade your existing security systems without tearing down existing hardware. Our Retailers Surveillance solution connects directly with legacy ONVIF-compliant IP cameras, RTSP streams, and physical access control systems.',
       features: [
         'Universal ONVIF & RTSP Camera Compatibility',
         'Integration with Access Control & Alarm Systems',
@@ -123,7 +123,7 @@ export default function ServicesPage() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-200 rounded-full text-[10px] font-mono font-extrabold tracking-widest text-blue-600 uppercase mb-4">
               <FaShieldAlt className="text-blue-600" />
-              SURVEILLANCE & VMS SERVICES
+              RETAILERS SURVEILLANCE & VMS SERVICES
             </div>
             <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-neutral-900 tracking-tight leading-tight">
               Cloud Surveillance & <span className="text-blue-600">Video Intelligence</span>

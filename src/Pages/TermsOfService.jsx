@@ -16,7 +16,7 @@ export default function TermsOfService() {
     { label: "Footage Rights", value: "100% Client", detail: "Full client video ownership" },
     { label: "Payment Terms", value: "Net 30", detail: "Monthly recurring service billing" },
     { label: "Service SLA", value: "99.9% Up", detail: "24/7 Live stream uptime target" },
-    { label: "Governing Law", value: "Delaware, US", detail: "Standard corporate terms" }
+    // { label: "Governing Law", value: "Delaware, US", detail: "Standard corporate terms" }
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function TermsOfService() {
               Terms of <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-neutral-800">Service</span>
             </h1>
             <p className="mt-4 text-neutral-600 text-xs sm:text-sm md:text-base leading-relaxed font-normal">
-              Rules, data ownership rights, surveillance service level commitments, and client operational responsibilities at PixPerl.
+              Rules, data ownership rights, surveillance service level commitments, and client operational responsibilities at Retailers Surveillance.
             </p>
             
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
@@ -109,7 +109,7 @@ export default function TermsOfService() {
                   <h2 className="text-xl sm:text-2xl font-black text-neutral-900">Monitoring Services & Operations</h2>
                 </div>
                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  PixPerl provides 24/7 proactive live video surveillance, virtual perimeter guarding, remote operator audio voice-downs, and emergency law enforcement dispatch integration.
+                  Retailers Surveillance provides 24/7 proactive live video surveillance, virtual perimeter guarding, remote operator audio voice-downs, and emergency law enforcement dispatch integration.
                 </p>
 
                 <div className="space-y-3 font-mono text-xs">
@@ -137,7 +137,7 @@ export default function TermsOfService() {
                 </p>
                 <ul className="list-disc list-inside text-xs text-neutral-600 space-y-2 leading-relaxed font-mono">
                   <li>Client retains full rights to request video clip exports for legal or insurance evidence.</li>
-                  <li>PixPerl retains ownership of proprietary surveillance software, analytics infrastructure, and command center platforms.</li>
+                  <li>Retailers Surveillance retains ownership of proprietary surveillance software, analytics infrastructure, and command center platforms.</li>
                   <li>Video feeds will never be shared, publicly broadcasted, or used for external promotional purposes without explicit written permission.</li>
                 </ul>
               </motion.div>
@@ -189,7 +189,7 @@ export default function TermsOfService() {
               </div>
             </div>
             <a 
-              href="mailto:info@pixperl.com"
+              href="mailto:info@retailerssurveillance.com"
               className="w-full sm:w-auto px-5 py-2.5 bg-neutral-900 text-white rounded text-xs font-bold uppercase tracking-wider hover:bg-blue-600 transition-all duration-300 flex items-center justify-center gap-2 flex-shrink-0"
             >
               Contact Legal

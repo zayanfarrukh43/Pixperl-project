@@ -108,7 +108,7 @@ export default function SLADocumentation() {
                   <h2 className="text-xl sm:text-2xl font-black text-neutral-900">Surveillance System Availability</h2>
                 </div>
                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  PixPerl guarantees 99.9% monthly uptime for all camera stream integrations, remote monitoring endpoints, and cloud archivers.
+                  Retailers Surveillance guarantees 99.9% monthly uptime for all camera stream integrations, remote monitoring endpoints, and cloud archivers.
                 </p>
 
                 <div className="space-y-3 font-mono text-xs">
@@ -193,7 +193,6 @@ export default function SLADocumentation() {
               </div>
             </div>
 
-            {/* Note: Change href to "#contact" if linking to an anchor section instead */}
             <a
               href="/contact"
               className="w-full sm:w-auto px-5 py-2.5 bg-neutral-900 text-white rounded text-xs font-bold uppercase tracking-wider hover:bg-blue-600 transition-all duration-300 flex items-center justify-center gap-2 flex-shrink-0 text-center"

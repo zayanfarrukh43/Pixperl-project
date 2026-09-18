@@ -42,7 +42,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 
 const QUOTE_LINK = "/get-quote";
-
+const SERVICES_LINK = "/services";
 // Helper component for live clock in office locations
 function CityClock({ timeZone }) {
   const [timeStr, setTimeStr] = useState('');
@@ -90,7 +90,7 @@ export default function PixPerlPage() {
 
   const clients = [
     {
-      name: 'BOBO APPLIANCES',
+      name: 'BOBOS APPLIANCES',
       type: 'Retail Chain',
       desc: 'Full-spectrum remote coverage across 12+ high-volume retail locations in Houston, TX.',
       logoText: 'B',
@@ -116,7 +116,7 @@ export default function PixPerlPage() {
       action: 'RECEIVE',
       title: 'Every signal reaches an operator',
       description:
-        'Whether AI detects an anomaly on camera, someone presses an intercom button, or a user calls in directly, a Pixperl operator is always there to receive it, 24/7.',
+        'Whether AI detects an anomaly on camera, someone presses an intercom button, or a user calls in directly, a Retailers Surveillance operator is always there to receive it, 24/7.',
       icon: <FaEye className="text-xl text-blue-600" />,
       iconBg: 'bg-blue-50 border-blue-200',
       badgeColor: 'text-blue-600',
@@ -226,7 +226,7 @@ export default function PixPerlPage() {
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/80 border border-blue-200 rounded-full text-[9px] sm:text-[10px] font-mono font-bold tracking-widest text-blue-900 uppercase mb-4 sm:mb-6 shadow-sm">
                 <span className="w-2 h-2 rounded-full bg-blue-600 animate-ping" />
-                PIXPERL // LIVE SYSTEM
+                RETAILERS SURVEILLANCE // LIVE SYSTEM
               </div>
 
               <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-black leading-tight sm:leading-none">
@@ -244,7 +244,7 @@ export default function PixPerlPage() {
                 <motion.a
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  href="#services"
+                  href={SERVICES_LINK}
                   className="px-6 sm:px-8 py-3.5 bg-black text-white rounded-md hover:bg-blue-600 transition-colors text-center shadow-lg"
                 >
                   Explore Services
@@ -309,7 +309,7 @@ export default function PixPerlPage() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight font-mono text-neutral-900 leading-tight">
                 An incident. A call. A button press.{' '}
                 <span className="text-blue-600">
-                  Pixperl responds to all of it.
+                  Retailers Surveillance responds to all of it.
                 </span>
               </h2>
             </div>
@@ -679,7 +679,7 @@ export default function PixPerlPage() {
               </p>
 
               <p className="text-xs sm:text-base text-neutral-600 leading-relaxed font-normal">
-                Behind every alert is a trained operator in Pixperl&apos;s command center watching live, verifying in seconds, and acting before damage escalates. AI surfaces the threat; people make the call.
+                Behind every alert is a trained operator in Retailers Surveillance&apos;s command center watching live, verifying in seconds, and acting before damage escalates. AI surfaces the threat; people make the call.
               </p>
             </div>
           </div>
@@ -886,7 +886,7 @@ export default function PixPerlPage() {
               </h2>
 
               <p className="text-sm sm:text-lg text-neutral-300 font-normal mb-8 sm:mb-10 max-w-lg leading-relaxed">
-                Pixperl detects, verifies, and responds before damage escalates.
+                Retailers Surveillance detects, verifies, and responds before damage escalates.
               </p>
 
               {/* Action Button linked to /quote route */}

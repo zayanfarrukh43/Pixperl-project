@@ -188,7 +188,7 @@ export default function GetQuotePage() {
         <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-neutral-100 border border-neutral-200 rounded-full text-[9px] sm:text-[10px] font-mono font-bold tracking-wider sm:tracking-widest text-blue-600 uppercase mb-3 sm:mb-4">
             <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-blue-600 animate-ping shrink-0" />
-            <span className="truncate">PIXPERL // ESTIMATOR</span>
+            <span className="truncate"> RETAILERS SURVEILLANCE // ESTIMATOR</span>
           </div>
           <h1 className="text-2xl sm:text-4xl md:text-5xl font-black text-neutral-900 tracking-tight leading-tight">
             Request Custom <br className="hidden sm:inline" />
@@ -243,7 +243,7 @@ export default function GetQuotePage() {
                 </div>
                 <h2 className="text-xl sm:text-3xl font-black text-neutral-900">Quote Request Transmitted</h2>
                 <p className="text-xs sm:text-sm text-neutral-600 max-w-md mx-auto font-normal leading-relaxed px-2">
-                  Thank you, <strong>{formData.fullName}</strong>. Your request for <strong>{formData.companyName || 'your business'}</strong> has been received by PixPerl.
+                  Thank you, <strong>{formData.fullName}</strong>. Your request for <strong>{formData.companyName || 'your business'}</strong> has been received by Retailers Surveillance.
                 </p>
                 <div className="p-3 sm:p-4 bg-neutral-50 rounded-xl border border-neutral-200 text-[11px] sm:text-xs font-mono text-neutral-600 inline-block">
                   TICKET ID: <span className="text-blue-600 font-bold">{ticketId}</span>
