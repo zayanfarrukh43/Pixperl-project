@@ -20,6 +20,7 @@ import PrivacyPolicyPage from './Pages/PrivacyPolicy';
 import TermsOfServicePage from './Pages/TermsOfService';
 import IndustriesPage from './Pages/IndustriesPage';
 import ContactPage from './Pages/ContactPage';
+import FAQ from './Pages/FAQ'; // Import the FAQ page
 
 // Automatically resets scroll position to top on route navigation
 function ScrollToTopOnNavigate() {
@@ -84,6 +85,7 @@ function AnimatedRoutes() {
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/FAQ" element={<FAQ />} /> {/* 4. Added Route for FAQ */}
       </Routes>
 
       {/* Floating Scroll to Top Button */}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { 
   FaShieldAlt, 
   FaVideo, 
@@ -9,10 +10,11 @@ import {
   FaHardHat, 
   FaArrowRight, 
   FaCheckCircle,
-  FaCloud,        // Vape / Smoke Shop
+  FaCloud,          // Vape / Smoke Shop
   FaShoppingBasket, // Grocery Stores
   FaGasPump,        // Gas Station
-  FaStore           // Convenience Stores
+  FaStore,          // Convenience Stores
+  FaWarehouse       // Warehouses & Distribution
 } from 'react-icons/fa';
 
 export default function IndustriesPage() {
@@ -34,6 +36,23 @@ export default function IndustriesPage() {
         'Loss Prevention & Shrinkage Analytics',
         'Automated Perimeter Breach Alerts',
         'Incident Archiving & SLA Reports'
+      ]
+    },
+    {
+      id: 'warehouse',
+      icon: FaWarehouse,
+      title: 'Warehouses & Logistics',
+      tagline: 'Perimeter protection, cargo security & inventory monitoring',
+      description: 'Secure large-scale distribution centers, shipping docks, and storage yards with proactive thermal perimeter monitoring, gate access control, and continuous cargo oversight.',
+      stats: [
+        { value: '100%', label: 'Dock Coverage' },
+        { value: '24/7', label: 'Yard Guarding' }
+      ],
+      deliverables: [
+        'Loading Dock & Freight Bay Surveillance',
+        'Gate House & Truck License Plate Logging',
+        'After-Hours Perimeter Breach Defense',
+        'Inventory Theft & Damage Mitigation'
       ]
     },
     {
@@ -183,7 +202,7 @@ export default function IndustriesPage() {
               Industries We <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-neutral-800">Protect</span>
             </h1>
             <p className="mt-4 text-neutral-600 text-xs sm:text-sm md:text-base leading-relaxed font-normal">
-              From retail & convenience chains to commercial real estate and construction sites—discover how Retailers Surveillance delivers 24/7 proactive remote monitoring, security command control, and threat mitigation.
+              From retail & convenience chains to warehouses, commercial real estate, and construction sites—discover how Retailers Surveillance delivers 24/7 proactive remote monitoring, security command control, and threat mitigation.
             </p>
             
             <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-mono">
@@ -194,7 +213,7 @@ export default function IndustriesPage() {
           </motion.div>
 
           {/* QUICK HIGHLIGHT CARDS GRID */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-4 mt-12 max-w-6xl mx-auto">
             {industries.map((item, idx) => {
               const IconComponent = item.icon;
               return (
@@ -279,6 +298,25 @@ export default function IndustriesPage() {
                     ))}
                   </ul>
                 </div>
+              </div>
+
+              {/* GET QUOTE ACTION BANNER */}
+              <div className="mt-8 pt-6 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between gap-4 bg-neutral-50 -mx-6 sm:-mx-10 -mb-6 sm:-mb-10 p-6 sm:px-10">
+                <div>
+                  <h3 className="text-sm font-bold text-neutral-900 font-mono uppercase">
+                    Need Custom Security For Your {currentData.title}?
+                  </h3>
+                  <p className="text-xs text-neutral-500 mt-0.5 font-sans">
+                    Get a tailored proposal and site evaluation from our security team.
+                  </p>
+                </div>
+                <Link
+                  to="/get-quote"
+                  className="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-neutral-900 text-white rounded-xl text-xs font-bold font-mono uppercase tracking-widest shadow-md hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 flex-shrink-0"
+                >
+                  Get Quote
+                  <FaArrowRight className="text-[10px]" />
+                </Link>
               </div>
 
             </motion.div>

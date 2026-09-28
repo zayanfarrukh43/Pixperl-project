@@ -38,19 +38,20 @@ const Footer = () => {
 
           <div className="flex items-center gap-3 pt-2">
             <a
-              // href="https://www.facebook.com/share/1CHkHu7Tgm/?mibextid=wwXIfr"
-              // target="_blank"
-              // rel="noopener noreferrer"
-              // aria-label="Facebook"
+              href="https://www.facebook.com/share/1FW3KW28RG/?mibextid=wwXIfr
+"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
               className="w-8 h-8 rounded bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-600 hover:text-blue-600 hover:border-blue-600/50 transition-colors"
             >
               <FaFacebookF size={13} />
             </a>
             <a
-              // href="https://www.instagram.com/pixperl_servicesstudio?igsi=eG9xbXpsZDB3Yjh4"
-              // target="_blank"
-              // rel="noopener noreferrer"
-              // aria-label="Instagram"
+              href="https://www.instagram.com/retailerssurveillance?stkn=MWZuc2JxeWhwNms5eg%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
               className="w-8 h-8 rounded bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-600 hover:text-blue-600 hover:border-blue-600/50 transition-colors"
             >
               <FaInstagram size={14} />
@@ -77,6 +78,7 @@ const Footer = () => {
             <li><Link to="/clients" className="hover:text-blue-600 transition-colors">Clients</Link></li>
             <li><Link to="/industries" className="hover:text-blue-600 transition-colors">Industries</Link></li>
             <li><Link to="/contact" className="hover:text-blue-600 transition-colors">Contact</Link></li>
+
           </ul>
         </div>
 
@@ -89,6 +91,7 @@ const Footer = () => {
             <li><a href="#services" className="hover:text-blue-600 transition-colors">Contract Services</a></li>
             <li><a href="#services" className="hover:text-blue-600 transition-colors">Remote Monitoring</a></li>
             <li><a href="#services" className="hover:text-blue-600 transition-colors">Reporting & Analytics</a></li>
+            <li><Link to="/FAQ" className="hover:text-blue-600 transition-colors">Faqs</Link></li>
           </ul>
         </div>
 
