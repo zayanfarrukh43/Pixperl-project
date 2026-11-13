@@ -33,6 +33,11 @@ import {
   FaGlobe,
   FaClock,
   FaNetworkWired,
+  FaUserCheck as FaUserCheckWhy,
+  FaDollarSign,
+  FaVolumeUp,
+  FaBolt,
+  FaFileAlt,
   FaUndo,
   FaUserCheck
 } from 'react-icons/fa';
@@ -87,6 +92,40 @@ export default function PixPerlPage() {
     { title: 'Remote Monitoring', desc: 'Off-site monitoring powered by real-time neural detection and immediate threat escalation.', tag: '04 / REMOTE', icon: FaDesktop },
     { title: 'Reporting & Insights', desc: 'Comprehensive analytical reports to give you complete visibility into security operations.', tag: '05 / ANALYTICS', icon: FaChartLine },
   ];
+
+  const whyLiveFeatures = [
+    {
+      icon: FaUserCheckWhy,
+      title: 'Real People Behind Every Alert',
+      description: 'AI flags the threat and a trained operator confirms it, so you get fewer false alarms and faster action.'
+    },
+    {
+      icon: FaDollarSign,
+      title: 'Costs Less Than On-Site Guards',
+      description: 'One monitored system covers your entire property 24/7 for a fraction of the cost of guard shifts.'
+    },
+    {
+      icon: FaVolumeUp,
+      title: 'Live Voice Deterrence',
+      description: 'Most intruders leave the moment a live operator speaks to them through the on-site speaker.'
+    },
+    {
+      icon: FaBolt,
+      title: 'Faster Police Response',
+      description: 'Verified, in-progress incidents get priority over unconfirmed alarms.'
+    },
+    {
+      icon: FaFileAlt,
+      title: 'Evidence Ready to Hand Over',
+      description: 'Time-stamped clips and incident logs, ready for police, insurance claims or court.'
+    },
+    {
+      icon: FaClock,
+      title: 'No Tired Night Shifts',
+      description: 'Our command centers hand over shifts around the clock, so a fresh operator is always on watch.'
+    }
+  ];
+
 
   const clients = [
     {
@@ -452,6 +491,49 @@ export default function PixPerlPage() {
               );
             })}
           </Swiper>
+
+        </div>
+      </section>
+
+      {/* WHY LIVE MONITORING SECTION */}
+      <section className="py-16 sm:py-24 bg-white text-neutral-800 border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 text-[10px] font-mono font-extrabold tracking-widest text-blue-600 uppercase mb-3">
+              THE DIFFERENCE
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-neutral-900 tracking-tight leading-tight">
+              Why Live Monitoring Beats Recorded Cameras
+            </h2>
+            <p className="mt-4 text-neutral-600 text-sm sm:text-base md:text-lg leading-relaxed font-sans">
+              Recorded cameras show you what went wrong after it happens. Our operators stop incidents while they are happening.
+            </p>
+          </div>
+
+          <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {whyLiveFeatures.map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-6 sm:p-8 rounded-3xl bg-white border border-neutral-200/80 shadow-sm hover:border-blue-500/40 hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-6">
+                      <Icon className="text-lg" />
+                    </div>
+                    <h3 className="text-base sm:text-lg font-bold font-mono text-neutral-900 tracking-tight mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-neutral-600 font-sans leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
 
         </div>
       </section>
@@ -854,54 +936,33 @@ export default function PixPerlPage() {
         </div>
       </section>
 
-      <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-12 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative overflow-hidden rounded-3xl bg-neutral-950 text-white min-h-[440px] sm:min-h-[500px] flex items-center">
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="bg-neutral-950 rounded-3xl p-8 sm:p-12 md:p-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 border border-neutral-800 shadow-2xl">
 
-            {/* Background Image & Dual-Layer Ambient Overlay */}
-            <div className="absolute inset-0 z-0">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRByKnoQ8-PILL5EcPP41xDnJNaX9MZAs0UHSjLO3-sQA&s=10"
-                alt="Pixperl Live Dispatch & Command Team"
-                className="w-full h-full object-cover object-right lg:object-center opacity-45 mix-blend-luminosity"
-              />
-              {/* Responsive Left-to-Right gradient overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/90 md:via-neutral-950/75 to-transparent" />
-              {/* Subtle Blue Glow Accent */}
-              <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-            </div>
-
-            {/* Content Container */}
-            <div className="relative z-10 max-w-2xl p-6 sm:p-12 lg:p-16">
-
-              {/* Status Badge */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-950/80 border border-blue-800/60 rounded-full text-[10px] font-mono font-bold tracking-widest text-blue-400 uppercase mb-4 sm:mb-6 backdrop-blur-md">
-                <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                LIVE OPERATOR SUPPORT
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-neutral-900 border border-neutral-800 rounded-full text-[10px] font-mono font-bold tracking-widest text-blue-500 uppercase mb-5">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                FREE SITE AUDIT
               </div>
 
-              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-4 sm:mb-6">
-                Be the reason <br className="hidden sm:inline" />
-                nothing happened.
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-tight">
+                Get a Free Security Risk Assessment
               </h2>
 
-              <p className="text-sm sm:text-lg text-neutral-300 font-normal mb-8 sm:mb-10 max-w-lg leading-relaxed">
-                Retailers Surveillance detects, verifies, and responds before damage escalates.
+              <p className="mt-4 text-neutral-400 text-xs sm:text-sm md:text-base leading-relaxed font-sans">
+                Tell us about your store or job site. We'll map your blind spots and weak points and show you exactly how live monitoring would protect your business. No cost, no obligation.
               </p>
+            </div>
 
-              {/* Action Button linked to /quote route */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-4">
-                <Link
-                  to="/get-quote"
-                  className="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all shadow-lg shadow-blue-600/30 text-sm text-center active:scale-95"
-                >
-                  Request a Quote
-                </Link>
-              </div>
-
-              <p className="text-[11px] sm:text-xs font-mono text-neutral-400 tracking-wide">
-                3 quick questions. No calls, no forms, no obligation.
-              </p>
+            <div className="flex-shrink-0 w-full md:w-auto">
+              <Link
+                to="/get-quote"
+                className="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl text-xs font-bold font-mono uppercase tracking-widest shadow-lg shadow-blue-600/20 transition-all duration-300"
+              >
+                Request Free Audit
+                <FaArrowRight className="text-[10px]" />
+              </Link>
             </div>
 
           </div>

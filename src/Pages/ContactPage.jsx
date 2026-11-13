@@ -28,51 +28,51 @@ export default function ContactPage() {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
- const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  try {
-    const response = await fetch(
-      'https://pixelperl-backend.vercel.app/api/contact',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+    try {
+      const response = await fetch(
+        'https://pixelperl-backend.vercel.app/api/contact',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          data.message || 'Failed to submit your message.'
+        );
       }
-    );
 
-    const data = await response.json();
+      console.log('Contact submitted successfully:', data);
 
-    if (!response.ok) {
-      throw new Error(
-        data.message || 'Failed to submit your message.'
+      setSubmitted(true);
+
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        service: 'General Inquiry',
+        message: '',
+      });
+
+    } catch (error) {
+      console.error('Contact form error:', error);
+
+      alert(
+        error.message ||
+        'Something went wrong. Please try again.'
       );
     }
-
-    console.log('Contact submitted successfully:', data);
-
-    setSubmitted(true);
-
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      company: '',
-      service: 'General Inquiry',
-      message: '',
-    });
-
-  } catch (error) {
-    console.error('Contact form error:', error);
-
-    alert(
-      error.message ||
-      'Something went wrong. Please try again.'
-    );
-  }
-};
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -240,7 +240,7 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="John Doe"
-                        className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-blue-500 transition-colors"
+                        className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-base sm:text-sm font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-blue-500 transition-colors"
                       />
                     </div>
 
@@ -250,7 +250,7 @@ export default function ContactPage() {
                         Work Email <span className="text-blue-500">*</span>
                       </label>
                       <div className="relative flex items-center">
-                        <span className="absolute left-3.5 text-neutral-500 pointer-events-none text-xs sm:text-sm">
+                        <span className="absolute left-3.5 text-neutral-500 pointer-events-none text-base sm:text-sm">
                           <FaEnvelope />
                         </span>
                         <input
@@ -260,11 +260,11 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="john@company.com"
-                          className="w-full bg-neutral-950 border border-neutral-800 rounded-lg pl-9 sm:pl-10 pr-9 sm:pr-10 py-2.5 sm:py-3 text-xs sm:text-sm font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+                          className="w-full bg-neutral-950 border border-neutral-800 rounded-lg pl-10 sm:pl-10 pr-10 sm:pr-10 py-2.5 sm:py-3 text-base sm:text-sm font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
                         />
                         {/* Live Email Checkmark Indicator */}
                         {isValidEmail(formData.email) && (
-                          <span className="absolute right-3.5 text-emerald-500 text-xs sm:text-sm pointer-events-none">
+                          <span className="absolute right-3.5 text-emerald-500 text-base sm:text-sm pointer-events-none">
                             <FaCheck />
                           </span>
                         )}
@@ -287,7 +287,7 @@ export default function ContactPage() {
                         value={formData.phone}
                         onChange={handleChange}
                         placeholder="(555) 000-0000"
-                        className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-blue-500 transition-colors"
+                        className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-base sm:text-sm font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-blue-500 transition-colors"
                       />
                     </div>
 
@@ -301,7 +301,7 @@ export default function ContactPage() {
                         value={formData.company}
                         onChange={handleChange}
                         placeholder="Acme Corp"
-                        className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-blue-500 transition-colors"
+                        className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-base sm:text-sm font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-blue-500 transition-colors"
                       />
                     </div>
                   </div>
@@ -314,7 +314,7 @@ export default function ContactPage() {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm font-mono text-white focus:outline-none focus:border-blue-500 transition-colors"
+                      className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-base sm:text-sm font-mono text-white focus:outline-none focus:border-blue-500 transition-colors"
                     >
                       <option value="General Inquiry">General Inquiry</option>
                       <option value="Enterprise Architecture">Enterprise Architecture</option>
@@ -335,7 +335,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={handleChange}
                       placeholder="Describe your requirement, timeline, or query..."
-                      className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-sm font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                      className="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-3.5 sm:px-4 py-2.5 sm:py-3 text-base sm:text-sm font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-blue-500 transition-colors resize-none"
                     />
                   </div>
 
