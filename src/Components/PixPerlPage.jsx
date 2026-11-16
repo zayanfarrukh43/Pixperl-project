@@ -4,6 +4,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, EffectCoverflow } from 'swiper/modules';
 import { Link } from 'react-router-dom';
 import surveillanceImg from "../assets/survellince.avif";
+import WhyLiveMonitoring from '../components/WhyLiveMonitoring';
+import IndustriesWeProtect from '../components/IndustriesWeProtect';
+import CoverageArea from '../components/CoverageArea';
+import FAQSection from '../components/FAQSection';
 import {
   FaShoppingCart,
   FaBuilding,
@@ -33,11 +37,6 @@ import {
   FaGlobe,
   FaClock,
   FaNetworkWired,
-  FaUserCheck as FaUserCheckWhy,
-  FaDollarSign,
-  FaVolumeUp,
-  FaBolt,
-  FaFileAlt,
   FaUndo,
   FaUserCheck
 } from 'react-icons/fa';
@@ -93,40 +92,6 @@ export default function PixPerlPage() {
     { title: 'Reporting & Insights', desc: 'Comprehensive analytical reports to give you complete visibility into security operations.', tag: '05 / ANALYTICS', icon: FaChartLine },
   ];
 
-  const whyLiveFeatures = [
-    {
-      icon: FaUserCheckWhy,
-      title: 'Real People Behind Every Alert',
-      description: 'AI flags the threat and a trained operator confirms it, so you get fewer false alarms and faster action.'
-    },
-    {
-      icon: FaDollarSign,
-      title: 'Costs Less Than On-Site Guards',
-      description: 'One monitored system covers your entire property 24/7 for a fraction of the cost of guard shifts.'
-    },
-    {
-      icon: FaVolumeUp,
-      title: 'Live Voice Deterrence',
-      description: 'Most intruders leave the moment a live operator speaks to them through the on-site speaker.'
-    },
-    {
-      icon: FaBolt,
-      title: 'Faster Police Response',
-      description: 'Verified, in-progress incidents get priority over unconfirmed alarms.'
-    },
-    {
-      icon: FaFileAlt,
-      title: 'Evidence Ready to Hand Over',
-      description: 'Time-stamped clips and incident logs, ready for police, insurance claims or court.'
-    },
-    {
-      icon: FaClock,
-      title: 'No Tired Night Shifts',
-      description: 'Our command centers hand over shifts around the clock, so a fresh operator is always on watch.'
-    }
-  ];
-
-
   const clients = [
     {
       name: 'BOBOS APPLIANCES',
@@ -180,6 +145,29 @@ export default function PixPerlPage() {
       iconBg: 'bg-blue-50 border-blue-200',
       badgeColor: 'text-blue-600',
     },
+  ];
+
+  const stats = [
+    {
+      number: '24/7/365',
+      highlightColor: 'text-neutral-900',
+      label: 'LIVE OPERATOR COVERAGE'
+    },
+    {
+      number: '66+',
+      highlightColor: 'text-blue-600',
+      label: 'CAMERAS & THERMAL ARRAYS ON WATCH'
+    },
+    {
+      number: '12+',
+      highlightColor: 'text-neutral-900',
+      label: 'RETAIL LOCATIONS PROTECTED'
+    },
+    {
+      number: '2',
+      highlightColor: 'text-blue-600',
+      label: 'COMMAND CENTERS: HOUSTON & KARACHI'
+    }
   ];
 
   // Renamed to methodologySteps
@@ -339,6 +327,35 @@ export default function PixPerlPage() {
           </div>
         </div>
       </section>
+      <section className="py-12 sm:py-16 bg-white border-b border-neutral-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {stats.map((stat, idx) => (
+              <div
+                key={idx}
+                className="p-6 sm:p-8 rounded-2xl bg-white border border-neutral-200/90 shadow-sm hover:border-blue-500/40 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className={`text-3xl sm:text-4xl font-black font-mono tracking-tight mb-4 ${stat.highlightColor}`}>
+                    {stat.number}
+                  </div>
+                  <p className="text-[10px] sm:text-[11px] font-mono font-bold uppercase text-neutral-500 tracking-wider leading-relaxed">
+                    {stat.label}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+
+
+
+
+      {/* WHY LIVE MONITORING SECTION */}
+      <WhyLiveMonitoring />
 
       {/* INCIDENT RESPONSE SECTION */}
       <section className="bg-white py-12 sm:py-16 px-4 sm:px-6 lg:px-12 text-neutral-900 border-b border-neutral-200">
@@ -394,6 +411,11 @@ export default function PixPerlPage() {
           </div>
         </div>
       </section>
+
+
+      {/* INDUSTRIES WE PROTECT SECTION */}
+      <IndustriesWeProtect />
+
 
       {/* SERVICES SECTION */}
       <section id="services" className="py-12 sm:py-20 bg-neutral-50 border-b border-neutral-200 relative overflow-hidden">
@@ -491,49 +513,6 @@ export default function PixPerlPage() {
               );
             })}
           </Swiper>
-
-        </div>
-      </section>
-
-      {/* WHY LIVE MONITORING SECTION */}
-      <section className="py-16 sm:py-24 bg-white text-neutral-800 border-b border-neutral-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
-
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 text-[10px] font-mono font-extrabold tracking-widest text-blue-600 uppercase mb-3">
-              THE DIFFERENCE
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-neutral-900 tracking-tight leading-tight">
-              Why Live Monitoring Beats Recorded Cameras
-            </h2>
-            <p className="mt-4 text-neutral-600 text-sm sm:text-base md:text-lg leading-relaxed font-sans">
-              Recorded cameras show you what went wrong after it happens. Our operators stop incidents while they are happening.
-            </p>
-          </div>
-
-          <div className="mt-12 sm:mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {whyLiveFeatures.map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div
-                  key={idx}
-                  className="p-6 sm:p-8 rounded-3xl bg-white border border-neutral-200/80 shadow-sm hover:border-blue-500/40 hover:shadow-md transition-all duration-300 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-6">
-                      <Icon className="text-lg" />
-                    </div>
-                    <h3 className="text-base sm:text-lg font-bold font-mono text-neutral-900 tracking-tight mb-3">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-neutral-600 font-sans leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
 
         </div>
       </section>
@@ -861,80 +840,138 @@ export default function PixPerlPage() {
         </div>
       </section>
 
+      <CoverageArea />
+
       {/* OFFICES SECTION */}
-      <section id="offices" className="py-12 sm:py-20 lg:py-28 bg-neutral-50 border-b border-neutral-200 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-blue-500/10 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-72 sm:w-96 h-72 sm:h-96 bg-indigo-500/10 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
+      {/* <section id="offices" className="py-12 sm:py-20 lg:py-28 bg-neutral-50 border-b border-neutral-200 relative overflow-hidden">
+    <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-blue-500/10 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
+    <div className="absolute bottom-0 left-0 w-72 sm:w-96 h-72 sm:h-96 bg-indigo-500/10 rounded-full blur-[100px] sm:blur-[140px] pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
 
-          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/80 border border-blue-200 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-blue-900 uppercase mb-3">
-              <FaGlobe className="text-blue-600 animate-spin" style={{ animationDuration: '15s' }} />
-              24/7 DUAL COMMAND HUBS
-            </div>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-black tracking-tight">Our Offices & Command Centers</h2>
-            <p className="mt-2 sm:mt-3 text-neutral-600 text-xs sm:text-sm leading-relaxed font-normal px-2">
-              Dual active command hubs providing round-the-clock shift handovers, real-time threat detection, and continuous SLA delivery.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-            {offices.map((office, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{ y: -6 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: idx * 0.15,
-                  y: { duration: 0.3, ease: 'easeOut' }
-                }}
-                className="p-5 sm:p-7 md:p-8 bg-white border border-neutral-200 hover:border-blue-400 rounded-2xl sm:rounded-3xl transition-all duration-500 ease-out flex flex-col justify-between group shadow-lg hover:shadow-xl relative overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 w-28 sm:w-32 h-28 sm:h-32 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/15 transition-all duration-500 pointer-events-none" />
-
-                <div>
-                  <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-neutral-100 mb-5 sm:mb-6">
-                    <span className="px-2.5 py-1 bg-blue-50 border border-blue-200 rounded text-[9px] sm:text-[10px] font-mono font-extrabold text-blue-700 tracking-wider uppercase transition-colors duration-300 group-hover:border-blue-400">
-                      {office.badge}
-                    </span>
-                    <div className="flex items-center gap-1.5 sm:gap-2 font-mono text-[9px] sm:text-[10px] text-blue-800 bg-blue-50 px-2.5 py-1 rounded border border-blue-200">
-                      <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-blue-600 animate-pulse" />
-                      <span>OPERATIONAL // 24/7</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <h3 className="text-xl sm:text-2xl font-black text-black group-hover:text-blue-600 transition-colors duration-300">{office.city}</h3>
-                      <p className="text-xs font-mono text-blue-600 font-bold mt-0.5">{office.country}</p>
-                    </div>
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-500 group-hover:text-blue-600 group-hover:border-blue-300 group-hover:scale-105 transition-all duration-300 flex-shrink-0">
-                      <FaMapMarkerAlt size={15} />
-                    </div>
-                  </div>
-
-                  <p className="text-xs text-neutral-600 font-medium mt-3 mb-5 leading-relaxed">{office.role}</p>
-
-                  <div className="p-3 rounded-xl bg-neutral-50 border border-neutral-200 font-mono text-[10px] sm:text-[11px] mb-5 sm:mb-6 flex flex-row items-center justify-between gap-2 transition-colors duration-300 group-hover:border-neutral-300">
-                    <div className="flex items-center gap-2 text-neutral-600">
-                      <FaClock className="text-blue-600 flex-shrink-0" />
-                      <span>LOCAL TIME:</span>
-                    </div>
-                    <span className="text-blue-600 font-bold">
-                      <CityClock timeZone={office.timeZone} />
-                    </span>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
+      <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/80 border border-blue-200 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-blue-900 uppercase mb-3">
+          <FaGlobe className="text-blue-600 animate-spin" style={{ animationDuration: '15s' }} />
+          24/7 DUAL COMMAND HUBS
         </div>
-      </section>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-black tracking-tight">Our Offices & Command Centers</h2>
+        <p className="mt-2 sm:mt-3 text-neutral-600 text-xs sm:text-sm leading-relaxed font-normal px-2">
+          Dual active command hubs providing round-the-clock shift handovers, real-time threat detection, and continuous SLA delivery.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+        {offices.map((office, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -6 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.5,
+              delay: idx * 0.15,
+              y: { duration: 0.3, ease: 'easeOut' }
+            }}
+            className="p-5 sm:p-7 md:p-8 bg-white border border-neutral-200 hover:border-blue-400 rounded-2xl sm:rounded-3xl transition-all duration-500 ease-out flex flex-col justify-between group shadow-lg hover:shadow-xl relative overflow-hidden"
+          >
+            <div className="absolute top-0 right-0 w-28 sm:w-32 h-28 sm:h-32 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/15 transition-all duration-500 pointer-events-none" />
+
+            <div>
+              <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-neutral-100 mb-5 sm:mb-6">
+                <span className="px-2.5 py-1 bg-blue-50 border border-blue-200 rounded text-[9px] sm:text-[10px] font-mono font-extrabold text-blue-700 tracking-wider uppercase transition-colors duration-300 group-hover:border-blue-400">
+                  {office.badge}
+                </span>
+                <div className="flex items-center gap-1.5 sm:gap-2 font-mono text-[9px] sm:text-[10px] text-blue-800 bg-blue-50 px-2.5 py-1 rounded border border-blue-200">
+                  <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-blue-600 animate-pulse" />
+                  <span>OPERATIONAL // 24/7</span>
+                </div>
+              </div>
+
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-black text-black group-hover:text-blue-600 transition-colors duration-300">{office.city}</h3>
+                  <p className="text-xs font-mono text-blue-600 font-bold mt-0.5">{office.country}</p>
+                </div>
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-neutral-100 border border-neutral-200 flex items-center justify-center text-neutral-500 group-hover:text-blue-600 group-hover:border-blue-300 group-hover:scale-105 transition-all duration-300 flex-shrink-0">
+                  <FaMapMarkerAlt size={15} />
+                </div>
+              </div>
+
+              <p className="text-xs text-neutral-600 font-medium mt-3 mb-5 leading-relaxed">{office.role}</p>
+
+              <div className="p-3 rounded-xl bg-neutral-50 border border-neutral-200 font-mono text-[10px] sm:text-[11px] mb-5 sm:mb-6 flex flex-row items-center justify-between gap-2 transition-colors duration-300 group-hover:border-neutral-300">
+                <div className="flex items-center gap-2 text-neutral-600">
+                  <FaClock className="text-blue-600 flex-shrink-0" />
+                  <span>LOCAL TIME:</span>
+                </div>
+                <span className="text-blue-600 font-bold">
+                  <CityClock timeZone={office.timeZone} />
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+    </div>
+  </section> */}
+
+      {/* <section className="py-12 sm:py-20 px-4 sm:px-6 lg:px-12 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="relative overflow-hidden rounded-3xl bg-neutral-950 text-white min-h-[440px] sm:min-h-[500px] flex items-center">
+
+            <div className="absolute inset-0 z-0">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRByKnoQ8-PILL5EcPP41xDnJNaX9MZAs0UHSjLO3-sQA&s=10"
+                alt="Pixperl Live Dispatch & Command Team"
+                className="w-full h-full object-cover object-right lg:object-center opacity-45 mix-blend-luminosity"
+              />
+              
+              <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/90 md:via-neutral-950/75 to-transparent" />
+            
+              <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+            </div>
+
+            
+            <div className="relative z-10 max-w-2xl p-6 sm:p-12 lg:p-16">
+
+             
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-950/80 border border-blue-800/60 rounded-full text-[10px] font-mono font-bold tracking-widest text-blue-400 uppercase mb-4 sm:mb-6 backdrop-blur-md">
+                <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                LIVE OPERATOR SUPPORT
+              </div>
+
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] mb-4 sm:mb-6">
+                Be the reason <br className="hidden sm:inline" />
+                nothing happened.
+              </h2>
+
+              <p className="text-sm sm:text-lg text-neutral-300 font-normal mb-8 sm:mb-10 max-w-lg leading-relaxed">
+                Retailers Surveillance detects, verifies, and responds before damage escalates.
+              </p>
+
+              
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mb-4">
+                <Link
+                  to="/get-quote"
+                  className="px-6 py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl transition-all shadow-lg shadow-blue-600/30 text-sm text-center active:scale-95"
+                >
+                  Request a Quote
+                </Link>
+              </div>
+
+              <p className="text-[11px] sm:text-xs font-mono text-neutral-400 tracking-wide">
+                3 quick questions. No calls, no forms, no obligation.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section> */}
+
+
+<FAQSection />  
 
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -968,6 +1005,6 @@ export default function PixPerlPage() {
           </div>
         </div>
       </section>
-    </div>
+    </div >
   );
 }
