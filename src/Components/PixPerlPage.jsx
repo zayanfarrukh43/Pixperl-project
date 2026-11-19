@@ -257,9 +257,9 @@ export default function PixPerlPage() {
               </div>
 
               <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-black leading-tight sm:leading-none">
-                SMART <br className="hidden sm:inline" />
+               NEURAL <br className="hidden sm:inline" />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800">
-                  SURVEILLANCE.
+                  DETECTION.
                 </span>
               </h1>
 

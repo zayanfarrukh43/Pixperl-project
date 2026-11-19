@@ -19,6 +19,7 @@ import SLADocumentationPage from './Pages/SLADocumentation';
 import PrivacyPolicyPage from './Pages/PrivacyPolicy';
 import TermsOfServicePage from './Pages/TermsOfService';
 import IndustriesPage from './Pages/IndustriesPage';
+import IndustryDetailPage from './Pages/IndustryDetailPage'; // Added Individual Industry Detail Page
 import ContactPage from './Pages/ContactPage';
 import Pricing from './Pages/Pricing';
 import FAQ from './Pages/FAQ'; // Import the FAQ page
@@ -53,7 +54,7 @@ function AnimatedRoutes() {
       '/contact'
     ];
 
-    if (splashRoutes.includes(location.pathname)) {
+    if (splashRoutes.includes(location.pathname) || location.pathname.startsWith('/industries/')) {
       setLoading(true);
     } else {
       setLoading(false);
@@ -82,6 +83,7 @@ function AnimatedRoutes() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/clients" element={<ClientsPage />} /> {/* 3. Defined Route */}
         <Route path="/industries" element={<IndustriesPage />} />
+        <Route path="/industries/:slug" element={<IndustryDetailPage />} /> {/* Dynamic Route for Each Industry Niche */}
         <Route path="/sla-documentation" element={<SLADocumentationPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-of-service" element={<TermsOfServicePage />} />
