@@ -271,10 +271,10 @@ export default function PixPerlPage() {
                 <motion.a
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
-                  href={SERVICES_LINK}
+                  href={  QUOTE_LINK }
                   className="px-6 sm:px-8 py-3.5 bg-black text-white rounded-md hover:bg-blue-600 transition-colors text-center shadow-lg"
                 >
-                  Explore Services
+                 FREE SITE AUDIT
                 </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.03 }}
