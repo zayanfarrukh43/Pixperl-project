@@ -15,7 +15,7 @@ export default function TermsOfService() {
   const termsHighlights = [
     { label: "Footage Rights", value: "100% Client", detail: "Full client video ownership" },
     { label: "Payment Terms", value: "Net 30", detail: "Monthly recurring service billing" },
-    { label: "Service SLA", value: "99.9% Up", detail: "24/7 Live stream uptime target" },
+    { label: "Service SLA", value: "99.9% Up", detail: "24/6 Live stream uptime target" },
     // { label: "Governing Law", value: "Delaware, US", detail: "Standard corporate terms" }
   ];
 
@@ -109,7 +109,7 @@ export default function TermsOfService() {
                   <h2 className="text-xl sm:text-2xl font-black text-neutral-900">Monitoring Services & Operations</h2>
                 </div>
                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  Retailers Surveillance provides 24/7 proactive live video surveillance, virtual perimeter guarding, remote operator audio voice-downs, and emergency law enforcement dispatch integration.
+                  Retailers Surveillance provides 24/6 proactive live video surveillance, virtual perimeter guarding, remote operator audio voice-downs, and emergency law enforcement dispatch integration.
                 </p>
 
                 <div className="space-y-3 font-mono text-xs">

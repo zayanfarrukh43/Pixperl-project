@@ -24,7 +24,7 @@ export default function FAQSection() {
     {
       question: 'How long are your contracts?',
       answer:
-        'Our standard dedicated monitoring agreements run on 12-month SLA terms, ensuring consistent, uninterrupted 24/7 coverage, hardware support, and custom escalation protocols tailored to your property.'
+        'Our standard dedicated monitoring agreements run on 12-month SLA terms, ensuring consistent, uninterrupted 24/6 coverage, hardware support, and custom escalation protocols tailored to your property.'
     },
     {
       question: 'How much does it cost?',
@@ -34,7 +34,7 @@ export default function FAQSection() {
     {
       question: 'Do you monitor construction sites at night and on weekends?',
       answer:
-        'Yes. We provide continuous 24/7/365 coverage, including overnight hours, weekends, and holidays—protecting heavy machinery, copper, and building materials when sites are most vulnerable.'
+        'Yes. We provide continuous 24/6/365 coverage, including overnight hours, weekends, and holidays—protecting heavy machinery, copper, and building materials when sites are most vulnerable.'
     },
     {
       question: 'Will I receive reports?',
@@ -44,7 +44,7 @@ export default function FAQSection() {
     {
       question: 'What areas do you serve?',
       answer:
-        'We provide full on-site installation, field dispatch, and monitoring across Greater Houston, TX, as well as 24/7 remote live video monitoring for retail and commercial businesses across the entire United States and North America.'
+        'We provide full on-site installation, field dispatch, and monitoring across Greater Houston, TX, as well as 24/6 remote live video monitoring for retail and commercial businesses across the entire United States and North America.'
     }
   ];
 

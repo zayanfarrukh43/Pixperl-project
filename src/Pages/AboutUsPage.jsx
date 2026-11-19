@@ -27,7 +27,7 @@ export default function AboutUsPage() {
 
   const values = [
     {
-      title: "24/7 Unblinking Surveillance",
+      title: "24/6 Unblinking Surveillance",
       desc: "Threats don't follow business hours. Our command centers maintain non-stop active coverage for high-risk assets.",
       icon: FaEye
     },

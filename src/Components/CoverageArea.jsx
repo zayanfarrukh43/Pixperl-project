@@ -17,7 +17,7 @@ export default function CoverageArea() {
     },
     nationwide: {
       title: "UNITED STATES // NATIONWIDE COVERAGE",
-      tagline: "24/7 Remote Command Centers Across All States",
+      tagline: "24/6 Remote Command Centers Across All States",
       cities: [
         "California (CA)", "Texas (TX)", "Florida (FL)", "New York (NY)", 
         "Illinois (IL)", "Georgia (GA)", "Ohio (OH)", "Pennsylvania (PA)", 
@@ -50,7 +50,7 @@ export default function CoverageArea() {
             </p>
             
             <p className="text-neutral-600 text-xs sm:text-sm leading-relaxed font-sans">
-              We also provide remote video monitoring for businesses across the United States and North America through our 24/7 command centers.
+              We also provide remote video monitoring for businesses across the United States and North America through our 24/6 command centers.
             </p>
 
             {/* Region Switcher Buttons */}

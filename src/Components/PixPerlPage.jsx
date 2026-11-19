@@ -120,7 +120,7 @@ export default function PixPerlPage() {
       action: 'RECEIVE',
       title: 'Every signal reaches an operator',
       description:
-        'Whether AI detects an anomaly on camera, someone presses an intercom button, or a user calls in directly, a Retailers Surveillance operator is always there to receive it, 24/7.',
+        'Whether AI detects an anomaly on camera, someone presses an intercom button, or a user calls in directly, a Retailers Surveillance operator is always there to receive it, 24/6.',
       icon: <FaEye className="text-xl text-blue-600" />,
       iconBg: 'bg-blue-50 border-blue-200',
       badgeColor: 'text-blue-600',
@@ -149,7 +149,7 @@ export default function PixPerlPage() {
 
   const stats = [
     {
-      number: '24/7/365',
+      number: '24/6/365',
       highlightColor: 'text-neutral-900',
       label: 'LIVE OPERATOR COVERAGE'
     },
@@ -200,7 +200,7 @@ export default function PixPerlPage() {
       num: '04',
       phase: 'PHASE 04',
       title: 'Setup & Deployment',
-      desc: ' Hardware installation, zero-trust network encryption setup, and streaming link to our 24/7 command center.',
+      desc: ' Hardware installation, zero-trust network encryption setup, and streaming link to our 24/6 command center.',
       icon: FaTools,
       deliverable: 'Hardware Sync & Calibration'
     },
@@ -210,32 +210,32 @@ export default function PixPerlPage() {
       title: 'Active Protection',
       desc: 'Continuous real-time monitoring, instant threat suppression dispatch, and weekly operational analytics logs.',
       icon: FaEye,
-      deliverable: '24/7 Command Watch'
+      deliverable: '24/6 Command Watch'
     },
   ];
 
-  const offices = [
-    {
-      city: 'Houston',
-      country: 'UNITED STATES',
-      badge: 'US HQ & COMMAND',
-      role: 'Primary North American Operations Center & Field Dispatch',
-      timeZone: 'America/Chicago',
-      address: '1000 Main Street, Suite 2400, Houston, TX 77002',
-      phone: '+1 (713) 555-0199',
-      email: 'houston@pixperl.com'
-    },
-    {
-      city: 'Karachi',
-      country: 'PAKISTAN',
-      badge: 'GLOBAL OPS CENTER',
-      role: '24/7 Remote Operations, AI Analytics & Tech Command Hub',
-      timeZone: 'Asia/Karachi',
-      address: 'Shahrah-e-Faisal, Business Avenue, Floor 8, Karachi',
-      phone: '+92 (21) 3555-0188',
-      email: 'karachi@pixperl.com'
-    }
-  ];
+  // const offices = [
+  //   {
+  //     city: 'Houston',
+  //     country: 'UNITED STATES',
+  //     badge: 'US HQ & COMMAND',
+  //     role: 'Primary North American Operations Center & Field Dispatch',
+  //     timeZone: 'America/Chicago',
+  //     address: '1000 Main Street, Suite 2400, Houston, TX 77002',
+  //     phone: '+1 (713) 555-0199',
+  //     email: 'houston@pixperl.com'
+  //   },
+  //   {
+  //     city: 'Karachi',
+  //     country: 'PAKISTAN',
+  //     badge: 'GLOBAL OPS CENTER',
+  //     role: ' Remote Operations, AI Analytics & Tech Command Hub',
+  //     timeZone: 'Asia/Karachi',
+  //     address: 'Shahrah-e-Faisal, Business Avenue, Floor 8, Karachi',
+  //     phone: '+92 (21) 3555-0188',
+  //     email: 'karachi@pixperl.com'
+  //   }
+  // ];
 
   return (
     <div className="min-h-screen bg-white text-black font-sans selection:bg-blue-200 selection:text-black antialiased overflow-x-hidden">
@@ -264,7 +264,7 @@ export default function PixPerlPage() {
               </h1>
 
               <p className="mt-4 sm:mt-6 text-neutral-600 text-sm sm:text-base md:text-lg leading-relaxed max-w-lg font-normal">
-                Next-generation 24/7 security management tailored for retail chains and construction operations. We take contracts and protect your assets end-to-end.
+                Next-generation 24/6 security management tailored for retail chains and construction operations. We take contracts and protect your assets end-to-end.
               </p>
 
               <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 font-mono text-xs font-bold uppercase tracking-widest">
@@ -373,7 +373,7 @@ export default function PixPerlPage() {
               <p className="text-neutral-600 font-mono text-xs sm:text-sm leading-relaxed">
                 Our mission is to deliver security, operational efficiency, and peace
                 of mind to every business through trained operators, data
-                analytics, and intelligent technology working together, 24/7.
+                analytics, and intelligent technology working together, 24/6.
               </p>
             </div>
           </div>
@@ -563,7 +563,7 @@ export default function PixPerlPage() {
                         </div>
 
                         <div className="flex items-center gap-2 px-2.5 py-1 bg-blue-100 border border-blue-200 rounded-md font-mono text-[9px] font-bold text-blue-800 uppercase">
-                          ACTIVE 24/7
+                          ACTIVE 24/6
                         </div>
                       </div>
 
@@ -852,7 +852,7 @@ export default function PixPerlPage() {
       <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-16">
         <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-100/80 border border-blue-200 rounded-full text-[9px] sm:text-[10px] font-mono font-extrabold tracking-widest text-blue-900 uppercase mb-3">
           <FaGlobe className="text-blue-600 animate-spin" style={{ animationDuration: '15s' }} />
-          24/7 DUAL COMMAND HUBS
+           DUAL COMMAND HUBS
         </div>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-black tracking-tight">Our Offices & Command Centers</h2>
         <p className="mt-2 sm:mt-3 text-neutral-600 text-xs sm:text-sm leading-relaxed font-normal px-2">
@@ -884,7 +884,7 @@ export default function PixPerlPage() {
                 </span>
                 <div className="flex items-center gap-1.5 sm:gap-2 font-mono text-[9px] sm:text-[10px] text-blue-800 bg-blue-50 px-2.5 py-1 rounded border border-blue-200">
                   <span className="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-blue-600 animate-pulse" />
-                  <span>OPERATIONAL // 24/7</span>
+                  <span>OPERATIONAL // </span>
                 </div>
               </div>
 

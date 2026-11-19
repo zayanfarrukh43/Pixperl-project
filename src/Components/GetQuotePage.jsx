@@ -104,7 +104,7 @@ export default function GetQuotePage() {
   const serviceOptions = [
     { id: 'retail', label: 'Retail Surveillance', icon: StoreIcon },
     { id: 'construction', label: 'Construction Site Security', icon: ConstructionIcon },
-    { id: 'remote', label: '24/7 Remote Monitoring', icon: RemoteIcon },
+    { id: 'remote', label: '24/6 Remote Monitoring', icon: RemoteIcon },
     { id: 'hardware_setup', label: 'Systems & Hardware Setup', icon: ShieldIcon },
     { id: 'analytics', label: 'Reporting & AI Analytics', icon: AnalyticsIcon },
   ];

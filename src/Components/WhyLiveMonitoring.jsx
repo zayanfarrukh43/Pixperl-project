@@ -18,7 +18,7 @@ export default function WhyLiveMonitoring() {
     {
       icon: FaDollarSign,
       title: 'Costs Less Than On-Site Guards',
-      description: 'One monitored system covers your entire property 24/7 for a fraction of the cost of guard shifts.'
+      description: 'One monitored system covers your entire property 24/6 for a fraction of the cost of guard shifts.'
     },
     {
       icon: FaVolumeUp,

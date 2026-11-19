@@ -109,7 +109,7 @@ export default function PrivacyPolicy() {
                   <h2 className="text-xl sm:text-2xl font-black text-neutral-900">Information We Collect</h2>
                 </div>
                 <p className="text-xs sm:text-sm text-neutral-600 leading-relaxed">
-                  We collect data strictly required to deliver 24/7 remote video surveillance, threat monitoring, and command center dispatch operations.
+                  We collect data strictly required to deliver 24/6 remote video surveillance, threat monitoring, and command center dispatch operations.
                 </p>
 
                 <div className="space-y-3 font-mono text-xs">
@@ -136,7 +136,7 @@ export default function PrivacyPolicy() {
                   Your live security camera feeds and archived incident clips remain strictly confidential and are accessed exclusively by authorized command center operators.
                 </p>
                 <ul className="list-disc list-inside text-xs text-neutral-600 space-y-2 leading-relaxed font-mono">
-                  <li>To provide continuous 24/7 proactive live video guarding and perimeter alarm verification.</li>
+                  <li>To provide continuous 24/6 proactive live video guarding and perimeter alarm verification.</li>
                   <li>To trigger live speaker voice-downs and dispatch emergency law enforcement during active incidents.</li>
                   <li>We strictly do not sell, stream, or expose client video feeds to unauthorized third parties or public networks.</li>
                 </ul>

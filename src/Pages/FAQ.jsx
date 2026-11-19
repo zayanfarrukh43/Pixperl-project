@@ -60,7 +60,7 @@ export default function FAQ() {
         {
             category: "security",
             question: "How long is footage saved before it gets overwritten?",
-            answer: "Storage retention depends on your hard drive size, the number of cameras, resolution settings, and whether you record 24/7 or use motion-triggered recording. Standard setups typically store between 14 to 30+ days of history, but we can customize retention windows to meet your exact legal or personal needs."
+            answer: "Storage retention depends on your hard drive size, the number of cameras, resolution settings, and whether you record 24/6 or use motion-triggered recording. Standard setups typically store between 14 to 30+ days of history, but we can customize retention windows to meet your exact legal or personal needs."
         },
         {
             category: "security",

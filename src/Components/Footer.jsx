@@ -29,7 +29,7 @@ const Footer = () => {
             </div>
           </Link>
           <p className="text-xs leading-relaxed text-neutral-600 font-normal">
-            Next-generation 24/7 security management tailored for retail chains and construction operations.
+            Next-generation 24/6 security management tailored for retail chains and construction operations.
           </p>
           <div className="flex items-center gap-2 text-xs font-mono text-blue-600">
             <FaLock className="text-[10px]" />

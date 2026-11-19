@@ -77,7 +77,7 @@ export default function ClientsPage() {
       ],
       highlights: [
         'Automated gate entry logging connected directly to Retailers Surveillance VMS',
-        '24/7 Night-vision infrared perimeter scanning with AI intrusion tracking',
+        '24/6 Night-vision infrared perimeter scanning with AI intrusion tracking',
         'Instant security team push notifications upon unauthorized boundary access'
       ]
     }

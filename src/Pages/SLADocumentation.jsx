@@ -13,7 +13,7 @@ export default function SLADocumentation() {
   const [activeTab, setActiveTab] = useState('uptime');
 
   const slaMetrics = [
-    { label: "Uptime Guarantee", value: "99.9%", detail: "24/7 Command Center" },
+    { label: "Uptime Guarantee", value: "99.9%", detail: "24/6 Command Center" },
     { label: "Stream Latency", value: "< 500ms", detail: "Ultra-low delay video feeds" },
     { label: "Support Response", value: "< 15 Mins", detail: "Critical incident queue" },
     { label: "Data Redundancy", value: "Cloud + Edge", detail: "Encrypted video storage" }
