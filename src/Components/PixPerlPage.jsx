@@ -46,7 +46,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/effect-coverflow';
 
 const QUOTE_LINK = "/get-quote";
-const SERVICES_LINK = "/services";
+// const SERVICES_LINK = "/services";
+const CONTACT_LINK = "/contact";
 // Helper component for live clock in office locations
 function CityClock({ timeZone }) {
   const [timeStr, setTimeStr] = useState('');
@@ -268,14 +269,14 @@ export default function PixPerlPage() {
               </p>
 
               <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 font-mono text-xs font-bold uppercase tracking-widest">
-                <motion.a
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  href={  QUOTE_LINK }
-                  className="px-6 sm:px-8 py-3.5 bg-black text-white rounded-md hover:bg-blue-600 transition-colors text-center shadow-lg"
-                >
-                 FREE SITE AUDIT
-                </motion.a>
+<motion.a
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              href={CONTACT_LINK}
+              className="px-6 sm:px-8 py-3.5 bg-black text-white rounded-md hover:bg-blue-600 transition-colors text-center shadow-lg"
+            >
+              FREE SITE AUDIT
+            </motion.a>
                 <motion.a
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.97 }}
